@@ -1,0 +1,14 @@
+Package: PApages
+Type: Package
+Title: Views on Performance and Risk of Financial Portfolios
+Version: 0.2
+Date: 2009-05-28
+Author: Peter Carl, Brian G. Peterson
+Maintainer: Peter Carl <pcarl@gsbalum.uchicago.edu>
+Description: Creates formatted views of performance and risk information using PerformanceAnalytics and other packages. This is considered EXPERIMENTAL CODE and WILL NOT BE SUPPORTED.  Collaboration towards creating a supportable code base would be welcome, however.
+License: GPL
+LazyLoad: yes
+Depends: R (>= 2.4.0), PerformanceAnalytics (>=1.0.3.3), gtools, Hmisc, sn
+Suggests: 
+URL: http://r-forge.r-project.org/projects/returnanalytics/
+Copyright: (c) 2004-2011
