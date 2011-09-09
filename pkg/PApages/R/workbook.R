@@ -46,11 +46,11 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, styl
 }
 
 books.Performance <-
-function (R, peer.columns = NULL, index.columns = NULL, style.columns, filename = "workbook.pdf", manager.color = "red", peer.color = "darkgray", index.color = "orange", Rf = 0.04/12, width = 36, prefix = "", stepsize=12, pages = c("Summary", "Scatter", "Performance", "Regression", "Distribution", "Autocorrelation", "Downside", "Style"), ...)
+function (R, manager.columns, peer.columns = NULL, index.columns = NULL, style.columns, filename = "workbook.pdf", manager.color = "red", peer.color = "darkgray", index.color = "orange", Rf = 0.04/12, width = 36, prefix = "", stepsize=12, pages = c("Summary", "Scatter", "Performance", "Regression", "Distribution", "Autocorrelation", "Downside", "Style"), ...)
 {  # @author Peter Carl
     columnnames = colnames(R)
     
-    for(i in peer.columns) {
+    for(i in manager.columns) {
         filename = paste(prefix, columnnames[i],".pdf", sep="")
         print(paste(i,columnnames[i], sep=" "))
         book.Performance(R, manager.column = i, peer.columns = peer.columns[-i], index.columns = index.columns, style.columns = style.columns, filename = filename, manager.color = manager.color, peer.color = peer.color, index.color = index.color, Rf = Rf, width = width, prefix = prefix, stepsize = stepsize, pages = pages, ...)
