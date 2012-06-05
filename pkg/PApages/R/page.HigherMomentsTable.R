@@ -4,7 +4,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, file
     colorset = c(rep(manager.color,length(manager.column)), rep(index.color, length(index.columns)), rep(peer.color,length(peer.columns)))
 
     # First, create the table 
-    w = t(table.HigherMoments(R[,c(manager.column, index.columns, peer.columns),drop=FALSE], R[,index.columns[1],drop=FALSE], digits=4, rf=rf))[,c(3,4,5)]
+    w = t(table.HigherMoments(R[,c(manager.column, index.columns, peer.columns),drop=FALSE], R[,index.columns[1],drop=FALSE], digits=4))[,c(3,4,5)]
 
     # Sort the table by Sharpe ratio
     w.order = order(w[,2], decreasing=FALSE)

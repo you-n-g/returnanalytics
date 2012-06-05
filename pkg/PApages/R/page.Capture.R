@@ -31,7 +31,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, mana
         legend.loc = NULL
 
     op <- par(no.readonly=TRUE)
-    layout(matrix(c(1,2,3,4),nrow=2,byrow=TRUE), height = c(1,1.5), width = 1)
+    layout(matrix(c(1,2,3,4),nrow=2,byrow=TRUE), heights = c(1,1.5), widths = 1)
 
     # mar: a numerical vector of the form c(bottom, left, top, right) which
     # gives the number of lines of margin to be specified on the four sides

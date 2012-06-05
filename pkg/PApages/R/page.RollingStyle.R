@@ -48,7 +48,7 @@ function (R.fund, R.style, method = c("constrained", "unconstrained", "normalize
     # gives the number of lines of margin to be specified on the four sides
     # of the plot. The default is c(5, 4, 4, 2) + 0.1
     op <- par(oma = c(2,0,4,0), mar=c(0,4,0,4))
-    layout(matrix(c(1:columns.style, columns.style+1, columns.style+2), nc = 1, byrow = TRUE))
+    layout(matrix(c(1:columns.style, columns.style+1, columns.style+2), ncol = 1, byrow = TRUE))
 
     for(i in 1:columns.style){
         if(even(i))

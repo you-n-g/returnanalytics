@@ -35,7 +35,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, mana
     op <- par(no.readonly=TRUE)
 
     # First, we lay out the graphic as a two row, two column format
-    layout(matrix(c(1,1,2,3),nrow=2,ncol=2,byrow=T),height=c(6,3),width=1)
+    layout(matrix(c(1,1,2,3),nrow=2,ncol=2,byrow=T),heights=c(6,3),widths=1)
 
     # mar: a numerical vector of the form c(bottom, left, top, right) which
     # gives the number of lines of margin to be specified on the four sides

@@ -22,7 +22,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, file
     x = x[start.row:length.column.one,]
 
     op <- par(no.readonly=TRUE)
-    layout(matrix(c(1,1,2,3,4,4), ncol=2,byrow=TRUE),height=c(3,5,1),width=1)
+    layout(matrix(c(1,1,2,3,4,4), ncol=2, byrow=TRUE), heights=c(3,5,1), widths=1)
 layout.show(4)
     calendar = table.CalendarReturns(x[,c(manager.column, index.columns), drop=FALSE])
 

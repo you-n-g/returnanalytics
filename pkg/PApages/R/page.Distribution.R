@@ -48,11 +48,11 @@ require("fBasics")
 
     op <- par(no.readonly=TRUE)
     # First, we lay out the graphic as a two row, two column format
-    layout(matrix(c(1,2,3,4,5,6),ncol=2,byrow=TRUE), height = c(1,1,1), width = 1)
+    layout(matrix(c(1,2,3,4,5,6),ncol=2,byrow=TRUE), heights = c(1,1,1), widths = 1)
 
     par(cex = 0.8)
     # Panel 1, Distribution of historical data, risk measures, normal fit
-    chart.Histogram(x[, c(manager.column), drop = FALSE], probability=TRUE, show.outliers=TRUE, main="Gaussian", note.lines = c(hVaR, pVaR, mVaR, stVaR, spVaR), note.labels = c("Historical VaR", "Parametric VaR", "Modified VaR", "", ""), note.color=c("darkblue", "darkgray", "darkgray", "darkgray", "darkgray"), methods=c("add.density","add.normal"), cex.axis=0.8, cex=.8)
+    chart.Histogram(x[, c(manager.column), drop = FALSE], probability=TRUE, show.outliers=TRUE, main="Gaussian", note.lines = c(hVaR, pVaR, mVaR, stVaR, spVaR), note.labels = c("Historical VaR", "Parametric VaR", "Modified VaR", "", ""), note.color=c("darkblue", "darkgray", "darkgray", "darkgray", "darkgray"), methods=c("add.density","add.normal"), cex.axis=0.8)
 
     par(cex = 0.8)
     # Panel 2, QQ Plot using Normal distribution
@@ -60,7 +60,7 @@ require("fBasics")
 
     par(cex = 0.8)
     # Panel 3, ECDF?
-    chart.Histogram(x[, c(manager.column), drop = FALSE], probability=T, show.outliers=T, main="Skew-T", note.lines = c(hVaR, pVaR, mVaR, stVaR, spVaR), note.labels = c("", "", "", "Skew-T VaR", ""), note.color=c("darkgray", "darkgray", "darkgray", "darkblue", "darkgray"), methods="add.sst", cex.axis=0.8, cex=.8)
+    chart.Histogram(x[, c(manager.column), drop = FALSE], probability=T, show.outliers=T, main="Skew-T", note.lines = c(hVaR, pVaR, mVaR, stVaR, spVaR), note.labels = c("", "", "", "Skew-T VaR", ""), note.color=c("darkgray", "darkgray", "darkgray", "darkblue", "darkgray"), methods="add.sst", cex.axis=0.8)
 
     # chart.ECDF(x[, c(manager.column), drop = FALSE], main = "ECDF", lwd = 2)
 
@@ -73,7 +73,7 @@ require("fBasics")
 #     library(zoo)
 
     par(cex = 0.8)
-    chart.Histogram(x[, c(manager.column), drop = FALSE], probability=T, show.outliers=T, main="Stable", note.lines = c(hVaR, pVaR, mVaR, stVaR, spVaR), note.labels = c("", "", "", "", "Stable VaR"), note.color=c("darkgray", "darkgray", "darkgray", "darkgray", "darkblue"), methods="add.stable", cex.axis=0.8, cex=.8)
+    chart.Histogram(x[, c(manager.column), drop = FALSE], probability=T, show.outliers=T, main="Stable", note.lines = c(hVaR, pVaR, mVaR, stVaR, spVaR), note.labels = c("", "", "", "", "Stable VaR"), note.color=c("darkgray", "darkgray", "darkgray", "darkgray", "darkblue"), methods="add.stable", cex.axis=0.8)
 #        chart.ACF(x[, c(manager.column, peer.columns, index.columns), drop = FALSE], main = "Autocorrelation")
 
     par(cex = 0.8)

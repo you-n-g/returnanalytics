@@ -34,7 +34,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, mana
     minu = min(minA, minP, L) - .01
 
     op <- par(no.readonly=TRUE)
-    layout(matrix(c(1,2,3),nrow=3,ncol=1),height=c(1,1,2),width=1)
+    layout(matrix(c(1,2,3),nrow=3,ncol=1),heights=c(1,1,2),widths=1)
     
     # mar: a numerical vector of the form c(bottom, left, top, right) which
     # gives the number of lines of margin to be specified on the four sides

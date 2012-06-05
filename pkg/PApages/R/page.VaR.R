@@ -31,7 +31,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, mana
         legend.loc = NULL
 
     op <- par(no.readonly=TRUE)
-    layout(matrix(c(1,1,2,2,3,4),nrow=3,byrow=TRUE), height = c(1,1), width = 1)
+    layout(matrix(c(1,1,2,2,3,4),nrow=3,byrow=TRUE), heights = c(1,1), widths = 1)
 
     # mar: a numerical vector of the form c(bottom, left, top, right) which
     # gives the number of lines of margin to be specified on the four sides
@@ -39,9 +39,9 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, mana
 
     # The first three rows are the rolling window chart of the Excess returns of the index versus the benchmark
     par(mar=c(3,4,4,2)+0.1)
-    chart.BarVaR(x[,c(manager.column,index.columns,peer.columns),drop = FALSE], main = "Comparing VaR to Peers", width = width, ylab = "Monthly Return", method = method[2], event.labels = NULL, ylog=FALSE, gap = gap, colorset = colorset, lwd = lwd, cex.axis=1, all=TRUE, lty=linetypes, xlab="", ...)
+    chart.BarVaR(x[,c(manager.column,index.columns,peer.columns),drop = FALSE], main = "Comparing VaR to Peers", width = width, ylab = "Monthly Return", methods = method[2], event.labels = NULL, ylog=FALSE, gap = gap, colorset = colorset, lwd = lwd, cex.axis=1, all=TRUE, lty=linetypes, xlab="", ...)
     par(mar=c(3,4,4,2)+0.1)
-    chart.BarVaR(x[,c(manager.column,index.columns,peer.columns),drop = FALSE], main = "Comparing Methods", width = width, ylab = "Monthly Return", method = method, event.labels = NULL, ylog=FALSE, gap = gap, colorset = colorset, lwd = lwd, cex.axis=1, clean="boudt", show.clean=TRUE, xlab="", ...)
+    chart.BarVaR(x[,c(manager.column,index.columns,peer.columns),drop = FALSE], main = "Comparing Methods", width = width, ylab = "Monthly Return", methods = method, event.labels = NULL, ylog=FALSE, gap = gap, colorset = colorset, lwd = lwd, cex.axis=1, clean="boudt", show.clean=TRUE, xlab="", ...)
 
     par(mar=c(5,4,4,2)+0.1)
     chart.VaRSensitivity(x[,manager.column,drop=FALSE], lwd=2, main="Raw", ylim=c(-.08,0))

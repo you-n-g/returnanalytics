@@ -35,7 +35,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, mana
         main = paste(colnames[manager.column],"Performance", sep=" ")
 
     op <- par(no.readonly=TRUE)
-    layout(matrix(c(1,2,3,4)),height=c(2.2,1.6,2.2,3),width=1)
+    layout(matrix(c(1,2,3,4)),heights=c(2.2,1.6,2.2,3),widths=1)
 
     # mar: a numerical vector of the form c(bottom, left, top, right) which
     # gives the number of lines of margin to be specified on the four sides

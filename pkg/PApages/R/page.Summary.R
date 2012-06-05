@@ -1,5 +1,5 @@
 page.Summary <-
-function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, manager.color = "red", peer.color = "darkgray", index.color = "orange", Rf = 0, main = NULL, method = c("ModifiedVaR", "HistoricalVaR"), width = 0, event.labels = NULL, ylog = FALSE, wealth.index = FALSE, gap = 12, begin=c("first","axis"), legend.loc="topleft", lwd = 2, ...)
+function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, manager.color = "red", peer.color = "darkgray", index.color = "orange", Rf = 0, main = NULL, methods = c("ModifiedVaR", "HistoricalVaR"), width = 0, event.labels = NULL, ylog = FALSE, wealth.index = FALSE, gap = 12, begin=c("first","axis"), legend.loc="topleft", lwd = 2, ...)
 { # @author Peter Carl
 
     begin = begin[1]
@@ -38,7 +38,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, mana
         wealth.index = TRUE
 
     op <- par(no.readonly=TRUE)
-    layout(matrix(c(1,2,3,4),nrow=4,ncol=1),height=c(3,1.25,1.75,3),width=1)
+    layout(matrix(c(1,2,3,4),nrow=4,ncol=1),heights=c(3,1.25,1.75,3), widths=1)
 
     # mar: a numerical vector of the form c(bottom, left, top, right) which
     # gives the number of lines of margin to be specified on the four sides
@@ -54,7 +54,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, mana
 
     # The second row is the monthly returns bar plot
     par(mar=c(1,4,0,2))
-    chart.BarVaR(x[,c(manager.column,index.columns,peer.columns),drop = FALSE], main = "", xaxis = FALSE, width = width, ylab = "Monthly Return", method = method, event.labels = NULL, ylog=FALSE, gap = gap, colorset = colorset, lwd = lwd, cex.axis=1, ...)
+    chart.BarVaR(x[,c(manager.column,index.columns,peer.columns),drop = FALSE], main = "", xaxis = FALSE, width = width, ylab = "Monthly Return", methods = methods, event.labels = NULL, ylog=FALSE, gap = gap, colorset = colorset, lwd = lwd, cex.axis=1, ...)
 
     # The third row is the underwater plot
     par(mar=c(3,4,0,2))
