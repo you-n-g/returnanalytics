@@ -4,12 +4,10 @@
 \alias{pages}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+Peer group analysis using returns-based performance and risk measures
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+Creates formatted views of performance and risk information using PerformanceAnalytics and other packages. This is considered EXPERIMENTAL CODE and WILL NOT BE SUPPORTED.  Collaboration towards creating a supportable code base would be welcome, however.
 }
 \details{
 \tabular{ll}{
@@ -17,28 +15,12 @@ Package: \tab pages\cr
 Type: \tab Package\cr
 Version: \tab 1.0\cr
 Date: \tab 2009-05-28\cr
-License: \tab What license is it under?\cr
+License: \tab GPL2\cr
 LazyLoad: \tab yes\cr
 }
-~~ An overview of how to use the package, including the most important ~~
-~~ functions ~~
+
 }
 \author{
-Who wrote it
+Peter Carl
+}
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
-}
-\references{
-~~ Literature or other references for background information ~~
-}
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in ~~
-~~ the R documentation directory ~~
-\keyword{ package }
-\seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
-}
-\examples{
-~~ simple examples of the most important functions ~~
-}
