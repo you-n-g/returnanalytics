@@ -3,7 +3,6 @@
 #' Calculate portfolio weights, variance, and mean return, given a set of 
 #' returns and a constraint on overall turnover
 #' 
-
 #' 
 #' @param returns an xts, vector, matrix, data frame, timeSeries or zoo object of
 #' asset returns
@@ -12,15 +11,19 @@
 #' must be equal to ncol(returns)
 #' @param turnover constraint on turnover from intial weights
 #' @param long.only optional long only constraint.  Defaults to FALSE
+#' @return returns a list with initial weights, buys, sells, and
+#' the aggregate of all three.  Also returns the portfolio's expected
+#' return and variance
 #' @author James Hobbs
+#' @seealso \code{\link{TurnoverFrontier}}
 #' @seealso \code{\link{solve.QP}} 
 #' 
-#' data(Returns)
-#'     opt <- TurnoverOpt(large.cap.returns,mu.target=0.01,
-#'      w.initial = rep(1/100,100),turnover=5)
-#'   		opt$w.total
-#' 			opt$port.var
-#'      opt$port.mu
+#' data(Returns) 
+#'     opt <- TurnoverOpt(large.cap.returns,mu.target=0.01, 
+#'      w.initial = rep(1/100,100),turnover=5) 
+#'   		opt$w.total 
+#' 			opt$port.var 
+#'      opt$port.mu 
 #' @export
 TurnoverOpt <- function(returns,mu.target,w.initial,turnover, long.only = FALSE){
   nassets <- ncol(returns)
@@ -83,7 +86,30 @@ TurnoverOpt <- function(returns,mu.target,w.initial,turnover, long.only = FALSE)
 
 
 
-#TODO add documentation
+#' Turnover constrained portfolio frontier
+#' 
+#' Calculates an efficient frontier of portfolios with a 
+#' constraint on overall turnover
+#' 
+#' @param returns an xts, vector, matrix, data frame, timeSeries or zoo object of
+#' asset returns
+#' @param minmu min feasible target portfolio return to use in optimization
+#' @param maxmu max feasible target portfolio return to use in optimization
+#' @param w.initial initial vector of portfolio weights.  Length of the vector
+#' must be equal to ncol(returns)
+#' @param turnover constraint on turnover from intial weights
+#' @param long.only optional long only constraint.  Defaults to FALSE
+#' @return returns a matrix, with the first column of mean return
+#' second column of portfolio standard deviation, and subsequent columns of
+#' asset weights
+#' @author James Hobbs
+#' @seealso \code{\link{TurnoverOpt}}
+#' 
+#' data(Returns) 
+#'  efront <- TurnoverFrontier(large.cap.returns,npoints=50,minmu=0.001, 
+#'  maxmu=.05, w.initial=rep(1/100,100),turnover=5) 
+#'  plot(x=efront[,"SD"],y=efront[,"MU"],type="l") 
+#' @export
 TurnoverFrontier <- function(returns,npoints = 10, minmu, maxmu,
                              w.initial,turnover,long.only = FALSE)
 {

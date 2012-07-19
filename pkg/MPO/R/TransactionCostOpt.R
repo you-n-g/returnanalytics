@@ -1,11 +1,4 @@
-library(xts)
-library(quadprog)
-library(corpcor)
 
-
-
-
-#generic quadratic utility maximization
 UtilityMaximization <- function(returns,lambda,long.only = FALSE){
   nassets <- ncol(returns)
   cov.mat <- cov(returns)
@@ -36,9 +29,26 @@ UtilityMaximization <- function(returns,lambda,long.only = FALSE){
 }
 
 
-#lambda - risk aversion paramter
-#c - proportional transaction cost
-#TODO - fix long only constraint
+#' Quadratic Portfolio Optimization with transaction costs
+#' 
+#' 2 step utility maximization including tranasaction costs as a penalty
+#' 
+#' @param returns an xts, vector, matrix, data frame, timeSeries or zoo object of
+#' asset returns
+#' @param lambda a risk aversion parameter
+#' @param w.initial initial vector of portfolio weights.  Length of the vector
+#' must be equal to ncol(returns)
+#' @param c transaction costs.  Must be a single value or a vector of length
+#' equal to ncol(returns)
+#' @param long.only optional long only constraint.  Defaults to FALSE
+#' @return returns a list with portfolio weights, return, and variance
+#' @author James Hobbs
+#' @seealso \code{\link{TransCostFrontier}}
+#' 
+#'    data(Returns) 
+#'     opt <- TransactionCostOpt(large.cap.returns,w.initial=rep(1/100,100), 
+#'     lambda=1,c=.0005) 
+#' @export
 TransactionCostOpt <- function(returns,lambda,w.initial,c,long.only = FALSE){
   nassets <- ncol(returns)
   if(length(c)==1){
@@ -58,7 +68,6 @@ TransactionCostOpt <- function(returns,lambda,w.initial,c,long.only = FALSE){
   sign.vec[diff<0] <- -1
   c <- c*sign.vec
   
-  #TODO fix this part
   #step 2: optimize with fixed c from step 1
   #this solution will be good as long as no buys or sells flip
   cov.mat <- cov(returns)
@@ -92,7 +101,31 @@ TransactionCostOpt <- function(returns,lambda,w.initial,c,long.only = FALSE){
 }
 
 
-#TODO add documentation
+#' Transaction cost penalized portfolio efficient frontier
+#' 
+#' Calculates an efficient frontier of portfolios using transaction costs
+#' as a penalty.
+#' 
+#' @param returns an xts, vector, matrix, data frame, timeSeries or zoo object of
+#' asset returns
+#' @param min.lambda minimum feasible risk aversion parameter to use in optimization
+#' @param max.lambda maximum feasible risk aversion parameter to use in optimization
+#' @param w.initial initial vector of portfolio weights.  Length of the vector
+#' must be equal to ncol(returns)
+#' @param c transaction costs.  Must be a single value or a vector of length
+#' equal to ncol(returns)
+#' @param long.only optional long only constraint.  Defaults to FALSE
+#' @return returns a matrix, with the first column of mean return
+#' second column of portfolio standard deviation, and subsequent columns of
+#' asset weights
+#' @author James Hobbs
+#' @seealso \code{\link{TransactionCostOpt}}
+#' 
+#'  data(Returns) 
+#'    efront <- TransCostFrontier(large.cap.returns,npoints=50,min.lambda=5, 
+#'    max.lambda=1000,w.initial=rep(1/100,100),c=0.0005) 
+#'    plot(x=efront[,"SD"],y=efront[,"MU"],type="l") 
+#'  @export
 TransCostFrontier <- function(returns,npoints = 10, min.lambda, max.lambda,
                               w.initial,c,long.only = FALSE)
 {
