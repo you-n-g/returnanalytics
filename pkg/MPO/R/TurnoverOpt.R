@@ -66,7 +66,7 @@ TurnoverOpt <- function(returns,mu.target,w.initial,turnover, long.only = FALSE)
 
 
 #TODO add documentation
-efrontMVTurnover <- function(returns,npoints = 10, minmu, maxmu,
+TurnoverFrontier <- function(returns,npoints = 10, minmu, maxmu,
                              w.initial,turnover,long.only = FALSE)
 {
   p = ncol(returns)
@@ -82,45 +82,6 @@ efrontMVTurnover <- function(returns,npoints = 10, minmu, maxmu,
   
   efront
 }
-
-#long and short example
-data("Returns.RData")
-port.turn.10 <- efrontMVTurnover(large.cap.returns,npoints=20,minmu=0.001,maxmu=.1,
-                                 w.initial=rep(1/100,100),turnover=10)
-port.turn.2 <- efrontMVTurnover(large.cap.returns,npoints=20,minmu=0.001,maxmu=.05,
-                                w.initial=rep(1/100,100),turnover=2)
-port.turn.1 <- efrontMVTurnover(large.cap.returns,npoints=20,minmu=0.001,maxmu=.025,
-                                w.initial=rep(1/100,100),turnover=1)
-port.turn.05 <- efrontMVTurnover(large.cap.returns,npoints=20,minmu=0.001,maxmu=.016,
-                                 w.initial=rep(1/100,100),turnover=.5)
-
-plot(x=port.turn.10[,"SD"],y=port.turn.10[,"MU"],type="l",
-     main="Efficent Frontiers with Turnover Constraints",xlab="SD",ylab="MU")
-lines(x=port.turn.2[,"SD"],y=port.turn.2[,"MU"],col="blue")
-lines(x=port.turn.1[,"SD"],y=port.turn.1[,"MU"],col="red")
-lines(x=port.turn.05[,"SD"],y=port.turn.05[,"MU"],col="orange")
-legend("topleft",bty="n",legend = c("Turnover 10","Turnover 2"
-                                    ,"Turnover 1","Turnover .5"), col=c("black",
-                                    "blue","red","orange"),lty=1)
-
-#long only example
-port.turn.long.10 <- efrontMVTurnover(large.cap.returns,npoints=20,minmu=0.001,maxmu=.020,
-                                 w.initial=rep(1/100,100),turnover=10,long.only=TRUE)
-port.turn.long.2 <- efrontMVTurnover(large.cap.returns,npoints=20,minmu=0.001,maxmu=.020,
-                                w.initial=rep(1/100,100),turnover=2,long.only=TRUE)
-port.turn.long.1 <- efrontMVTurnover(large.cap.returns,npoints=20,minmu=0.001,maxmu=.015,
-                                w.initial=rep(1/100,100),turnover=1,long.only=TRUE)
-port.turn.long.05 <- efrontMVTurnover(large.cap.returns,npoints=20,minmu=0.001,maxmu=.012,
-                                 w.initial=rep(1/100,100),turnover=.5,long.only=TRUE)
-
-plot(x=port.turn.long.10[,"SD"],y=port.turn.long.10[,"MU"],type="l",
-     main="Long-Only Efficent Frontiers with Turnover Constraints",xlab="SD",ylab="MU")
-lines(x=port.turn.long.2[,"SD"],y=port.turn.long.2[,"MU"],col="blue")
-lines(x=port.turn.long.1[,"SD"],y=port.turn.long.1[,"MU"],col="red")
-lines(x=port.turn.long.05[,"SD"],y=port.turn.long.05[,"MU"],col="orange")
-legend("topleft",bty="n",legend = c("Turnover 10","Turnover 2",
-    "Turnover 1","Turnover .5"), col=c("black",
-    "blue","red","orange"),lty=1)
 
 
 

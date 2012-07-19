@@ -39,7 +39,7 @@ PortOptUnconstrained <- function(returns,mu.target){
 UnconstrainedFrontier <- function(returns,npoints = 10){
   nassets <- ncol(returns)
   min.variance.port <- MinVariancePortOpt(returns)
-  mu.max <- max(apply(returns,2,mean))
+  mu.max <- max(apply(returns,2,mean))*1.5
   mu.min <- min.variance.port$port.mu
   mu.vals <- seq(mu.min, mu.max, length.out = npoints)
   result = matrix (0,nrow = npoints, ncol = (nassets+2))
