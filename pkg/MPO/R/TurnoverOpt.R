@@ -1,9 +1,27 @@
-library(xts)
-library(quadprog)
-library(corpcor)
+#' Turnover constrained portfolio optimization
+#' 
+#' Calculate portfolio weights, variance, and mean return, given a set of 
+#' returns and a constraint on overall turnover
+#' 
 
-#todo: documentation with Roxygen2 and updating package dependecies
-
+#' 
+#' @param returns an xts, vector, matrix, data frame, timeSeries or zoo object of
+#' asset returns
+#' @param mu.target target portfolio return
+#' @param w.initial initial vector of portfolio weights.  Length of the vector
+#' must be equal to ncol(returns)
+#' @param turnover constraint on turnover from intial weights
+#' @param long.only optional long only constraint.  Defaults to FALSE
+#' @author James Hobbs
+#' @seealso \code{\link{solve.QP}} 
+#' 
+#' data(Returns)
+#'     opt <- TurnoverOpt(large.cap.returns,mu.target=0.01,
+#'      w.initial = rep(1/100,100),turnover=5)
+#'   		opt$w.total
+#' 			opt$port.var
+#'      opt$port.mu
+#' @export
 TurnoverOpt <- function(returns,mu.target,w.initial,turnover, long.only = FALSE){
   nassets <- ncol(returns)
   #using 3 sets of variabes...w.initial, w.buy, and w.sell
