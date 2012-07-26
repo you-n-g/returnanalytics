@@ -49,7 +49,8 @@ UtilityMaximization <- function(returns,lambda,long.only = FALSE){
 #'     opt <- TransactionCostOpt(large.cap.returns,w.initial=rep(1/100,100), 
 #'     lambda=1,c=.0005) 
 #' @export
-TransactionCostOpt <- function(returns,lambda,w.initial,c,long.only = FALSE){
+TransactionCostOpt <- function(returns,lambda,w.initial,c,long.only = FALSE,
+                               niterations = 1,max.iter=10){
   nassets <- ncol(returns)
   if(length(c)==1){
     c = rep(c,nassets)
@@ -66,22 +67,23 @@ TransactionCostOpt <- function(returns,lambda,w.initial,c,long.only = FALSE){
   
   sign.vec <- rep(1,nassets)
   sign.vec[diff<0] <- -1
-  c <- c*sign.vec
+  cost <- c*sign.vec
   
   #step 2: optimize with fixed c from step 1
-  #this solution will be good as long as no buys or sells flip
   cov.mat <- cov(returns)
   Dmat <- 2*cov.mat*lambda
   mu <- apply(returns,2,mean)
-  dvec <- -(mu-c) #linear part is to maximize mean return
-  
+  dvec <- -(mu-cost) #linear part is to maximize mean return
+
   #left hand side of constraints
   constraint.weight.sum <- rep(1,nassets)
-  constraint.weight.buysell <- -diag(sign.vec)
-  Amat <- cbind(constraint.weight.sum,constraint.weight.buysell)
+  #constraint.weight.buysell <- -diag(sign.vec)
+  #Amat <- cbind(constraint.weight.sum,constraint.weight.buysell)
+  Amat <- cbind(constraint.weight.sum)
   
   #right hand side of constraints
-  bvec <- c(-1,(w.initial*sign.vec))
+  #bvec <- c(-1,(w.initial*sign.vec))
+  bvec <- -1
   
   #optional long only constraint
   if(long.only == TRUE){
@@ -93,11 +95,33 @@ TransactionCostOpt <- function(returns,lambda,w.initial,c,long.only = FALSE){
     bvec <- c(bvec,rep(0,nassets))
   }
   
-  solution <- solve.QP(Dmat,dvec,Amat,bvec,meq=1)
+  
+  curr.iter <- 1
+  
+  while (curr.iter <= max.iter){
+    if(curr.iter == 1){
+      prev.sign.vec <- sign.vec
+    }else{
+      cost <- c*sign.vec
+      dvec <- -(mu-cost)
+    }
+    solution <- solve.QP(Dmat,dvec,Amat,bvec,meq=1)
+    w.curr <- -solution$solution
+    diff <- w.curr - w.initial
+    sign.vec <- rep(1,nassets)
+    sign.vec[diff<0] <- -1
+    if(isTRUE(all.equal(prev.sign.vec,sign.vec))){break}
+    prev.sign.vec <- sign.vec
+    curr.iter <- curr.iter + 1
+  }
+  if(curr.iter > max.iter){
+    warning("Max iterations reached.  Transaction costs may be too high relative to returns.")
+  }
+  #solution <- solve.QP(Dmat,dvec,Amat,bvec,meq=1)
   w <- -solution$solution
   port.var <- w%*%cov.mat%*%w
   port.mu <- w%*%mu
-  list(w = w, port.var=port.var, port.mu=port.mu)
+  list(w = w, port.var=port.var, port.mu=port.mu,w.unconstrained=w.unconstrained)
 }
 
 
