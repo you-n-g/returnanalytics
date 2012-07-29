@@ -27,3 +27,4 @@ Collate:
     'ClassicMV.R'
     'TransactionCostOpt.R'
     'TurnoverOpt.R'
+    'ProportionalCostOpt.R'

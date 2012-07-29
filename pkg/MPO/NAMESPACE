@@ -1,3 +1,4 @@
+export(ProportionalCostOpt)
 export(TransactionCostOpt)
 export(TransCostFrontier)
 export(TurnoverFrontier)

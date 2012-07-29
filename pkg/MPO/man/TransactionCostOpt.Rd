@@ -3,7 +3,7 @@
 \title{Quadratic Portfolio Optimization with transaction costs}
 \usage{
   TransactionCostOpt(returns, lambda, w.initial, c,
-    long.only = FALSE)
+    long.only = FALSE, niterations = 1, max.iter = 10)
 }
 \arguments{
   \item{returns}{an xts, vector, matrix, data frame,
