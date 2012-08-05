@@ -1,3 +1,5 @@
+export(BackTestTimes)
+export(BackTestWeights)
 export(ProportionalCostOpt)
 export(TransactionCostOpt)
 export(TransCostFrontier)

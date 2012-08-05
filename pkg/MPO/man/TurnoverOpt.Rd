@@ -2,8 +2,8 @@
 \alias{TurnoverOpt}
 \title{Turnover constrained portfolio optimization}
 \usage{
-  TurnoverOpt(returns, mu.target, w.initial, turnover,
-    long.only = FALSE)
+  TurnoverOpt(returns, mu.target = NULL, w.initial,
+    turnover, long.only = FALSE)
 }
 \arguments{
   \item{returns}{an xts, vector, matrix, data frame,

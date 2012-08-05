@@ -25,7 +25,7 @@
 #' 			opt$port.var 
 #'      opt$port.mu 
 #' @export
-TurnoverOpt <- function(returns,mu.target,w.initial,turnover, long.only = FALSE){
+TurnoverOpt <- function(returns,mu.target = NULL,w.initial,turnover, long.only = FALSE){
   nassets <- ncol(returns)
   #using 3 sets of variabes...w.initial, w.buy, and w.sell
   returns <- cbind(returns,returns,returns)
@@ -52,11 +52,19 @@ TurnoverOpt <- function(returns,mu.target,w.initial,turnover, long.only = FALSE)
   constraint.weights.positive[temp.index,]<-
     constraint.weights.positive[temp.index,]*-1
   
-  #put left hand side of constraints into constraint matrix
-  Amat <- cbind(constraint.sum, constraint.mu.target, constraint.weights.initial,
+  
+  if(!is.null(mu.target)){
+    #put left hand side of constraints into constraint matrix
+    Amat <- cbind(constraint.sum, constraint.mu.target, constraint.weights.initial,
                 constraint.turnover, constraint.weights.positive)
-  #right hand side of constraints in this vector
-  bvec <- c(1,mu.target,w.initial,-turnover,rep(0,2*nassets))
+    #right hand side of constraints in this vector
+    bvec <- c(1,mu.target,w.initial,-turnover,rep(0,2*nassets))
+  } else {
+    #min variance, no target mu
+    Amat <- cbind(constraint.sum, constraint.weights.initial,
+                  constraint.turnover, constraint.weights.positive)
+    bvec <- c(1,w.initial,-turnover,rep(0,2*nassets))
+  }
   
   #optional long only constraint
   if(long.only == TRUE){
@@ -68,10 +76,15 @@ TurnoverOpt <- function(returns,mu.target,w.initial,turnover, long.only = FALSE)
     bvec <- c(bvec,rep(0,nassets))
   }
   
+  if(!is.null(mu.target)){
+    n.eq = 2+nassets 
+  } else {
+    n.eq = 1 + nassets
+  }
   #Note that the first 5 constraints are equality constraints
   #The rest are >= constraints, so if you want <= you have to flip
   #signs as done above
-  solution <- solve.QP(Dmat,dvec,Amat,bvec,meq=(2+nassets))
+  solution <- solve.QP(Dmat,dvec,Amat,bvec,meq=(n.eq))
   
   port.var <- solution$value
   w.buy <- solution$solution[(nassets+1):(2*nassets)]
@@ -80,7 +93,7 @@ TurnoverOpt <- function(returns,mu.target,w.initial,turnover, long.only = FALSE)
   achieved.turnover <- sum(abs(w.buy),abs(w.sell))
   port.mu <- w.total%*%(mu[1:nassets])
   list(w.initial = w.initial, w.buy = w.buy,w.sell=w.sell,
-       w.total=w.total,achieved.turnover = achieved.turnover,
+       w=w.total,achieved.turnover = achieved.turnover,
        port.var=port.var,port.mu=port.mu)
 }
 
@@ -126,6 +139,5 @@ TurnoverFrontier <- function(returns,npoints = 10, minmu, maxmu,
   
   efront
 }
-
 
 

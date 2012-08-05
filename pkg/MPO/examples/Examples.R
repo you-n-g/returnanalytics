@@ -2,6 +2,7 @@ source("TurnoverOpt.R")
 source("TransactionOpt.R")
 source("ClassicMV.R")
 
+data(Returns)
 
 pdf("Charts.pdf")
 #verify 3 methods are equal with no transaction cost/turnover

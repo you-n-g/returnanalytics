@@ -28,3 +28,4 @@ Collate:
     'TransactionCostOpt.R'
     'TurnoverOpt.R'
     'ProportionalCostOpt.R'
+    'BackTest.R'
