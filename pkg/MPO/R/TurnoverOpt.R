@@ -59,11 +59,13 @@ TurnoverOpt <- function(returns,mu.target = NULL,w.initial,turnover, long.only =
                 constraint.turnover, constraint.weights.positive)
     #right hand side of constraints in this vector
     bvec <- c(1,mu.target,w.initial,-turnover,rep(0,2*nassets))
+    n.eq <- 2+nassets
   } else {
     #min variance, no target mu
     Amat <- cbind(constraint.sum, constraint.weights.initial,
                   constraint.turnover, constraint.weights.positive)
     bvec <- c(1,w.initial,-turnover,rep(0,2*nassets))
+    n.eq <- 1 + nassets
   }
   
   #optional long only constraint
@@ -76,11 +78,7 @@ TurnoverOpt <- function(returns,mu.target = NULL,w.initial,turnover, long.only =
     bvec <- c(bvec,rep(0,nassets))
   }
   
-  if(!is.null(mu.target)){
-    n.eq = 2+nassets 
-  } else {
-    n.eq = 1 + nassets
-  }
+ 
   #Note that the first 5 constraints are equality constraints
   #The rest are >= constraints, so if you want <= you have to flip
   #signs as done above

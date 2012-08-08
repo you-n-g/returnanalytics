@@ -56,12 +56,16 @@ ProportionalCostOpt <- function(returns,mu.target,w.initial,tc,long.only = FALSE
   #need to flip sign for w_sell
   constraint.weights.positive[temp.index,]<-
     constraint.weights.positive[temp.index,]*-1
-  #put left hand side of constraints into constraint matrix
-  Amat <- cbind(constraint.sum, constraint.mu.target, constraint.weights.initial,
-                constraint.weights.positive)
+  
 
-  #right hand side of constraints in this vector
-  bvec <- c(1,(1+mu.target),w.initial,rep(0,2*nassets))
+    #put left hand side of constraints into constraint matrix
+    Amat <- cbind(constraint.sum, constraint.mu.target, constraint.weights.initial,
+                  constraint.weights.positive)
+    
+    #right hand side of constraints in this vector
+    bvec <- c(1,(1+mu.target),w.initial,rep(0,2*nassets))
+    n.eq = 2+ nassets
+
  
   #optional long only constraint
   if(long.only == TRUE){
@@ -73,7 +77,9 @@ ProportionalCostOpt <- function(returns,mu.target,w.initial,tc,long.only = FALSE
     bvec <- c(bvec,rep(0,nassets))
   }
   
-  solution <- solve.QP(Dmat,dvec,Amat,bvec,meq=(2+nassets))
+  
+  
+  solution <- solve.QP(Dmat,dvec,Amat,bvec,meq=n.eq)
   
   port.var <- solution$value
   w.buy <- solution$solution[(nassets+1):(2*nassets)]
@@ -81,7 +87,7 @@ ProportionalCostOpt <- function(returns,mu.target,w.initial,tc,long.only = FALSE
   w.total <- w.initial + w.buy + w.sell
   port.mu <- w.total%*%(mu[1:nassets])
   list(w.initial = w.initial, w.buy = w.buy,w.sell=w.sell,
-       w.total=w.total, port.var=port.var,port.mu=port.mu)
+       w=w.total, port.var=port.var,port.mu=port.mu)
 }
 
 

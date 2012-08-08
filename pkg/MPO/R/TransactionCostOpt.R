@@ -61,6 +61,7 @@ TransactionCostOpt <- function(returns,lambda,w.initial,c,long.only = FALSE,
   #step 1: optimize without constraints to determine buys vs sells
   #if w*>w.initial c = c
   #if w* < w.initial c = -c
+  
   unconstrained <- UtilityMaximization(returns,lambda,long.only)
   w.unconstrained <- unconstrained$w
   diff <- w.unconstrained-w.initial 
