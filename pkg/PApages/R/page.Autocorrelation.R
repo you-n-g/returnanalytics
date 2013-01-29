@@ -62,7 +62,7 @@ function (R, manager.column = 1, peer.columns = NULL, index.columns = NULL, mana
     w.order = order(w[,7], decreasing=FALSE)
 
 
-    textplot(format.df(w[w.order,],na.blank=TRUE,numericdollar=FALSE,rdec=c(rep(4,dim(w)[1])), col.just=rep("nc",dim(w)[2])), rmar = rmar, cmar = cmar, max.cex=max.cex, halign = "center", valign = "center", row.valign="center", wrap.rownames=50, wrap.colnames=10, col.rownames=colorset[w.order])
+    textplot(format.df(w[w.order,],na.blank=TRUE,numeric.dollar=FALSE,rdec=c(rep(4,dim(w)[1])), col.just=rep("nc",dim(w)[2])), rmar = rmar, cmar = cmar, max.cex=max.cex, halign = "center", valign = "center", row.valign="center", wrap.rownames=50, wrap.colnames=10, col.rownames=colorset[w.order])
 
     par(op)
 }
