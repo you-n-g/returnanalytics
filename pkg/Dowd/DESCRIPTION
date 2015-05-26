@@ -1,7 +1,7 @@
 Package: Dowd
 Type: Package
 Title: R-version of Matlab Toolbox offered in Kevin Dowd's book Measuring Market Risk
-Version: 0.0.1
+Version: 0.1
 Date: 2015-05-24
 Author: Dinesh Acharya <dines.acharya@gmail.com>
 Maintainer: Dinesh Acharya <dines.acharya@gmail.com>
