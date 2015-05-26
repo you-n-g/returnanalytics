@@ -2,3 +2,6 @@
 
 export(ADTestStat)
 export(BinomialBacktest)
+export(JarqueBeraBacktest)
+export(KSTestStat)
+export(KuiperTestStat)

@@ -2,8 +2,8 @@
 % Please edit documentation in R/ADTestStat.R
 \name{ADTestStat}
 \alias{ADTestStat}
-\title{Plots cumulative density for Anderson-Darling test and computes confidence
-interval Anderson-Darling test stat.}
+\title{Plots cumulative density for AD test and computes confidence
+interval for AD test stat.}
 \usage{
 ADTestStat(number.trials, sample.size, confidence.interval)
 }
@@ -18,10 +18,10 @@ ADTestStat(number.trials, sample.size, confidence.interval)
 Confidence Interval for AD test statistic
 }
 \description{
-AD test can be used to carry out distribution equality test and is
+Anderson-Darling(AD) test can be used to carry out distribution equality test and is
 similar to Kolmogorov-Smirnov test. AD test statistic is defined as:
 \deqn{A^2=n\int_{-\infty}^{\infty}\frac{[\hat{F}(x)-F(x)]^2}{F(x)[1-F(x)]}dF(x)}
-which can be simplified to
+which is equivalent to
 \deqn{=-n-\frac{1}{n}\sum_{i=1}^n(2i-1)[\ln F(X_i)+\ln(1-F(X_{n+1-i}))]}
 }
 \examples{
@@ -33,7 +33,7 @@ which can be simplified to
 Dinesh Acharya
 }
 \references{
-Dowd, Kevin. Measuring Market Risk, Wiley, 2007.
+Dowd, K. Measuring Market Risk, Wiley, 2007.
 
 Anderson, T.W. and Darling, D.A. Asymptotic Theory of Certain Goodness of
 Fit Criteria Based on Stochastic Processes, The Annals of Mathematical
