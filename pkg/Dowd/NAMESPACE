@@ -3,6 +3,7 @@
 export(ADTestStat)
 export(BinomialBacktest)
 export(BlancoIhleBacktest)
+export(ChristoffersenBacktestForIndependence)
 export(ChristoffersenBacktestForUnconditionalCoverage)
 export(JarqueBeraBacktest)
 export(KSTestStat)

@@ -16,7 +16,13 @@
 #' 
 #' @author Dinesh Acharya
 #' @examples
-#' 			# To be added
+#'    
+#'    # Has to be modified with appropriate data:
+#'    # Christoffersen Backtest For Independence for given parameters
+#'    a <- rnorm(1*100)
+#'    b <- abs(rnorm(1*100))+2
+#'    c <- abs(rnorm(1*100))+2
+#'    BlancoIhleBacktest(a, b, c, 0.95)
 #'
 #' @export
 BlancoIhleBacktest <- function(Ra, Rb, Rc, cl){
@@ -27,14 +33,17 @@ BlancoIhleBacktest <- function(Ra, Rb, Rc, cl){
   
   n <- length(profit.loss)
   p <- 1-cl
-  excess.loss <- -profit.loss(-profit.loss>VaR) # Derives excess loss
-  benchmark <- double(length(excess_loss))
+  excess.loss <- -profit.loss[-profit.loss>VaR] # Derives excess loss
+  m <- length(excess.loss)
   
-  for (i in 1:length(excess_loss)){
-	benchmark[i] <- (ETL[i]-VaR[i])/Var[i]
+  benchmark <- double(m)
+  score <- double(m)
+  for (i in 1:m){
+	benchmark[i] <- (ETL[i]-VaR[i])/VaR[i]
 	score[i] <- (excess.loss[i]-VaR[i])/VaR[i]-benchmark[i]
   }
   
   # First Blanco-Ihle score measure
-  return((2/n)*sum(score)^2)
+  y <- (2/n)*sum(score)^2
+  return(y)
 }

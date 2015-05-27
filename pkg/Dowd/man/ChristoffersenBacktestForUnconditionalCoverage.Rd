@@ -22,7 +22,11 @@ Carries out the Christiffersen backtest for unconditional coverage for a
 VaR risk measurement model, for specified VaR confidence level.
 }
 \examples{
-# To be added
+# Has to be modified with appropriate data:
+   # Christoffersen Backtest For Unconditional Coverage for given parameters
+   a <- rnorm(1*100)
+   b <- abs(rnorm(1*100))+2
+   ChristoffersenBacktestForUnconditionalCoverage(a, b, 0.95)
 }
 \author{
 Dinesh Acharya
