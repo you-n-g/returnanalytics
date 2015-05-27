@@ -16,7 +16,12 @@
 #' 
 #' @author Dinesh Acharya
 #' @examples
-#' 			# To be added
+#'    
+#'    # Has to be modified with appropriate data:
+#'    # Christoffersen Backtest For Unconditional Coverage for given parameters
+#'    a <- rnorm(1*100)
+#'    b <- abs(rnorm(1*100))+2
+#'    ChristoffersenBacktestForUnconditionalCoverage(a, b, 0.95)
 #'
 #' @export
 ChristoffersenBacktestForUnconditionalCoverage <- function(Ra, Rb, cl){
@@ -26,8 +31,8 @@ ChristoffersenBacktestForUnconditionalCoverage <- function(Ra, Rb, cl){
   
   n <- length(profit.loss) # Number of observations
   p <- 1-cl # Probability of failure under null hypothesis
-  v <- length(which(VaR+profit.loss<0)) # Frequency of failures
-  
+  x <- length(which(VaR+profit.loss<0)) # Number of Failures
+  phat <- x/n # Frequency of Failures
   # Likelihood ratio test statistic
   LR <- -2*log(((p^x)*(1-p)^(n-x))/((phat^x)*((1-phat)^(n-x))))
   
