@@ -1,4 +1,8 @@
 #***************************************************************
+# most suitable function similar to bootsrtp in matlab is still to be checked
+# original bootstrp VaR so that still needs to be checked.
+# Other functions depending on bootstrp are still only half complete.
+#***************************************************************
 # Jarque-Bera Test:
 # It has to be checked Probability of null (H0) or (H1).
 # (http://stats.stackexchange.com/questions/130368/why-do-i-get-this-p-value-doing-the-jarque-bera-test-in-r)
