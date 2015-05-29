@@ -1,7 +1,5 @@
 #***************************************************************
-# most suitable function similar to bootsrtp in matlab is still to be checked
-# original bootstrp VaR so that still needs to be checked.
-# Other functions depending on bootstrp are still only half complete.
+# Bootstrap is almost complete. It is still to be tested/debugged. Tests still remaining.
 #***************************************************************
 # Jarque-Bera Test:
 # It has to be checked Probability of null (H0) or (H1).

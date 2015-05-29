@@ -41,7 +41,6 @@ HSES <- function(Ra, cl){
     stop("Too many arguments")
   }
   
-  
   if (nargs() == 2) {
     profit.loss.data <- as.vector(Ra)
     unsorted.loss.data <- -profit.loss.data # Derives L/P data from input P/L
@@ -54,7 +53,6 @@ HSES <- function(Ra, cl){
     stop('Confidence level must be scalar (length-1 vector in R)')
   }
   
-  
   # Check that inputs obey sign and value restrictions
   if (cl >= 1) {
     stop("Confidence level must be less than 1.")
@@ -63,14 +61,15 @@ HSES <- function(Ra, cl){
     stop("Confidence level must be positive")
   }
   
+  # VaR and ES estimation
   index <- n*cl # This putative index value may or may not be an integer
   
   # Each case needs to be considered in turn
   # If index value is an integegr, VaR follows immediately and then we
   # estimate ES
   if (index-round(index)==0){
-    var <- losses.data[index] # Historical Value at Risk
-    k <- which[var <= losses.data] # Finds indices of tail loss data
+    VaR <- losses.data[index] # Historical Value at Risk
+    k <- which(VaR <= losses.data) # Finds indices of tail loss data
     tail.losses <- losses.data[k] # Creates data set of tail loss observations
     es <- mean(tail.losses) # Expected Shortfall
     y <- es    
@@ -82,27 +81,32 @@ HSES <- function(Ra, cl){
   if (index-round(index) != 0){
     # Deal with loss
     upper.index <- ceiling(index)
-    upper.var <- losses.data(upper.index) # Upper VaR
-    upper.k <- which(upper.var<=losses.data) # Finds indices of upper tail loss data
-    upper.tail.losses <- losses.data(upper.k) # Creates data set of upper tail loss obs.
+    upper.VaR <- losses.data[upper.index] # Upper VaR
+    upper.k <- which(upper.VaR<=losses.data) # Finds indices of upper tail loss data
+    upper.tail.losses <- losses.data[upper.k] # Creates data set of upper tail loss obs.
+	upper.es <- mean(upper.tail.losses) # Upper ES
+	# Deal with loss observation just below VaR to derive lower ES
+	lower.index <- ceil(index)
+	lower.VaR <- losses.data[lower.index] # Lower VaR
+	lower.k <- which(lower.VaR <= losses.data) # Finds indices of lower tail loss data 
+	lower.tail.losses <- losses.data[lower.k] # Creates data set of lower tail loss obs.
+	lower.es <- mean(lower.tail.losses)# Lower ES
+	
     lower.es <- mean(lower.tail.losses) # Lower Expected Shortfall (ES)
     # If lower and upper indices are the same, ES is upper ES
     if (upper.index == lower.index){
       y <- upper.es
     }
-    # If lower and upper indices are different, ES is weighted average of 
+    # If lower and upper indices are different, ES is weighted average of
     # upper and lower ESs
     if (upper.index!=lower.index) {
       # Weights attached to upper and lower ESs
-      lower.weight <- (upper.index-index)/(upper.index-lower.index)
-      upper.weight <- (index-lower.index)/(upper.index-lower.index)
+      lower.weight <- (upper.index-index)/(upper.index-lower.index) # weight on upper_var
+      upper.weight <- (index-lower.index)/(upper.index-lower.index) # weight on upper_var
       # Finally, the weighted, ES as a linear interpolation of upper and lower
       # ESs
       y <- lower.weight*lower.es+upper.weight*upper.es
-  
     }
-    return(y)
   }
-  
+  return(y)
 }
-
