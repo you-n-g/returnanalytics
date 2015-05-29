@@ -1,11 +1,11 @@
-#' Bootstrapped ES for specified confidence level
+#' Bootstrapped VaR for specified confidence level
 #'
-#' Estimates the bootstrapped ES for confidence level and holding period
+#' Estimates the bootstrapped VaR for confidence level and holding period
 #' implied by data frequency.
 #'
 #' @param Ra Vector corresponding to profit and loss distribution
-#' @param number.resamples Number of samples to be taken in bootstrap procedure
-#' @return cl Number corresponding to Expected Shortfall confidence level
+#' @param number.sample Number of samples to be taken in bootstrap procedure
+#' @return cl Number corresponding to Value at Risk confidence level
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
@@ -13,12 +13,12 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # Estimates bootstrapped ES for given parameters
+#'    # Estimates bootstrapped VaR for given parameters
 #'    a <- rnorm(100) # generate a random profit/loss vector
-#'    BootstrapVaR(a, 50, 0.95)
+#'    BootstrapES(a, 50, 0.95)
 #'
 #' @export
-BootstrapES <- function(Ra, number.resamples, cl){
+BootstrapVaR <- function(Ra, number.sample, cl){
   
   if (nargs() < 3){
     error("Too few arguments")
@@ -37,7 +37,7 @@ BootstrapES <- function(Ra, number.resamples, cl){
   if (length(cl) != 1) {
     error("Confidence level must be a scalar")
   }
-  if (length(number.resamples) != 1){
+  if (length(number.samples) != 1){
     error("Number of resamples must be a scalar");
   }
   
@@ -55,7 +55,7 @@ BootstrapES <- function(Ra, number.resamples, cl){
   # Load bootstrap package
   library(bootstrap)
   # ES estimation
-  es <- bootstrap(losses.data, number.resamples, HSES, cl)$thetastar
-  y <- mean(es)
+  VaR <- bootstrap(losses.data, number.resamples, HSVaR, cl)$thetastar
+  y <- mean(VaR)
   return (y)
 }

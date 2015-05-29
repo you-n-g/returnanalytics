@@ -4,24 +4,24 @@
 \alias{BootstrapES}
 \title{Bootstrapped ES for specified confidence level}
 \usage{
-BootstrapES(Ra, number.sample, cl)
+BootstrapES(Ra, number.resamples, cl)
 }
 \arguments{
 \item{Ra}{Vector corresponding to profit and loss distribution}
 
-\item{number.sample}{Number of samples to be taken in bootstrap procedure}
+\item{number.resamples}{Number of samples to be taken in bootstrap procedure}
 }
 \value{
-cl Number corresponding to Value at Risk confidence level
+cl Number corresponding to Expected Shortfall confidence level
 }
 \description{
 Estimates the bootstrapped ES for confidence level and holding period
 implied by data frequency.
 }
 \examples{
-# Estimates bootstrapped Es for given parameters
+# Estimates bootstrapped ES for given parameters
    a <- rnorm(100) # generate a random profit/loss vector
-   BootstrappedES(a, 50, 0.95)
+   BootstrapVaR(a, 50, 0.95)
 }
 \author{
 Dinesh Acharya
