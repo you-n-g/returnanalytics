@@ -5,7 +5,7 @@
 #' period implies by data frequency.
 #'
 #' @param Ra Vector corresponding to profit and loss distribution
-#' @param Rb Vector corresponding to VaR confidence levels.
+#' @param Rb Scalar corresponding to VaR confidence levels.
 #' @return Value at Risk of the portfolio
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
@@ -25,7 +25,9 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # To be added.
+#'    # To be added
+#'    a <- rnorm(1000) # Payoffs of random portfolio
+#'    HSVaR(a, .95)
 #'
 #' @export
 HSVaR <- function(Ra, Rb){
@@ -40,7 +42,6 @@ HSVaR <- function(Ra, Rb){
     stop("Too many arguments")
   }
   
-  
   if (nargs() == 2) {
     profit.loss.data <- as.vector(Ra)
     cl <- as.vector(Rb)
@@ -50,10 +51,9 @@ HSVaR <- function(Ra, Rb){
   }
   
   # Check that inputs have correct dimensions
-  if (is.vector(Rb)) {
+  if (!is.vector(cl)) {
     stop("Confidence level must be a vector")
   }
-  
   
   # Check that inputs obey sign and value restrictions
   if (max(cl) >= 1) {
@@ -68,7 +68,7 @@ HSVaR <- function(Ra, Rb){
   
   # If index value is an integer, VaR follows immediately
   y <- double(length(i))
-  if (index-round[index] == 0){
+  if (index-round(index) == 0){
     y[i] <- losses.data[index]
   }
   

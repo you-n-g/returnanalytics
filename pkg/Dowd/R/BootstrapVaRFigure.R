@@ -20,7 +20,7 @@
 #'    BootstrapESFigure(Ra, 500, 0.95)
 #'
 #' @export
-BootstrapESFigure <- function(Ra, number.resamples, cl){
+BootstrapVaRFigure <- function(Ra, number.resamples, cl){
   
   # Determine if there are three arguments
   if (nargs() < 3){
@@ -67,6 +67,6 @@ BootstrapESFigure <- function(Ra, number.resamples, cl){
   
   # Histogram
   cl.for.label <- 100*cl
-  hist(VaR[1], 30, xlab="VaR", ylab="Frequency", main=paste("Bootstrapped Historical Simulation VaR at", cl, "% Confidence Level"))
+  hist(VaR, 30, xlab="VaR", ylab="Frequency", main=paste("Bootstrapped Historical Simulation VaR at", cl, "% Confidence Level"))
   
 }
