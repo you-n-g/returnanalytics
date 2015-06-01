@@ -9,7 +9,7 @@ HSVaR(Ra, Rb)
 \arguments{
 \item{Ra}{Vector corresponding to profit and loss distribution}
 
-\item{Rb}{Vector corresponding to VaR confidence levels.}
+\item{Rb}{Scalar corresponding to VaR confidence levels.}
 }
 \value{
 Value at Risk of the portfolio
@@ -20,7 +20,9 @@ approach for the specified range of confidence levels and the holding
 period implies by data frequency.
 }
 \examples{
-# To be added.
+# To be added
+   a <- rnorm(1000) # Payoffs of random portfolio
+   HSVaR(a, .95)
 }
 \author{
 Dinesh Acharya

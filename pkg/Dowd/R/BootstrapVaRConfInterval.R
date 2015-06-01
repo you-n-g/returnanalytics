@@ -21,7 +21,7 @@
 #'    BootstrapVarConfInterval(Ra, 500, 0.95)
 #'
 #' @export
-BootstrapVarConfInterval <- function(Ra, number.resamples, cl){
+BootstrapVaRConfInterval <- function(Ra, number.resamples, cl){
   
   # Determine if there are three arguments
   if (nargs() < 3){

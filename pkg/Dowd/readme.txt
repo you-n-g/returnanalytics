@@ -1,9 +1,12 @@
 #***************************************************************
-# Bootstrap is almost complete. It is still to be tested/debugged. Tests still remaining.
+# Some error is present in GumbelCopulaVaR and needs correction
+#***************************************************************
+# Bootstrap is functional (but HSVaR still does not accept matrix P/L
+# and only still accepts vectors, its needs to be modified)
 #***************************************************************
 # Jarque-Bera Test:
 # It has to be checked Probability of null (H0) or (H1).
-# (http://stats.stackexchange.com/questions/130368/why-do-i-get-this-p-value-doing-the-jarque-bera-test-in-r)
+# 
 #***************************************************************
 # Christofferson Backtest for Independence:
 # VaR(excess_loss<=0)=[]; Does not make sense. It is still to be checked if it is as intended.

@@ -4,7 +4,7 @@
 \alias{BootstrapVaR}
 \title{Bootstrapped VaR for specified confidence level}
 \usage{
-BootstrapVaR(Ra, number.sample, cl)
+BootstrapVaR(Ra, number.resamples, cl)
 }
 \arguments{
 \item{Ra}{Vector corresponding to profit and loss distribution}

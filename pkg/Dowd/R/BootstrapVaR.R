@@ -18,7 +18,7 @@
 #'    BootstrapES(a, 50, 0.95)
 #'
 #' @export
-BootstrapVaR <- function(Ra, number.sample, cl){
+BootstrapVaR <- function(Ra, number.resamples, cl){
   
   if (nargs() < 3){
     error("Too few arguments")
@@ -37,7 +37,7 @@ BootstrapVaR <- function(Ra, number.sample, cl){
   if (length(cl) != 1) {
     error("Confidence level must be a scalar")
   }
-  if (length(number.samples) != 1){
+  if (length(number.resamples) != 1){
     error("Number of resamples must be a scalar");
   }
   
