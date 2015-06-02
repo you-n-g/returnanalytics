@@ -1,4 +1,4 @@
-#' Derives prob ( X + Y < quantile) using Gumbel copula
+#' Derives prob ( X + Y < quantile) using Product copula
 #' 
 #' If X and Y are position P/Ls, then the VaR is equal to minus quantile. In
 #' such cases, we insert the negative of the VaR as the quantile, and the
@@ -11,7 +11,6 @@
 #' @param mu2 Mean of Profit/Loss on second position
 #' @param sigma1 Standard Deviation of Profit/Loss on first position
 #' @param sigma2 Standard Deviation of Profit/Loss on second position
-#' @param beta Gumber copula parameter (greater than 1)
 #' @return Probability of X + Y being less than quantile
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
@@ -21,16 +20,12 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # Prob ( X + Y < q ) using Gumbel Copula for X with mean 2.3 and std. .2
+#'    # Prob ( X + Y < q ) using Product Copula for X with mean 2.3 and std. .2
 #'    # and Y with mean 4.5 and std. 1.5 with beta 1.2 at 0.9 quantile
-#'    CdfOfSumUsingGumbelCopula(0.9, 2.3, 4.5, 1.2, 1.5, 1.2)
+#'    CdfOfSumUsingProductCopula(0.9, 2.3, 4.5, 1.2, 1.5)
 #'
 #' @export
-CdfOfSumUsingGumbelCopula <- function(quantile, mu1, mu2, sigma1, sigma2, beta){
-  
-  if (beta <= 1) {
-    stop("Beta must be bigger than 1")
-  }
+CdfOfSumUsingProductCopula <- function(quantile, mu1, mu2, sigma1, sigma2){
   
   # Define w variable
   w.min <- 0.001
@@ -45,14 +40,12 @@ CdfOfSumUsingGumbelCopula <- function(quantile, mu1, mu2, sigma1, sigma2, beta){
   second.copula <- double(length(w))
   approximate.copula.differential <- double(length(w))
   for (i in 1:length(w)) {
-    first.copula[i] <- GumbelCopula(w[i], 
-                                    pnorm(quantile - qnorm(w[i], mu1, sigma1), mu2, sigma2), 
-                                    beta)
+    first.copula[i] <- ProductCopula(w[i], 
+                                    pnorm(quantile - qnorm(w[i], mu1, sigma1), mu2, sigma2))
   }
   for (i in 2:length(w)) {
-    second.copula[i] <- GumbelCopula(w[i] - dw, 
-                                    pnorm(quantile - qnorm(w[i], mu1, sigma1), mu2, sigma2), 
-                                    beta)
+    second.copula[i] <- ProductCopula(w[i] - dw, 
+                                     pnorm(quantile - qnorm(w[i], mu1, sigma1), mu2, sigma2))
   }
   
   # Obtain approximate copula differentials from the above
@@ -64,11 +57,11 @@ CdfOfSumUsingGumbelCopula <- function(quantile, mu1, mu2, sigma1, sigma2, beta){
   
 }
 
-GumbelCopula <- function(u, v, beta){
-  # Derives value of Gumbel Copula
+ProductCopula <- function(u, v){
+  # Derives value of Product Copula
   # u is value of first marginal for random variable X
   # v is value of second marginal for random variable Y
-  # beta parameter for Gumbel Copula
-  y <- exp(-((-log(u))^beta + (-log(v))^beta))^(1/beta)
+  # beta parameter for Product Copula
+  y <- u * v
   return(y)
 }

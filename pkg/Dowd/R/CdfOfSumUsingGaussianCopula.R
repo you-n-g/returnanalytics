@@ -11,7 +11,8 @@
 #' @param mu2 Mean of Profit/Loss on second position
 #' @param sigma1 Standard Deviation of Profit/Loss on first position
 #' @param sigma2 Standard Deviation of Profit/Loss on second position
-#' @param beta Gumber copula parameter (greater than 1)
+#' @param rho Correlation between P/Ls on two positions
+#' @param number.steps.in.copula The number of steps used in the copula approximation
 #' @return Probability of X + Y being less than quantile
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
@@ -21,16 +22,12 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # Prob ( X + Y < q ) using Gumbel Copula for X with mean 2.3 and std. .2
+#'    # Prob ( X + Y < q ) using Gaussian Copula for X with mean 2.3 and std. .2
 #'    # and Y with mean 4.5 and std. 1.5 with beta 1.2 at 0.9 quantile
-#'    CdfOfSumUsingGumbelCopula(0.9, 2.3, 4.5, 1.2, 1.5, 1.2)
+#'    CdfOfSumUsingGaussianCopula(0.9, 2.3, 4.5, 1.2, 1.5, 0.6, 100)
 #'
 #' @export
-CdfOfSumUsingGumbelCopula <- function(quantile, mu1, mu2, sigma1, sigma2, beta){
-  
-  if (beta <= 1) {
-    stop("Beta must be bigger than 1")
-  }
+CdfOfSumUsingGaussianCopula <- function(quantile, mu1, mu2, sigma1, sigma2, rho, number.steps.in.copula){
   
   # Define w variable
   w.min <- 0.001
@@ -45,14 +42,14 @@ CdfOfSumUsingGumbelCopula <- function(quantile, mu1, mu2, sigma1, sigma2, beta){
   second.copula <- double(length(w))
   approximate.copula.differential <- double(length(w))
   for (i in 1:length(w)) {
-    first.copula[i] <- GumbelCopula(w[i], 
+    first.copula[i] <- GaussianCopula(w[i], 
                                     pnorm(quantile - qnorm(w[i], mu1, sigma1), mu2, sigma2), 
-                                    beta)
+                                    0, number.steps.in.copula)
   }
   for (i in 2:length(w)) {
-    second.copula[i] <- GumbelCopula(w[i] - dw, 
+    second.copula[i] <- GaussianCopula(w[i] - dw, 
                                     pnorm(quantile - qnorm(w[i], mu1, sigma1), mu2, sigma2), 
-                                    beta)
+                                    0, number.steps.in.copula)
   }
   
   # Obtain approximate copula differentials from the above
@@ -64,11 +61,37 @@ CdfOfSumUsingGumbelCopula <- function(quantile, mu1, mu2, sigma1, sigma2, beta){
   
 }
 
-GumbelCopula <- function(u, v, beta){
-  # Derives value of Gumbel Copula
+GaussianCopula <- function(u, v, rho, number.steps){
+  # Derives value of Gaussian Copula
   # u is value of first marginal for random variable X
   # v is value of second marginal for random variable Y
-  # beta parameter for Gumbel Copula
-  y <- exp(-((-log(u))^beta + (-log(v))^beta))^(1/beta)
+  # rho is correlation coefficient between X and Y
+  # number.steps is used for each of x and y
+  # NB: Applies to bivariate Gaussian copula only
+  
+  # Define x and y
+  # NB: These are hypothetical domains of the cdfs; without loss of generality
+  # we can take these to be standard normal percentiles; this is because we are
+  # only using these to determine double integrals with limits u and v
+  x.min <- -3
+  x.max <- qnorm(u, 0, 1)
+  dx <- (x.max - x.min)/number.steps
+  x <- seq(x.min, x.max, dx)
+  y.min <- -3
+  y.max <- qnorm(v, 0, 1)
+  dy <- (y.max - y.min)/number.steps
+  y <- seq(y.min, y.max, dy)
+  
+  # Obtain copula as approximate double sum, which appriximates the 'true'
+  # double integral
+  term <- double(length(x),length(y))
+  for (i in 1:length(x)) {
+    for (j in 1:length(y)) {
+      term[i, j] <- exp(-(x[i]^2-2*rho*x[i]*y[j]+y[j]^2)/(2*(1-rho^2)))
+    }
+  }
+  
+  y <- sum(term) * dx * dy / (2 * pi * (1 - rho^2)^0.5)
+    
   return(y)
 }
