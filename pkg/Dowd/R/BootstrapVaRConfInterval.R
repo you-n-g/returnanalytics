@@ -18,7 +18,7 @@
 #'    # Estimates 90% confidence interval for bootstrapped Var for 95% 
 #'    # confidence interval 
 #'    Ra <- rnorm(1000)
-#'    BootstrapVarConfInterval(Ra, 500, 0.95)
+#'    BootstrapVaRConfInterval(Ra, 500, 0.95)
 #'
 #' @export
 BootstrapVaRConfInterval <- function(Ra, number.resamples, cl){
