@@ -14,8 +14,9 @@ Produces an emperical QQ-Plot of the quantiles of the data set 'Ra' versus
 the quantiles of a normal distribution. The purpose of the quantile-quantile plot is to determine whether the sample in 'Ra' is drawn from a normal (i.e., Gaussian) distribution.
 }
 \examples{
-# Description of example
-   Example
+# Normal QQ Plot for randomly generated standard normal data
+   Ra <- rnorm(100)
+   NormalQQPlot(Ra)
 }
 \author{
 Dinesh Acharya
