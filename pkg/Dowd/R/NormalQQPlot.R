@@ -10,8 +10,9 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # Description of example
-#'    Example
+#'    # Normal QQ Plot for randomly generated standard normal data
+#'    Ra <- rnorm(100)
+#'    NormalQQPlot(Ra)
 #'
 #' @export
 NormalQQPlot <- function(Ra){
