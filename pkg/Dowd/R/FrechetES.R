@@ -29,8 +29,8 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # Computes VaR assuming Frechet Distribution for given parameters
-#'    FrechetVaR(3.5, 2.3, 1.6, 10, .95, 30)
+#'    # Computes ES assuming Frechet Distribution for given parameters
+#'    FrechetES(3.5, 2.3, 1.6, 10, .95, 30)
 #'
 #' @export
 FrechetES <- function(mu, sigma, tail.index, n, cl, hp){
