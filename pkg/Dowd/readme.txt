@@ -1,3 +1,10 @@
+#
+# General Notes for Modification: 
+#***************************************************************
+# FrechetVaR does not use hp and the remark about return value when it is vector is vaccuous.
+#***************************************************************
+# In Normal/t QQ Plots, dowd code does not work for matrices but the code contains parts that
+# work for matrices. some vectors like pvec are not defined anywhere in his code.
 #***************************************************************
 # Some error is present in GumbelCopulaVaR and needs correction
 #***************************************************************
@@ -6,7 +13,6 @@
 #***************************************************************
 # Jarque-Bera Test:
 # It has to be checked Probability of null (H0) or (H1).
-# 
 #***************************************************************
 # Christofferson Backtest for Independence:
 # VaR(excess_loss<=0)=[]; Does not make sense. It is still to be checked if it is as intended.
