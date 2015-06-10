@@ -33,8 +33,8 @@ holding period.
 Note that the long-right-hand tail is fitted to losses, not profits.
 }
 \examples{
-# Computes VaR assuming Frechet Distribution for given parameters
-   FrechetVaR(3.5, 2.3, 1.6, 10, .95, 30)
+# Computes ES assuming Frechet Distribution for given parameters
+   FrechetES(3.5, 2.3, 1.6, 10, .95, 30)
 }
 \author{
 Dinesh Acharya
