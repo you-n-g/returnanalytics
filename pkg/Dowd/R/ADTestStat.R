@@ -24,7 +24,7 @@
 #' @examples
 #' 
 #'    # Probability that the VaR model is correct for 3 failures, 100 number
-#'    observations and  95% confidence level
+#'    # observations and  95% confidence level
 #'    ADTestStat(1000, 100, 0.95)
 #'
 #' @export
