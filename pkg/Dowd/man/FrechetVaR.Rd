@@ -25,7 +25,7 @@ is vector and hp is a scalar, or viceversa, returns vector of VaRs. If both
 cl and hp are vectors, returns a matrix of VaRs.
 }
 \description{
-Plots the VaR of a portfolio against confidence level assuming extreme losses
+Estimates the VaR of a portfolio  assuming extreme losses
 are Frechet distributed, for specified range of confidence level and a given
 holding period.
 }

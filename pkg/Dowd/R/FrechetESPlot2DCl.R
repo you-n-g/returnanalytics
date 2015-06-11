@@ -1,6 +1,6 @@
-#' Frechet Expected Shortfall
+#' Plots Frechet Expected Shortfall against confidence level
 #'
-#' Estimates the ES of a portfolio  assuming extreme losses
+#' Plots the ES of a portfolio against confidence level assuming extreme losses
 #' are Frechet distributed, for specified confidence level and a given 
 #' holding period.
 #'
@@ -11,11 +11,8 @@
 #' @param sigma Scale parameter for daily L/P
 #' @param tail.index Tail index
 #' @param n Block size from which maxima are drawn
-#' @param cl Confidence level
+#' @param cl Confidence level and should be a vector
 #' @param hp Holding period
-#' @return Value at Risk. If cl and hp are scalars, it returns scalar VaR. If cl
-#' is vector and hp is a scalar, or viceversa, returns vector of VaRs. If both 
-#' cl and hp are vectors, returns a matrix of VaRs.
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
@@ -29,11 +26,12 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # Computes ES assuming Frechet Distribution for given parameters
-#'    FrechetES(3.5, 2.3, 1.6, 10, .95, 30)
+#'    # Plots ES against vector of cl assuming Frechet Distribution for given parameters
+#'    cl <- seq(0.9,0.99,0.01)
+#'    FrechetESPlot2DCl(3.5, 2.3, 1.6, 10, cl, 30)
 #'
 #' @export
-FrechetES <- function(mu, sigma, tail.index, n, cl, hp){
+FrechetESPlot2DCl <- function(mu, sigma, tail.index, n, cl, hp){
   
   # Check that inputs have correct dimensions
   if (!length(mu) == 1) {
@@ -46,15 +44,14 @@ FrechetES <- function(mu, sigma, tail.index, n, cl, hp){
     stop("tail.index must be a scalar")
   }
   if (!is.vector(cl)) {
-    stop("cl must be a vector or a scalar")
+    stop("cl must be a vector")
   }
-  if (!is.vector(hp)) {
-    stop("hp must be a vector or a scalar")
+  if (!length(hp) == 1) {
+    stop("hp must be a scalar")
   }
   
-  # Change cl and hp to row vector and column vectors respectively
+  # Change cl to row vector
   cl <- t(as.matrix(cl))
-  hp <- as.matrix(hp)
   
   # Check that parameters obey sign and value restrictions
   if (sigma < 0) {
@@ -90,8 +87,24 @@ FrechetES <- function(mu, sigma, tail.index, n, cl, hp){
     # NB Frechet term
   }
   
-  y <- term / (number.slices - 1)
+  es <- term / (number.slices - 1)
+  plot(cl0, es, type = "l", xlab = "Confidence level", ylab = "VaR", 
+       main = "Frechet ES against confidence level")
   
-  return(y)
+  text(mean(cl0), 
+       max(es) - .1*(max(es) - min(es)),
+       'Input parameters')
+  text(mean(cl0), 
+       max(es)-.2*(max(es)-min(es)),
+       paste('Location parameter for daily L/P = ', mu))
+  text(mean(cl0), 
+       max(es) - .3 * (max(es) - min(es)),
+       paste('Scale parameter for daily L/P = ', sigma))
+  text(mean(cl0), 
+       max(es) - .4 * (max(es) - min(es)),
+       paste('Tail index = ', tail.index))
+  text(mean(cl0), 
+       max(es) - .5 * (max(es) - min(es)),
+       paste('Holding period = ', hp, ' days'))
   
-} 
+}
