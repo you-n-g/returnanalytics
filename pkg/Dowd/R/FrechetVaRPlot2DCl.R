@@ -1,6 +1,6 @@
-#' Frechet Value at Risk
+#' Plots Frechet Value at Risk against Cl
 #'
-#' Estimates the VaR of a portfolio  assuming extreme losses
+#' Plots the VaR of a portfolio against confidence level assuming extreme losses
 #' are Frechet distributed, for specified range of confidence level and a given 
 #' holding period.
 #'
@@ -11,11 +11,8 @@
 #' @param sigma Scale parameter for daily L/P
 #' @param tail.index Tail index
 #' @param n Block size from which maxima are drawn
-#' @param cl Confidence level
-#' @param hp Holding period
-#' @return Value at Risk. If cl and hp are scalars, it returns scalar VaR. If cl
-#' is vector and hp is a scalar, or viceversa, returns vector of VaRs. If both 
-#' cl and hp are vectors, returns a matrix of VaRs.
+#' @param cl Confidence level and should be a vector
+#' @param hp Holding period and should be a scalar
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
@@ -29,11 +26,12 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # Computes VaR assuming Frechet Distribution for given parameters
-#'    FrechetVaR(3.5, 2.3, 1.6, 10, .95, 30)
+#'    # Plots VaR against vector of cl assuming Frechet Distribution for given parameters
+#'    cl <- seq(0.9, .99, .01)
+#'    FrechetVaRPlot2DCl(3.5, 2.3, 1.6, 10, cl, 30)
 #'
 #' @export
-FrechetVaR <- function(mu, sigma, tail.index, n, cl, hp){
+FrechetVaRPlot2DCl <- function(mu, sigma, tail.index, n, cl, hp){
   
   # Check that inputs have correct dimensions
   if (!length(mu) == 1) {
@@ -52,9 +50,8 @@ FrechetVaR <- function(mu, sigma, tail.index, n, cl, hp){
     stop("hp must be a vector or a scalar")
   }
   
-  # Change cl and hp to row vector and column vectors respectively
+  # Change cl to row vector
   cl <- t(as.matrix(cl))
-  hp <- as.matrix(hp)
   
   # Check that parameters obey sign and value restrictions
   if (sigma < 0) {
@@ -73,9 +70,24 @@ FrechetVaR <- function(mu, sigma, tail.index, n, cl, hp){
     stop("Holding period(s) must be greater than 0")
   }
   # VaR estimation
-  y <- mu * matrix(1, 1, length(cl)) - (sigma / tail.index) * 
+  VaR <- mu * matrix(1, 1, length(cl)) - (sigma / tail.index) * 
     (1 - ( - n * log(cl)) ^ ( - tail.index))
-  
-  return(y)
+  # Plotting
+  plot(cl, VaR, type = "l", xlab = "Confidence level", ylab = "VaR", main = "Frechet VaR against confidence level")
+  text(mean(cl),
+       max(VaR) - .1*(max(VaR) - min(VaR)),
+       'Input parameters')
+  text(mean(cl),
+       max(VaR)-.2*(max(VaR)-min(VaR)),
+       paste('Location parameter for daily L/P = ', mu))
+  text(mean(cl),
+       max(VaR) - .3 * (max(VaR) - min(VaR)),
+       paste('Scale parameter for daily L/P = ', sigma))
+  text(mean(cl),
+       max(VaR) - .4 * (max(VaR) - min(VaR)),
+       paste('Tail index = ', tail.index))
+  text(mean(cl),
+       max(VaR) - .5 * (max(VaR) - min(VaR)),
+       paste('Holding period = ', hp, ' days'))  
   
 } 
