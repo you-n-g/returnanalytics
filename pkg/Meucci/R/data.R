@@ -249,12 +249,29 @@ NULL
 #' @keywords data
 NULL
 
-
 #' @title data from the sectors in the S&P 500
 #'
 #' @name sectorsSnP500
 #' @docType data
 #' @author Xavier Valls\email{flamejat@@gmail.com}
 #' @references  Attilio Meucci, 2011, "Robust Bayesian Allocation". \url{http://symmys.com/node/102}
+#' @keywords data
+NULL
+
+#' @title japanese government bonds
+#'
+#' @name JGB
+#' @docType data
+#' @author Xavier Valls\email{flamejat@@gmail.com}
+#' @references  A. Meucci, A. Loregian - "Neither Normal not Lognormal: Modeling Interest Rates Across all Regimes" \url{http://symmys.com/node/601}
+#' @keywords data
+NULL
+
+#' @title equal-weight portfolio of stocks in the S&P500
+#'
+#' @name linRet
+#' @docType data
+#' @author Xavier Valls\email{flamejat@@gmail.com}
+#' @references  A. Meucci, A. Santangelo, R. Deguest - "Measuring Portfolio Diversification Based on Optimized Uncorrelated Factors" \url{http://symmys.com/node/599}
 #' @keywords data
 NULL
