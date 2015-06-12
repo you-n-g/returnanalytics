@@ -212,7 +212,7 @@ PanicCopula = function( N = 20 , J = 50000 , r_c = .3 , r = .99 , b = .02 , sig 
   # Aeq %*% p_ # equals the expectations in beq            
   # meanPriorReturnScenarios = apply( Aeq[ -1 , ] , 2 , mean ) # mean return for j'th prior scenario (distribution remains unaltered)
   # meanPriorReturnScenarios %*% p_ # expected portfolio return with new probabilities at each scenario
-  # breaks = pHist( meanPriorReturnScenarios , p_ , round( 10 * log(J)) , freq = FALSE )$Breaks            
+  # breaks = PHist( meanPriorReturnScenarios , p_ , round( 10 * log(J)) , freq = FALSE )$Breaks            
   # weighted.hist( meanPriorReturnScenarios, p_ , breaks , freq = FALSE )  # create weighted histogram. TODO: FIX. Cannot abline the expected portfolio return    
     
   # bin <- cut( meanPriorReturnScenarios , breaks , include.lowest = TRUE)
@@ -270,8 +270,8 @@ PanicCopula = function( N = 20 , J = 50000 , r_c = .3 , r = .99 , b = .02 , sig 
   R_w = Y %*% w # Range is from -.18 to .18
   meanReturn = mean( R_w )
     
-  histOld = pHist( R_w , p , round( 10 * log(J)) , freq = FALSE ) # barplot with old probabilities
-  histNew = pHist( R_w , p_ , round( 10 * log(J)) , freq = FALSE ) # barplot with new probabilities
+  histOld = PHist( R_w , p , round( 10 * log(J)) , freq = FALSE ) # barplot with old probabilities
+  histNew = PHist( R_w , p_ , round( 10 * log(J)) , freq = FALSE ) # barplot with new probabilities
   print( histOld$Plot )
   print( histNew$Plot )
   # abline( v = mean( R_w ) , col = "blue" )

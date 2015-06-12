@@ -74,10 +74,10 @@ ymax = 1.0
 xmesh = t(linspace(xmin, xmax, ghqMesh.J))
 
 # Monte Carlo
-plotDataMC = pHist( monteCarlo.X , monteCarlo.p_ , 50 )
+plotDataMC = PHist( monteCarlo.X , monteCarlo.p_ , 50 )
 plot( plotDataMC$x , plotDataMC$f , type = "l" )
 
 # Gauss Hermite Grid
-plotDataGHQ = pHist(data.matrix(ghqMesh.X), ghqMesh.p_ , 50 )
+plotDataGHQ = PHist(data.matrix(ghqMesh.X), ghqMesh.p_ , 50 )
 plot( plotDataGHQ$x , plotDataGHQ$f , type = "l" )
 

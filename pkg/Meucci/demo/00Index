@@ -102,6 +102,7 @@ S_WishartLocationDispersion   		 computes the location-dispersion ellipsoid of t
 S_ToyExample               			 illustrates the use of Entropy Pooling to compute Fully Flexible Probabilities
 logToArithmeticCovariance   		 generates arithmetric returns and arithmetric covariance matrix given a distribution of log returns
 S_plotGaussHermite          		 displays mesh points based on Gaussian-Hermite quadrature Bayesian networks
-
+S_AnalyzeJGBrates					 applies the Inverse Call Transformation to Japanese government rates and compares the shadow rates returned.
+S_MainDiversification				 computes Diversification Distribution and the Effective Number of Bets.
 
 

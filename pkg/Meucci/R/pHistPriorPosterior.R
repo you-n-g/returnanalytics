@@ -33,13 +33,13 @@ pHistPriorPosterior = function( X, p, p_)
         par( mfrow = c( 2, 1 ) );
 
         # prior numerical
-        pHist( X[ , n ], p, NBins);
+        PHist( X[ , n ], p, NBins);
         # xlim([xl, xh]);
         # y1 = ylim();
         # title('prior');
         
         # posterior numerical
-        pHist( X[ , n ], p_, NBins);
+        PHist( X[ , n ], p_, NBins);
         # xlim([xl, xh]);
         # y2 = ylim();
         # ylim([min(y1(1), y2(1)), max(y1(2), y2(2))]);
