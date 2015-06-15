@@ -23,8 +23,7 @@ FrechetVaRPlot2DCl(mu, sigma, tail.index, n, cl, hp)
 Plots the VaR of a portfolio against confidence level assuming extreme losses
 are Frechet distributed, for specified range of confidence level and a given
 holding period.
-}
-\details{
+
 Note that the long-right-hand tail is fitted to losses, not profits.
 }
 \examples{
@@ -36,7 +35,7 @@ Note that the long-right-hand tail is fitted to losses, not profits.
 Dinesh Acharya
 }
 \references{
-Dowd, K. Measuring Market Risk, Wiley, 2007.
+Dowd, K. Measurh  ing Market Risk, Wiley, 2007.
 
 Embrechts, P., Kluppelberg, C. and Mikosch, T., Modelling Extremal Events for
 Insurance and Finance. Springer, Berlin, 1997, p. 324.
