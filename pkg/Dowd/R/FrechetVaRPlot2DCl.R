@@ -1,6 +1,6 @@
-#' Plots Frechet Value at Risk against Cl
+#' @title Plots Frechet Value at Risk against Cl
 #'
-#' Plots the VaR of a portfolio against confidence level assuming extreme losses
+#' @description Plots the VaR of a portfolio against confidence level assuming extreme losses
 #' are Frechet distributed, for specified range of confidence level and a given 
 #' holding period.
 #'
@@ -14,7 +14,7 @@
 #' @param cl Confidence level and should be a vector
 #' @param hp Holding period and should be a scalar
 #' 
-#' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
+#' @references Dowd, K. Measurh  ing Market Risk, Wiley, 2007.
 #' 
 #' Embrechts, P., Kluppelberg, C. and Mikosch, T., Modelling Extremal Events for
 #' Insurance and Finance. Springer, Berlin, 1997, p. 324.
@@ -24,6 +24,7 @@
 #' 15-18.
 #' 
 #' @author Dinesh Acharya
+#' 
 #' @examples
 #' 
 #'    # Plots VaR against vector of cl assuming Frechet Distribution for given parameters
