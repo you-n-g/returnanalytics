@@ -2,8 +2,7 @@
 % Please edit documentation in R/ButterflyTradingFunctions.R
 \name{ComputeCVaR}
 \alias{ComputeCVaR}
-\title{Computes the conditional value at risk as it appears in A. Meucci, "Fully Flexible Views: Theory and Practice",
-The Risk Magazine, October 2008, p 100-106}
+\title{Computes the conditional value at risk}
 \usage{
 ComputeCVaR(Units, Scenarios, Conf)
 }
@@ -18,14 +17,17 @@ ComputeCVaR(Units, Scenarios, Conf)
 CVaR          Conditional Value at Risk
 }
 \description{
-Computes the conditional value at risk as it appears in A. Meucci, "Fully Flexible Views: Theory and Practice",
-The Risk Magazine, October 2008, p 100-106
+Computes the conditional value at risk as it appears in
+A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk Magazine,
+October 2008, p 100-106.
 }
 \author{
 Ram Ahluwalia \email{ram@wingedfootcapital.com}
 }
 \references{
-A. Meucci, "Fully Flexible Views: Theory and Practice" \url{http://www.symmys.com/node/158}
+A. Meucci, "Fully Flexible Views: Theory and Practice"
+\url{http://www.symmys.com/node/158}
+
 See Meucci script for "ButterflyTrading/ComputeCVaR.m"
 }
 

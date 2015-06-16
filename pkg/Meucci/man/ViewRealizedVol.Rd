@@ -2,9 +2,7 @@
 % Please edit documentation in R/ButterflyTradingFunctions.R
 \name{ViewRealizedVol}
 \alias{ViewRealizedVol}
-\title{Process the relative inequality view on median,  as it appears in A. Meucci,
- "Fully Flexible Views: Theory and Practice", The Risk Magazine, October 2008,
- p 100-106}
+\title{Process the relative inequality view on median}
 \usage{
 ViewRealizedVol(X, p)
 }
@@ -17,15 +15,17 @@ ViewRealizedVol(X, p)
 p_    : vector of posterior probabilities
 }
 \description{
-Process the relative inequality view on median,  as it appears in A. Meucci,
- "Fully Flexible Views: Theory and Practice", The Risk Magazine, October 2008,
- p 100-106
+Process the relative inequality view on median, as it appears in
+A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk Magazine,
+October 2008, p 100-106
 }
 \author{
-Ram Ahluwalia \email{ram@wingedfootcapital.com} and Xavier Valls \email{flamejat@gmail.com}
+Ram Ahluwalia \email{ram@wingedfootcapital.com} and Xavier Valls
+\email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci, "Fully Flexible Views: Theory and Practice" \url{http://www.symmys.com/node/158}
+A. Meucci, "Fully Flexible Views: Theory and Practice"
+\url{http://www.symmys.com/node/158}
 See Meucci script for "ButterflyTrading/ViewRealizedVol.m"
 }
 
