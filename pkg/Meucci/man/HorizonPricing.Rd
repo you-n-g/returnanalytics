@@ -2,8 +2,7 @@
 % Please edit documentation in R/ButterflyTradingFunctions.R
 \name{HorizonPricing}
 \alias{HorizonPricing}
-\title{Compute the pricing in the horizon as it appears in A. Meucci, "Fully Flexible Views: Theory and Practice",
- The Risk Magazine, October 2008, p 100-106.}
+\title{Compute the pricing in the horizon.}
 \usage{
 HorizonPricing(Butterflies, X)
 }
@@ -16,14 +15,20 @@ HorizonPricing(Butterflies, X)
 PnL            Matrix of profit and loss scenarios
 }
 \description{
-Compute the pricing in the horizon as it appears in A. Meucci, "Fully Flexible Views: Theory and Practice",
- The Risk Magazine, October 2008, p 100-106.
+Compute the pricing in the horizon as it appears in A. Meucci,
+ "Fully Flexible Views: Theory and Practice", The Risk Magazine, October
+  2008, p 100-106.
+}
+\details{
+
 }
 \author{
-Ram Ahluwalia \email{ram@wingedfootcapital.com} and Xavier Valls \email{flamejat@gmail.com}
+Ram Ahluwalia \email{ram@wingedfootcapital.com} and Xavier Valls
+ \email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci, "Fully Flexible Views: Theory and Practice" \url{http://www.symmys.com/node/158}
- See Meucci script for "ButterflyTrading/HorizonPricing.m"
+A. Meucci, "Fully Flexible Views: Theory and Practice"
+ \url{http://www.symmys.com/node/158}, see Meucci script for
+ "ButterflyTrading/HorizonPricing.m"
 }
 

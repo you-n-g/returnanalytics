@@ -37,8 +37,8 @@ Depends:
     quadprog,
     kernlab,
     nloptr,
-Suggests:
     limSolve,
+Suggests:
     Matrix,
     MASS,
     reshape2,

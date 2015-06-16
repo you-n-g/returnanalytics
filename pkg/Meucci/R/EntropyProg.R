@@ -98,11 +98,11 @@ EntropyProg <- function(p, A = NULL, b = NULL, Aeq, beq) {
   if (((.999999 < sum(p)) & (sum(p) < 1.00001)) == FALSE)
     stop("sum of probabilities from prior distribution must equal 1")
 
-  if (nrow(Aeq) != nrow(beq)){
+  if (nrow(Aeq) != length(beq)){
     stop("number of inequality constraints in matrix Aeq must match
       number of elements in vector beq")
   }
-  if (nrow(A) != nrow(b)) {
+  if (nrow(A) != length(b)) {
     stop("number of equality constraints in matrix A must match number of
           elements in vector b")
   }

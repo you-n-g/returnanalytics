@@ -76,7 +76,7 @@ for ( k in 1:nrow( G ) )
 }
 
 emptyMatrix = matrix( , nrow = 0 , ncol = 0 )
-p_ = EntropyProg( p , emptyMatrix , emptyMatrix , Aeq , beq ) # ...compute posterior probabilities
+p_ = EntropyProg( p , emptyMatrix , emptyMatrix , Aeq , beq )$p_ # ...compute posterior probabilities
 
 ###############################################################
 # plots

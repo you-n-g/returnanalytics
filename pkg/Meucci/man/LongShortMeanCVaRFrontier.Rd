@@ -2,8 +2,7 @@
 % Please edit documentation in R/ButterflyTradingFunctions.R
 \name{LongShortMeanCVaRFrontier}
 \alias{LongShortMeanCVaRFrontier}
-\title{Computes the long-short conditional value at risk frontier as it appears in A. Meucci,
-"Fully Flexible Views: Theory and Practice", The Risk Magazine, October 2008, p 100-106}
+\title{Computes the long-short conditional value at risk}
 \usage{
 LongShortMeanCVaRFrontier(PnL, Probs, Butterflies, Options)
 }
@@ -19,21 +18,27 @@ LongShortMeanCVaRFrontier(PnL, Probs, Butterflies, Options)
 \value{
 Exp           vector of expected returns for each asset
 
-SDev          vector of security volatilities along the efficient frontier
+SDev          vector of security volatilities along the efficient
+                        frontier
 
 CVaR          Conditional Value at Risk for each portfolio
 
-Composition   matrix of compositions (security weights) for each portfolio along the efficient frontier
+Composition   matrix of compositions (security weights) for each
+                        portfolio along the efficient frontier
 }
 \description{
-Computes the long-short conditional value at risk frontier as it appears in A. Meucci,
-"Fully Flexible Views: Theory and Practice", The Risk Magazine, October 2008, p 100-106
+Computes the long-short conditional value at risk frontier as it
+appears in A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk
+Magazine, October 2008, p 100-106.
 }
 \author{
-Ram Ahluwalia \email{ram@wingedfootcapital.com}, Xavier Valls \email{flamejat@gmail.com}
+Ram Ahluwalia \email{ram@wingedfootcapital.com},
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci, "Fully Flexible Views: Theory and Practice" \url{http://www.symmys.com/node/158}
+A. Meucci, "Fully Flexible Views: Theory and Practice"
+\url{http://www.symmys.com/node/158}
+
 See Meucci script for "ButterflyTrading/LongShortMeanCVaRFrontier.m"
 }
 
