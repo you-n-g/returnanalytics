@@ -20,8 +20,8 @@ Plots of emperical mean excess function and Generalized mean excess function.
 }
 \examples{
 # Computes ES assuming generalised Pareto for following parameters
-   Ra <- 5 * randn(100)
-   mu <- 1
+   Ra <- 5 * rnorm(100)
+   mu <- 0
    beta <- 1.2
    zeta <- 1.6
    GParetoMEFPlot(Ra, mu, beta, zeta)

@@ -20,7 +20,7 @@ FrechetES(mu, sigma, tail.index, n, cl, hp)
 \item{hp}{Holding period}
 }
 \value{
-Value at Risk. If cl and hp are scalars, it returns scalar VaR. If cl
+Estimated ES. If cl and hp are scalars, it returns scalar VaR. If cl
 is vector and hp is a scalar, or viceversa, returns vector of VaRs. If both
 cl and hp are vectors, returns a matrix of VaRs.
 }
