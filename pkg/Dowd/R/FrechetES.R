@@ -13,7 +13,7 @@
 #' @param n Block size from which maxima are drawn
 #' @param cl Confidence level
 #' @param hp Holding period
-#' @return Value at Risk. If cl and hp are scalars, it returns scalar VaR. If cl
+#' @return Estimated ES. If cl and hp are scalars, it returns scalar VaR. If cl
 #' is vector and hp is a scalar, or viceversa, returns vector of VaRs. If both 
 #' cl and hp are vectors, returns a matrix of VaRs.
 #' 
