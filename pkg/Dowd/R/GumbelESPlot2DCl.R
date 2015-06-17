@@ -15,7 +15,7 @@
 #' @examples
 #' 
 #'    # Plots ES against Cl
-#'    GumbelESPlot2DCl(0, 1.2, 100, c(.9,.88, .85, .8), 280)
+#'    GumbelESPlot2DCl(0, 1.2, 100, seq(0.8,0.99,0.02), 280)
 #'
 #' @export
 GumbelESPlot2DCl<- function(mu, sigma, n, cl, hp){
@@ -68,20 +68,10 @@ GumbelESPlot2DCl<- function(mu, sigma, n, cl, hp){
   
   # Plotting
   plot(cl0, v, xlab = "Confidence Level", ylab = "ES", type = "l")
-  
-  text(mean(cl0), 
-       max(v) - .1*(max(v) - min(v)),
-       'Input parameters')
-  text(mean(cl0), 
-       max(v)-.2*(max(v)-min(v)),
-       paste('Location parameter for daily L/P = ', mu))
-  text(mean(cl0), 
-       max(v) - .3 * (max(v) - min(v)),
-       paste('Scale parameter for daily L/P = ', sigma))
-  text(mean(cl0), 
-       max(v) - .4 * (max(v) - min(v)),
-       paste('Holding period = ', hp, ' days'))
-  
+  legend("topleft",c('Input parameters',
+                     paste('Location parameter for daily L/P = ', mu),
+                     paste('Scale parameter for daily L/P = ', sigma),
+                     paste('Holding period = ', hp, ' days')), bty="n")
   title("Gumbel ES against confidence level")
   
 } 

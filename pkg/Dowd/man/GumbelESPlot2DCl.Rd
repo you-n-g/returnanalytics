@@ -22,7 +22,7 @@ Estimates the EV VaR of a portfolio assuming extreme losses are Gumbel distribut
 }
 \examples{
 # Plots ES against Cl
-   GumbelESPlot2DCl(0, 1.2, 100, c(.9,.88, .85, .8), 280)
+   GumbelESPlot2DCl(0, 1.2, 100, seq(0.8,0.99,0.02), 280)
 }
 \author{
 Dinesh Acharya

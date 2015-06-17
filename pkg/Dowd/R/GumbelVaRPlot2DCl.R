@@ -10,7 +10,6 @@
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
-#' 
 #' @author Dinesh Acharya
 #' @examples
 #' 
@@ -56,19 +55,10 @@ GumbelVaRPlot2DCl<- function(mu, sigma, n, cl, hp){
   
   # Plotting
   plot(cl, VaR, xlab = "Confidence Level", ylab = "VaR", type = "l")
-  text(mean(cl), 
-       max(VaR) - .1*(max(VaR) - min(VaR)),
-       'Input parameters')
-  text(mean(cl), 
-       max(VaR)-.2*(max(VaR)-min(VaR)),
-       paste('Location parameter for daily L/P = ', mu))
-  text(mean(cl), 
-       max(VaR) - .3 * (max(VaR) - min(VaR)),
-       paste('Scale parameter for daily L/P = ', sigma))
-  text(mean(cl), 
-       max(VaR) - .4 * (max(VaR) - min(VaR)),
-       paste('Holding period = ', hp, ' days'))
-  
+  legend("topleft",c('Input parameters',
+                     paste('Location parameter for daily L/P = ', mu),
+                     paste('Scale parameter for daily L/P = ', sigma),
+                     paste('Holding period = ', hp, ' days')), bty="n")
   title("Gumbel VaR against confidence level")
   
 } 
