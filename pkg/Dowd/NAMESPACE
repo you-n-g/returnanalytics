@@ -3,6 +3,7 @@
 export(ADTestStat)
 export(AdjustedNormalESHotspots)
 export(AdjustedNormalVaRHotspots)
+export(AdjustedVarianceCovarianceES)
 export(BinomialBacktest)
 export(BlancoIhleBacktest)
 export(BootstrapES)
