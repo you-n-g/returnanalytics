@@ -1,12 +1,11 @@
-#' @title Plots Frechet Value at Risk against Cl
+#' Plots Frechet Value at Risk against Cl
 #'
-#' @description Plots the VaR of a portfolio against confidence level assuming extreme losses
+#' Plots the VaR of a portfolio against confidence level assuming extreme losses
 #' are Frechet distributed, for specified range of confidence level and a given 
 #' holding period.
 #'
 #' Note that the long-right-hand tail is fitted to losses, not profits.
 #' 
-#'
 #' @param mu Location parameter for daily L/P
 #' @param sigma Scale parameter for daily L/P
 #' @param tail.index Tail index

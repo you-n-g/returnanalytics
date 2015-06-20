@@ -41,6 +41,6 @@ corerction, for specified confidence level and holding period.
 Dinesh Acharya
 }
 \references{
-Dowd, K. Measurh  ing Market Risk, Wiley, 2007.
+Dowd, K. Measuring Market Risk, Wiley, 2007.
 }
 

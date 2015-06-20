@@ -7,9 +7,9 @@
 #' which is equivalent to
 #' \deqn{=-n-\frac{1}{n}\sum_{i=1}^n(2i-1)[\ln F(X_i)+\ln(1-F(X_{n+1-i}))]}
 #' 
-#' @param number.trials 
-#' @param sample.size
-#' @param confidence.interval
+#' @param number.trials Number of trials
+#' @param sample.size Sample size
+#' @param confidence.interval Confidence Interval
 #' @return Confidence Interval for AD test statistic
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 

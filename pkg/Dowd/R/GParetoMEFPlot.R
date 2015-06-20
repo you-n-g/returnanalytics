@@ -1,6 +1,6 @@
-#' @title Plot of Emperical and Generalised Pareto mean excess functions 
+#' Plot of Emperical and Generalised Pareto mean excess functions 
 #'
-#' @description Plots of emperical mean excess function and Generalized mean excess function.
+#' Plots of emperical mean excess function and Generalized mean excess function.
 #'
 #' @param Ra Vector of daily Profit/Loss data 
 #' @param mu Location parameter

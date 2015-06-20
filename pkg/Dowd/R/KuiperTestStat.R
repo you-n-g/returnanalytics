@@ -18,15 +18,18 @@
 #' @examples
 #' 
 #'    # Plots the cdf for Kuiper Test statistic and returns Kuiper confidence 
-#'    interval for 100 trials with 1000 sample size and 0.95 confidence 
-#'    interval.
+#'    # interval for 100 trials with 1000 sample size and 0.95 confidence 
+#'    # interval.
 #'    KuiperTestStat(100, 1000, 0.95)
 #'
 #' @export
 KuiperTestStat <- function(number.trials, sample.size, confidence.interval){
   
-  if (confidence.interval>1){
+  if (confidence.interval >= 1) {
     stop("Confidence Interval should be less than 1.")
+  }
+  if (confidence.interval <= 0) {
+    stop("Confidence Interval should be positive.")
   }
   
   # Read back input parameters

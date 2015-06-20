@@ -9,7 +9,6 @@
 #' @return Probability that given the data set, the null hypothesis 
 #' (i.e. independence) is correct.
 #' 
-#' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
 #' Christoffersen, P. Evaluating Interval Forecasts. International Economic 

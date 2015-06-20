@@ -39,6 +39,6 @@ Estimates the variance-covariance VaR of a multi-asset portfolio using the Corni
 Dinesh Acharya
 }
 \references{
-Dowd, K. Measurh  ing Market Risk, Wiley, 2007.
+Dowd, K. Measuring Market Risk, Wiley, 2007.
 }
 
