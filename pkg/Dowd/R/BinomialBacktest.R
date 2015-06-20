@@ -27,9 +27,8 @@
 #' @export
 BinomialBacktest <- function (x, n, cl){
   # Give warning if x>n or cl>100%
-  if(x > n | cl > 1){
-    warning ("Incorrect parameter list. Make sure that x>n and cl<=100%")
-    return (NaN) 
+  if(x > n | cl >= 1 | cl <= 0){
+    stop ("Incorrect parameter list. Make sure that x>n and 0<cl<1")
   }
   
   p <- 1 - cl # Probability of a failure each observation occurs
