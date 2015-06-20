@@ -21,12 +21,17 @@ p_s = .1 # aversion to estimation risk for sigma
 ####################################################################
 # true market parameters
 ####################################################################
-C = ( 1 - r ) * eye( N ) + r * ones( N , N ) # creates a homogenous correlation matrix
-step_s = ( max_s - min_s ) / ( N - 1 ) # 1st asset will have min volatility...
-s = seq( min_s , max_s , step_s ) # ... last asset will have maximum volatility
-S = diag(s) %*% C %*% diag(s) # fake covariance matrix with equally spaced volatilities
+# creates a homogenous correlation matrix
+C = ( 1 - r ) * eye( N ) + r * ones( N , N )
+# 1st asset will have min volatility...
+step_s = ( max_s - min_s ) / ( N - 1 )
+# ... last asset will have maximum volatility
+s = seq( min_s , max_s , step_s )
+# fake covariance matrix with equally spaced volatilities
+S = diag(s) %*% C %*% diag(s)
 
-# Note the means are defined in such a way that a mean-variance optimization would yield an equally weighted portfolio
+# Note the means are defined in such a way that a mean-variance optimization
+# would yield an equally weighted portfolio.
 # fake mean matrix : mus = 2.5 * Sigma / N
     M = 2.5 * S %*% ones( N , 1 ) / N
 
@@ -37,33 +42,40 @@ S = diag(s) %*% C %*% diag(s) # fake covariance matrix with equally spaced volat
 # initialize variables
 meanVarMus = meanVarVols = trueMus = trueVols = bayesianMus = bayesianVols = robustMus = robustVols = list()
 
-# construct efficient sample, bayesian, and robust bayesian frontier for each simulation
-for( j in 1:J )
-{
+# construct efficient sample, bayesian, and robust bayesian frontier for each
+# simulation
+for( j in 1:J ) {
   # Sample T draws from the true covariance matrix
   rets = mvrnorm( T , M , S ) 
   
   # construct mean-variance frontier using sample estimate.
   mean = colMeans( rets ) # get mean vector
   cov = cov( rets ) # cov vector  
-  sampleFrontier = efficientFrontier( NumPortf , cov , mean , TRUE ) # returns a list of returns, volatility, and assets weights along the frontier. Each row represents a point on the frontier
+  # returns a list of returns, volatility, and assets weights along the frontier
+  # Each row represents a point on the frontier
+  sampleFrontier = efficientFrontier( NumPortf , cov , mean , TRUE )
   
   # construct mean-variance efficient portfolio based on true Mu and sigma  
   trueFrontier = efficientFrontier( NumPortf , S , M , TRUE ) 
   
-  # Bayesian prior for covariance and mu's (an arbitrary prior model of covariance and returns)
-    # the covariance prior is equal to the sample covariance on the principal diagonal
-    cov_prior  = diag( diag( cov ) ) 
-  
-    # set the prior expected returns for each asset to : mus = .5 * Sigma(1/N). Incidentally, this ensures there is a perfect positive linear relationship between asset variance and asset expected  return
-    mean_prior = .5 * cov_prior %*% rep( 1/N , N ) 
-  
-    # set the confidence in the prior as twice the confidence in the sample and blend the prior with the sample data
-    posterior = PartialConfidencePosterior( mean_sample = mean , cov_sample = cov , mean_prior = mean_prior , cov_prior = cov_prior , 
-                                            relativeConfidenceInMeanPrior = 2 , relativeConfidenceInCovPrior = 2 , sampleSize = nrow( rets ) )
+  # Bayesian prior for covariance and mu's (an arbitrary prior model of 
+  # covariance and returns)
+  # the covariance prior is equal to the sample covariance on the principal
+  # diagonal
+  cov_prior  = diag( diag( cov ) ) 
 
-    cov_post = posterior$cov_post ; mean_post = posterior$mean_post ; time_post = posterior$time_post ; nu_post = posterior$nu_post ; rm( posterior )
-  
+  # set the prior expected returns for each asset to : mus = .5 * Sigma(1/N)
+  # Incidentally, this ensures there is a perfect positive linear relationship
+  # between asset variance and asset expected return
+  mean_prior = .5 * cov_prior %*% rep( 1/N , N ) 
+
+  # set the confidence in the prior as twice the confidence in the sample and
+  # blend the prior with the sample data
+  posterior = PartialConfidencePosterior( mean_sample = mean , cov_sample = cov , mean_prior = mean_prior , cov_prior = cov_prior , 
+                                          relativeConfidenceInMeanPrior = 2 , relativeConfidenceInCovPrior = 2 , sampleSize = nrow( rets ) )
+
+  cov_post = posterior$cov_post ; mean_post = posterior$mean_post ; time_post = posterior$time_post ; nu_post = posterior$nu_post ; rm( posterior )
+
   # construct Bayesian frontier using blended mu and Sigma, and identify robust portfolio
   # returns a set of Bayesian efficient portfolios: a list of returns, volatility, and assets weights along the posterior frontier. Each row represents a point on the frontier
         # and the returns, volatility, and assets of the most robust portfolio in the set
@@ -123,20 +135,25 @@ for( j in 1:J )
 }
 
 # Plot sample, bayesian, and robust mean/variance portfolios
-    library( ggplot2 )
+library( ggplot2 )
 
-    # create dataframe consisting of actual returns, actual variance, and sample indicator    
-    actualReturns = unlist( meanVarMus ) ; actualVariance = unlist( meanVarVols )
-    plotData1 = data.frame( actualReturns = actualReturns, actualVariance = actualVariance , type = "Sample" )
-    actualReturns = unlist( bayesianMus ) ; actualVariance = unlist( bayesianVols )
-    plotData2 = data.frame( actualReturns = actualReturns, actualVariance = actualVariance , type = "Bayesian" )
-    actualReturns = unlist( robustMus ) ; actualVariance = unlist( robustVols )
-    plotData3 = data.frame( actualReturns = actualReturns, actualVariance = actualVariance , type = "Robust Bayesian" )
-    actualReturns = unlist( trueMus ) ; actualVariance = unlist( trueVols )
-    plotData4 = data.frame( actualReturns = actualReturns, actualVariance = actualVariance , type = "True frontier" )
-    plotData = rbind( plotData1 , plotData2 , plotData3 , plotData4 ) ; rm( plotData1 , plotData2 , plotData3 , actualReturns , actualVariance )
+# create dataframe consisting of actual returns, actual variance, and sample indicator    
+actualReturns = unlist( meanVarMus )
+actualVariance = unlist( meanVarVols )
+plotData1 = data.frame( actualReturns = actualReturns, actualVariance = actualVariance , type = "Sample" )
+actualReturns = unlist( bayesianMus )
+actualVariance = unlist( bayesianVols )
+plotData2 = data.frame( actualReturns = actualReturns, actualVariance = actualVariance , type = "Bayesian" )
+actualReturns = unlist( robustMus )
+actualVariance = unlist( robustVols )
+plotData3 = data.frame( actualReturns = actualReturns, actualVariance = actualVariance , type = "Robust Bayesian" )
+actualReturns = unlist( trueMus )
+actualVariance = unlist( trueVols )
+plotData4 = data.frame( actualReturns = actualReturns, actualVariance = actualVariance , type = "True frontier" )
+plotData = rbind( plotData1 , plotData2 , plotData3 , plotData4 )
+rm( plotData1 , plotData2 , plotData3 , actualReturns , actualVariance )
 
-    # build plot with overlays    
-    # Notice when plotting the the Bayesian portfolios are shrunk toward the prior. Therefore they 
-    # are less scattered and more efficient, although the prior differs significantly from the true market parameters.
-    ggplot( data = plotData ) + geom_point( aes_string( x = "actualVariance" , y = "actualReturns" , color = "type"  ) )
+# build plot with overlays    
+# Notice when plotting the the Bayesian portfolios are shrunk toward the prior. Therefore they 
+# are less scattered and more efficient, although the prior differs significantly from the true market parameters.
+ggplot( data = plotData ) + geom_point( aes_string( x = "actualVariance" , y = "actualReturns" , color = "type"  ) )

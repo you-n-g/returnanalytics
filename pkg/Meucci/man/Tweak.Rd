@@ -7,9 +7,9 @@
 Tweak(A, b, g)
 }
 \arguments{
-\item{A}{matrix A consisting of inequality constraints ( Ax <= b )}
+\item{A}{matrix A consisting of inequality constraints (Ax <= b)}
 
-\item{b}{matrix b consisting of inequality constraint vector b ( Ax <= b )}
+\item{b}{matrix b consisting of inequality constraint vector b (Ax <= b)}
 
 \item{g}{TODO: TBD}
 }

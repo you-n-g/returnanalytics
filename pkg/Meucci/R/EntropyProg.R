@@ -311,6 +311,8 @@ EntropyProg <- function(p, A = NULL, b = NULL, Aeq, beq) {
 #' See Meucci script pHist.m used for plotting
 #' @author Ram Ahluwalia \email{ram@@wingedfootcapital.com} and Xavier Valls 
 #' \email{xaviervallspla@@gmail.com}
+#'
+#' @export
 
 PHist <- function(X, p, nBins, freq = FALSE) {
 

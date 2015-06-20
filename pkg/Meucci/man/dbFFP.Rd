@@ -8,7 +8,7 @@
 Data for the Historical Scenarios with Fully Flexible Probabilities paper.
 }
 \author{
-Xavier Valls\email{flamejat@gmail.com}
+Xavier Valls\email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci, "Personalized Risk Management: Historical Scenarios with Fully Flexible Probabilities"

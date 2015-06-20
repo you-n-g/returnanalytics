@@ -8,7 +8,7 @@
 data from the sectors in the S&P 500
 }
 \author{
-Xavier Valls\email{flamejat@gmail.com}
+Xavier Valls\email{xaviervallspla@gmail.com}
 }
 \references{
 Attilio Meucci, 2011, "Robust Bayesian Allocation". \url{http://symmys.com/node/102}

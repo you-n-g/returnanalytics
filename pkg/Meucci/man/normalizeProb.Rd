@@ -7,10 +7,12 @@
 normalizeProb(p)
 }
 \arguments{
-\item{p}{a numeric value containing the probability value required to be normalized}
+\item{p}{a numeric value containing the probability value
+                     required to be normalized}
 }
 \value{
-normalizedp  a numeric value containing the normalized probability value
+normalizedp  a numeric value containing the normalized probability
+                     value
 }
 \description{
 Generates the normalized probability for an input probability value

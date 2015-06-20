@@ -2,7 +2,8 @@
 % Please edit documentation in R/HermiteGrid.R
 \name{integrateSubIntervals}
 \alias{integrateSubIntervals}
-\title{Integrate the subinterval for the given cumulative distribution function to get the equivalent probability}
+\title{Integrate the subinterval for the given cumulative distribution function to
+get the equivalent probability}
 \usage{
 integrateSubIntervals(x, cdf)
 }
@@ -12,10 +13,12 @@ integrateSubIntervals(x, cdf)
 \item{cdf}{the cumulative distribution function}
 }
 \value{
-p    a vector containing the cdf evaluated for each of the subintervals
+p    a vector containing the cdf evaluated for each of
+             the subintervals
 }
 \description{
-Integrate the subinterval for the given cumulative distribution function to get the equivalent probability
+Integrate the subinterval for the given cumulative distribution function to
+get the equivalent probability
 }
 \author{
 Ram Ahluwalia \email{ram@wingedfootcapital.com}
