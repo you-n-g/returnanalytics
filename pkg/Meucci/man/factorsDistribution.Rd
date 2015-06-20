@@ -8,7 +8,7 @@
 Panel X of joint factors realizations and vector p of respective probabilities for factors
 }
 \author{
-Xavier Valls\email{flamejat@gmail.com}
+Xavier Valls\email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk Magazine,

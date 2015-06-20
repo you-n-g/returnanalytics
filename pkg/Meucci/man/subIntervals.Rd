@@ -15,7 +15,9 @@ a list containing
 xLB  a vector containing the lower bound of each interval
 
 xUB  a vector containing the upper bound of each interval
-\deqn{ I_{j} \equiv  \big[ x_{j} -  \frac{x_{j} - x_{j-1} }{2}, x_{j} +  \frac{x_{j+1} - x_{j}}{2} \big)  }
+
+\deqn{ I_{j} \equiv  \big[x_{j} -  \frac{x_{j} - x_{j-1} }{2}, x_{j} +
+\frac{x_{j+1} - x_{j}}{2} \big)  }
 }
 \description{
 Generate the intervals containing jth point of the grid.

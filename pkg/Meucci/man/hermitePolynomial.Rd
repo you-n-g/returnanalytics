@@ -11,7 +11,8 @@ hermitePolynomial(n)
 }
 \value{
 p  A vector containing the Hermite Polynomial of order n
-\deqn{ H_{j} (x)  \equiv  (-1)^{J}   e^{ \frac{ -x^{2} }{2} }  \frac{ d^{J} e^{ \frac{ -x^{2} }{2} }}{ dx^{J} } }
+\deqn{ H_{j} (x)  \equiv  (-1)^{J}   e^{ \frac{ -x^{2} }{2} }  \frac{ d^{J}
+e^{ \frac{ -x^{2} }{2} }}{ dx^{J} } }
 }
 \description{
 Generate a Hermite Polynomial of order n
