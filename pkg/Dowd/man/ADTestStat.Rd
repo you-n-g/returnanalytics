@@ -8,11 +8,11 @@ interval for AD test stat.}
 ADTestStat(number.trials, sample.size, confidence.interval)
 }
 \arguments{
-\item{number.trials}{}
+\item{number.trials}{Number of trials}
 
-\item{sample.size}{}
+\item{sample.size}{Sample size}
 
-\item{confidence.interval}{}
+\item{confidence.interval}{Confidence Interval}
 }
 \value{
 Confidence Interval for AD test statistic
@@ -26,7 +26,7 @@ which is equivalent to
 }
 \examples{
 # Probability that the VaR model is correct for 3 failures, 100 number
-   observations and  95\% confidence level
+   # observations and  95\% confidence level
    ADTestStat(1000, 100, 0.95)
 }
 \author{

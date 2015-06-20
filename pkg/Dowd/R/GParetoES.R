@@ -1,6 +1,6 @@
-#' @title Expected Shortfall for Generalized Pareto
+#' Expected Shortfall for Generalized Pareto
 #'
-#' @description Estimates the ES of a portfolio assuming losses are distributed as a generalised Pareto.
+#' Estimates the ES of a portfolio assuming losses are distributed as a generalised Pareto.
 #'
 #' @param Ra Vector of daily Profit/Loss data 
 #' @param beta Assumed scale parameter

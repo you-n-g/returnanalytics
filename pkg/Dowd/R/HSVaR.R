@@ -94,7 +94,7 @@ HSVaR <- function(Ra, Rb){
     if (upper.index!=lower.index){
       # Weights attached to upper and lower VaRs
       lower.weight <- (upper.index-index)/(upper.index-lower.index) # weight on upper.var
-      
+      upper.weight <- (index-lower.index)/(upper.index-lower.index) # weight on upper_var
       # Finally, the weighted, VaR as a linear interpolation of upper and lower VaRs
       
       y <- lower.weight * lower.var + upper.weight * upper.var

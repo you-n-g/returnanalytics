@@ -19,7 +19,7 @@
 #' @examples
 #' 
 #'    # Plots the cdf for KS Test statistic and returns KS confidence interval
-#'    for 100 trials with 1000 sample size and 0.95 confidence interval
+#'    # for 100 trials with 1000 sample size and 0.95 confidence interval
 #'    KSTestStat(100, 1000, 0.95)
 #'
 #' @export

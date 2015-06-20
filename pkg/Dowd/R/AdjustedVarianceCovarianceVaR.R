@@ -10,7 +10,7 @@
 #' @param cl Confidence level and is scalar or vector
 #' @param hp Holding period and is scalar or vector
 #' 
-#' @references Dowd, K. Measurh  ing Market Risk, Wiley, 2007.
+#' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
 #' @author Dinesh Acharya
 #' 

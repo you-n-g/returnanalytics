@@ -15,7 +15,8 @@
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
-#' National Institute of Standards and Technology, Dataplot Reference Manual. Volume 1: Commands. NIST: Washington, DC, 1997, p. 8-67.
+#' National Institute of Standards and Technology, Dataplot Reference Manual. 
+#' Volume 1: Commands. NIST: Washington, DC, 1997, p. 8-67.
 #' 
 #' @author Dinesh Acharya
 #' @examples
