@@ -5,7 +5,8 @@
 #'
 #' @param Ra Vector corresponding to profit and loss distribution
 #' @param number.resamples Number of samples to be taken in bootstrap procedure
-#' @return cl Number corresponding to Expected Shortfall confidence level
+#' @param cl Number corresponding to Expected Shortfall confidence level
+#' @return Bootstrapped Expected Shortfall
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
