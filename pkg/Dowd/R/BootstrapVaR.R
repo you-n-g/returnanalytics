@@ -4,8 +4,9 @@
 #' implied by data frequency.
 #'
 #' @param Ra Vector corresponding to profit and loss distribution
-#' @param number.sample Number of samples to be taken in bootstrap procedure
-#' @return cl Number corresponding to Value at Risk confidence level
+#' @param number.resamples Number of samples to be taken in bootstrap procedure
+#' @param cl Number corresponding to Value at Risk confidence level
+#' @return Bootstrapped VaR
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
