@@ -26,7 +26,7 @@
 #'    positions <- c(5,2,6,10)
 #'    cl <- .95
 #'    hp <- 280
-#'    AdjustedNormalESHotsopts(vc.matrix, mu, skew, kurtosis, positions, cl, hp)
+#'    AdjustedNormalESHotspots(vc.matrix, mu, skew, kurtosis, positions, cl, hp)
 #' 
 #' @export
 AdjustedNormalESHotspots <- function(vc.matrix, mu, skew, kurtosis, positions,
