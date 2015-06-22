@@ -19,6 +19,8 @@
 #'    Ra <- rnorm(1000)
 #'    BootstrapESFigure(Ra, 500, 0.95)
 #'
+#' @import bootstrap
+#'
 #' @export
 BootstrapESFigure <- function(Ra, number.resamples, cl){
   

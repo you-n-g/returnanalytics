@@ -20,6 +20,8 @@
 #'    Ra <- rnorm(1000)
 #'    BootstrapVaRConfInterval(Ra, 500, 0.95)
 #'
+#' @import bootstrap
+#'
 #' @export
 BootstrapVaRConfInterval <- function(Ra, number.resamples, cl){
   

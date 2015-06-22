@@ -20,6 +20,8 @@
 #'    Ra <- rnorm(1000)
 #'    BootstrapESConfInterval(Ra, 50, 0.95)
 #'
+#' @import bootstrap
+#'
 #' @export
 BootstrapESConfInterval <- function(Ra, number.resamples, cl){
   

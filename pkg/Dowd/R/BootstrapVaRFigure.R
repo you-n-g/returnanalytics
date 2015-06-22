@@ -9,7 +9,6 @@
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #' 
-#' 
 #' @author Dinesh Acharya
 #' @examples
 #' 
@@ -18,6 +17,8 @@
 #'    # confidence interval 
 #'    Ra <- rnorm(1000)
 #'    BootstrapESFigure(Ra, 500, 0.95)
+#'
+#' @import bootstrap
 #'
 #' @export
 BootstrapVaRFigure <- function(Ra, number.resamples, cl){
