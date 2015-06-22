@@ -7,7 +7,7 @@
 #' @param vc.matrix Variance covariance matrix for returns
 #' @param mu Vector of expected position returns
 #' @param skew Return skew
-#' @param kurtisos Return kurtosis
+#' @param kurtosis Return kurtosis
 #' @param positions Vector of positions
 #' @param cl Confidence level and is scalar
 #' @param hp Holding period and is scalar
