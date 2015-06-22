@@ -59,7 +59,7 @@ BootstrapESConfInterval <- function(Ra, number.resamples, cl){
   }
  
   # ES estimation
-  es <- bootstrap(losses.data, number.resamples, HSES, cl)[1]
+  es <- bootstrap(losses.data, number.resamples, HSES, cl)$thetastar
   y <- quantile(es, c(.05, .95))
   return(y)
   
