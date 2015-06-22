@@ -52,8 +52,6 @@ BootstrapVaR <- function(Ra, number.resamples, cl){
     stop("Number of resamples must be at least 0")
   }
   
-  # Load bootstrap package
-  library(bootstrap)
   # ES estimation
   VaR <- bootstrap(losses.data, number.resamples, HSVaR, cl)$thetastar
   y <- mean(VaR)

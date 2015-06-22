@@ -55,9 +55,7 @@ BootstrapESConfInterval <- function(Ra, number.resamples, cl){
   if (number.resamples <= 0){
     stop("Number of resamples must be at least 0")
   }
-  
-  library(bootstrap)
-  
+ 
   # ES estimation
   es <- bootstrap(losses.data, number.resamples, HSES, cl)[1]
   y <- quantile(es, c(.05, .95))

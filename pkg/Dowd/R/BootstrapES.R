@@ -52,8 +52,6 @@ BootstrapES <- function(Ra, number.resamples, cl){
     stop("Number of resamples must be at least 0")
   }
   
-  # Load bootstrap package
-  library(bootstrap)
   # ES estimation
   es <- bootstrap(losses.data, number.resamples, HSES, cl)$thetastar
   y <- mean(es)

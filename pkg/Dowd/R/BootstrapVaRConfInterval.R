@@ -56,8 +56,6 @@ BootstrapVaRConfInterval <- function(Ra, number.resamples, cl){
     stop("Number of resamples must be at least 0")
   }
   
-  library(bootstrap)
-  
   # VaR estimation
   VaR <- bootstrap(losses.data, number.resamples, HSVaR, cl)$thetastar
   y <- quantile(VaR, c(.05, .95))
