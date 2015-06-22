@@ -9,7 +9,6 @@
 #' @param Ra Data set
 #' @param tail.size Number of observations to be used to estimate the Hill
 #' estimator.
-#' @param cl ES confidence level
 #' @return Estimated value of Hill Estimator
 #' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
