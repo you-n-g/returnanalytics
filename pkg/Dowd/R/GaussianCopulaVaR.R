@@ -21,7 +21,7 @@
 #' @examples
 #' 
 #'    # VaR using bivariate Gumbel for X and Y with given parameters:
-#'    GaussianCopulaVaR(2.3, 4.1, 1.2, 1.5, .6, 50, .95)
+#'    GaussianCopulaVaR(2.3, 4.1, 1.2, 1.5, .6, 10, .95)
 #'
 #' @export
 GaussianCopulaVaR <- function(mu1, mu2, sigma1, sigma2, rho, 
