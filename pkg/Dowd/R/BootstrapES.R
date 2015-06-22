@@ -23,10 +23,10 @@
 BootstrapES <- function(Ra, number.resamples, cl){
   
   if (nargs() < 3){
-    error("Too few arguments")
+    stop("Too few arguments")
   }
   if (nargs() > 3){
-    error("Too many arguments")
+    stop("Too many arguments")
   }
   
   profit.loss.data <- as.vector(Ra)
@@ -37,10 +37,10 @@ BootstrapES <- function(Ra, number.resamples, cl){
   
   # Check that inputs have correct dimensions
   if (length(cl) != 1) {
-    error("Confidence level must be a scalar")
+    stop("Confidence level must be a scalar")
   }
   if (length(number.resamples) != 1){
-    error("Number of resamples must be a scalar");
+    stop("Number of resamples must be a scalar");
   }
   
   # Check that inputs obey sign and value restrictions
