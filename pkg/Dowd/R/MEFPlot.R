@@ -21,7 +21,7 @@ MEFPlot <- function(Ra){
   }
   u <- data
   n <- length(u)
-  mef <- 
+  mef <- double(n-1)
   for (i in 1:n - 1) {
     data <- data[which(data > u[i])]
     mef[i] <- mean(data) - u[i]
