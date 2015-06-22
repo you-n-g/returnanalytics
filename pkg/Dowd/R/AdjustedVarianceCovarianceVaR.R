@@ -5,7 +5,7 @@
 #' @param vc.matrix Assumed variance covariance matrix for returns
 #' @param mu Vector of expected position returns
 #' @param skew Portfolio return skewness
-#' @param kurtisos Portfolio return kurtosis
+#' @param kurtosis Portfolio return kurtosis
 #' @param positions Vector of positions
 #' @param cl Confidence level and is scalar or vector
 #' @param hp Holding period and is scalar or vector
