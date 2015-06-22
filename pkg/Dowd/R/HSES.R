@@ -86,7 +86,7 @@ HSES <- function(Ra, cl){
     upper.tail.losses <- losses.data[upper.k] # Creates data set of upper tail loss obs.
 	upper.es <- mean(upper.tail.losses) # Upper ES
 	# Deal with loss observation just below VaR to derive lower ES
-	lower.index <- ceil(index)
+	lower.index <- ceiling(index)
 	lower.VaR <- losses.data[lower.index] # Lower VaR
 	lower.k <- which(lower.VaR <= losses.data) # Finds indices of lower tail loss data 
 	lower.tail.losses <- losses.data[lower.k] # Creates data set of lower tail loss obs.
