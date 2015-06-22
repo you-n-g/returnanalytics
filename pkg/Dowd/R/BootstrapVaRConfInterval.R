@@ -42,10 +42,10 @@ BootstrapVaRConfInterval <- function(Ra, number.resamples, cl){
   
   # Check that inputs have correct dimensions
   if (is.vector(cl) & (length(cl) != 1) ) {
-    error("Confidence level must be a scalar")
+    stop("Confidence level must be a scalar")
   }
   if (length(number.resamples) != 1) {
-    error("Number of resamples must be a scalar")
+    stop("Number of resamples must be a scalar")
   }
   # Check that inputs obey sign and value restrictions
   if (cl >= 1){
