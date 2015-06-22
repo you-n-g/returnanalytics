@@ -17,6 +17,8 @@
 #'    a <- rnorm(100) # generate a random profit/loss vector
 #'    BootstrapVaR(a, 50, 0.95)
 #'
+#' @import bootstrap
+#'
 #' @export
 BootstrapES <- function(Ra, number.resamples, cl){
   
