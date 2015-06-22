@@ -84,7 +84,7 @@ GaussianCopula <- function(u, v, rho, number.steps){
   
   # Obtain copula as approximate double sum, which appriximates the 'true'
   # double integral
-  term <- double(length(x),length(y))
+  term <- matrix(0, length(x),length(y))
   for (i in 1:length(x)) {
     for (j in 1:length(y)) {
       term[i, j] <- exp(-(x[i]^2-2*rho*x[i]*y[j]+y[j]^2)/(2*(1-rho^2)))
