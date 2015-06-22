@@ -33,7 +33,7 @@ ADTestStat <- function(number.trials, sample.size, confidence.interval){
   if (confidence.interval >= 1){
     stop("Confidence Interval should be less than 1.")
   }
-  if (confidence.interval <= 1){
+  if (confidence.interval <= 0){
     stop("Confidence Interval should be positive.")
   }
   
