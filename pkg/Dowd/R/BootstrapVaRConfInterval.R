@@ -4,7 +4,7 @@
 #' level and holding period implied by data frequency.
 #'
 #' @param Ra Vector corresponding to profit and loss distribution
-#' @param number.sample Number of samples to be taken in bootstrap procedure
+#' @param number.resamples Number of samples to be taken in bootstrap procedure
 #' @param cl Number corresponding to Value at Risk confidence level
 #' @return 90% Confidence interval for bootstrapped VaR
 #' 
