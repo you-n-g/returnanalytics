@@ -25,7 +25,7 @@ Estimates the ES of a portfolio assuming losses are distributed as a generalised
 }
 \examples{
 # Computes ES assuming generalised Pareto for following parameters
-   Ra <- 5 * randn(100)
+   Ra <- 5 * rnorm(100)
    beta <- 1.2
    zeta <- 1.6
    threshold.prob <- .85
