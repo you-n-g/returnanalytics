@@ -11,4 +11,4 @@ Depends: R (>= 3.0.0),
           bootstrap
 Suggests: PerformanceAnalytics, 
           testthat
-License: GNU Public License
+License: GPL
