@@ -48,7 +48,7 @@ ProductCopulaVaR <- function(mu1, mu2, sigma1, sigma2, cl){
   tol <- 0.0001 # Tolerance level (NM: change manually if desired)
   while (U - L > tol){
     x <- (L + U) / 2 # Bisection carried out in terms of P/L quantiles or minus VaR
-    cum.prob <- CdfOfSumUsingProductCopula(x, mu1, mu2, sigma1, sigma2, beta)
+    cum.prob <- CdfOfSumUsingProductCopula(x, mu1, mu2, sigma1, sigma2)
     fx <- cum.prob - p
     if (sign(fx) == sign(fL)){
       L <- x
