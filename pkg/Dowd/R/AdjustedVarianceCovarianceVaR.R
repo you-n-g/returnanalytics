@@ -24,7 +24,7 @@
 #'    positions <- c(5,2,6,10)
 #'    cl <- .95
 #'    hp <- 280
-#'    AdjustedNormalESHotsopts(vc.matrix, mu, skew, kurtosis, positions, cl, hp)
+#'    AdjustedVarianceCovarianceVaR(vc.matrix, mu, skew, kurtosis, positions, cl, hp)
 #'    
 #' @export
 AdjustedVarianceCovarianceVaR <- function(vc.matrix, mu, skew, kurtosis, positions, cl, hp){
