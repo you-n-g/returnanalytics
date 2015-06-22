@@ -55,8 +55,6 @@ BootstrapVaRFigure <- function(Ra, number.resamples, cl){
     stop("Number of resamples must be at least 0")
   }
   
-  library(bootstrap)
-  
   # ES Estimation
   VaR <- bootstrap(losses.data, number.resamples, HSVaR, cl)$thetastar
   mean.VaR <- mean(VaR)
