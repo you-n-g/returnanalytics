@@ -13,7 +13,7 @@ MEFPlot(Ra)
 Plots mean-excess function values of the data set.
 }
 \examples{
-# Plots
+# Plots mean-excess function values
    Ra <- rnorm(1000)
    MEFPlot(Ra)
 }

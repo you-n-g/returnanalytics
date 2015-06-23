@@ -9,7 +9,7 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # Plots 
+#'    # Plots mean-excess function values
 #'    Ra <- rnorm(1000)
 #'    MEFPlot(Ra)
 #'
@@ -19,14 +19,15 @@ MEFPlot <- function(Ra){
   if (!is.vector(data)) {
     stop("Input should be a vector data.")
   }
+  data <- sort(data)
   u <- data
   n <- length(u)
   mef <- double(n-1)
-  for (i in 1:n - 1) {
+  for (i in 1:(n-1)) {
     data <- data[which(data > u[i])]
     mef[i] <- mean(data) - u[i]
   }
-  u <- u[!u==max(u)]
+  u <- u[!u == max(u)]
   plot(u, mef, type = "l", xlab = "Threshold", ylab = "e(u)", 
        main = "Empirical Mean Excess Function")
   
