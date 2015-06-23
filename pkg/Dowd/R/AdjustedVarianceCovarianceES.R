@@ -121,6 +121,6 @@ AdjustedVarianceCovarianceES <- function(vc.matrix, mu, skew, kurtosis,
     }
   }
   y <- t(es)
-  return(es)
+  return(y)
   
 }
