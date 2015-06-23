@@ -45,7 +45,7 @@ InsuranceVaR<- function(mu, sigma, n, p, theta, deductible, number.trials, cl){
     theta * mean(total.company.loss) / n # Adjusts for premium
   profit.or.loss <- - adjusted.total.company.loss # Convert to P/L
   hist(adjusted.total.company.loss, col = "blue", 
-       xlab = "Total Company Loss", yab = "Frequency",
+       xlab = "Total Company Loss", ylab = "Frequency",
        main = "Adjusted Total Company Loss")
   y <- HSVaR(profit.or.loss, cl)
   return(y)
