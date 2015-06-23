@@ -4,7 +4,8 @@
 \alias{PHist}
 \title{Generates histogram}
 \usage{
-PHist(X, p, nBins, freq = FALSE)
+PHist(X, p, nBins, freq = FALSE, main = "Portfolio return distribution",
+  xlim = NULL, ylim = NULL)
 }
 \arguments{
 \item{X}{vector containing the data points}
@@ -15,7 +16,13 @@ points in X}
 \item{nBins}{expected number of Bins the data set is to be broken down into}
 
 \item{freq}{boolean variable to indicate whether the graphic is a
-               representation of frequencies}
+representation of frequencies}
+
+\item{main}{title for the plot}
+
+\item{xlim}{limits for the x-axis}
+
+\item{ylim}{limits for the y-axis}
 }
 \value{
 a list with
