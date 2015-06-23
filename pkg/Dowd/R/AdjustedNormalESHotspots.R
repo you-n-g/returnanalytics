@@ -89,7 +89,7 @@ AdjustedNormalESHotspots <- function(vc.matrix, mu, skew, kurtosis, positions,
   # Portfolio ES
   es <- double(length(positions))
   ies <- double(length(positions))
-  for (j in range(1: length(positions))) {
+  for (j in 1:length(positions)) {
     x <- positions
     x[j] <- 0
     sigma <- x %*% vc.matrix %*% t(x) / (sum(x)^2)
