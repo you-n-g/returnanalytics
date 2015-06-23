@@ -7,7 +7,7 @@
 #' @param Rb Vector of corresponding VaR forecasts
 #' @param Rc Vector of corresponding Expected Tailed Loss forecasts
 #' @param cl VaR confidence interval
-#' @return Something
+#' @return First Blanco-Ihle score measure.
 #' 
 #' @references Dowd, Kevin. Measuring Market Risk, Wiley, 2007.
 #' 
@@ -18,7 +18,7 @@
 #' @examples
 #'    
 #'    # Has to be modified with appropriate data:
-#'    # Christoffersen Backtest For Independence for given parameters
+#'    # Blanco-Ihle Backtest For Independence for given parameters
 #'    a <- rnorm(1*100)
 #'    b <- abs(rnorm(1*100))+2
 #'    c <- abs(rnorm(1*100))+2
