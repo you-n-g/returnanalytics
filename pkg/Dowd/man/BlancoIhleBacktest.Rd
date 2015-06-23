@@ -16,7 +16,7 @@ BlancoIhleBacktest(Ra, Rb, Rc, cl)
 \item{cl}{VaR confidence interval}
 }
 \value{
-Something
+First Blanco-Ihle score measure.
 }
 \description{
 Derives the Blanco-Ihle forecast evaluation loss measure for a VaR
@@ -24,7 +24,7 @@ risk measurement model.
 }
 \examples{
 # Has to be modified with appropriate data:
-   # Christoffersen Backtest For Independence for given parameters
+   # Blanco-Ihle Backtest For Independence for given parameters
    a <- rnorm(1*100)
    b <- abs(rnorm(1*100))+2
    c <- abs(rnorm(1*100))+2
