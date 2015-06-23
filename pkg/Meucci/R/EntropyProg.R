@@ -301,6 +301,9 @@ EntropyProg <- function(p, A = NULL, b = NULL, Aeq, beq) {
 #' @param nBins   expected number of Bins the data set is to be broken down into
 #' @param freq    boolean variable to indicate whether the graphic is a 
 #'                representation of frequencies
+#' @param main    title for the plot
+#' @param xlim    limits for the x-axis
+#' @param ylim    limits for the y-axis
 #'
 #' @return a list with 
 #'             f   the frequency for each midpoint
@@ -314,7 +317,9 @@ EntropyProg <- function(p, A = NULL, b = NULL, Aeq, beq) {
 #'
 #' @export
 
-PHist <- function(X, p, nBins, freq = FALSE) {
+PHist <- function(X, p, nBins, freq = FALSE,
+                  main = "Portfolio return distribution",
+                  xlim = NULL, ylim = NULL) {
 
   if (length(match.call()) < 3) {
     J <- dim(X)[1]
@@ -336,7 +341,7 @@ PHist <- function(X, p, nBins, freq = FALSE) {
     f <- np / D
   }
 
-  plot(x, f, type = "h", main = "Portfolio return distribution")
+  plot(x, f, type = "h", main = main, xlim = xlim, ylim = ylim)
 
   return(list(f = f, x = x))
 }
