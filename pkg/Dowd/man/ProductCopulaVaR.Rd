@@ -26,7 +26,7 @@ for normal marginals.
 }
 \examples{
 # VaR using bivariate Product for X and Y with given parameters:
-   ProductCopulaVaR(2.3, 4.1, 1.2, 1.5, .95)
+   ProductCopulaVaR(.9, 2.1, 1.2, 1.5, .95)
 }
 \author{
 Dinesh Acharya
