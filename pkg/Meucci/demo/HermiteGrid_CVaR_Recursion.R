@@ -4,6 +4,8 @@
 # The most recent version of this code is available at
 # MATLAB Central - File Exchange
 
+data(gqhx)
+
 # Prior market model (normal) on grid
 emptyMatrix <- matrix(nrow = 0, ncol = 0)
 market.mu   <- 0.0
@@ -44,24 +46,30 @@ for (i in 1:nVaR95) {
   posteriorEntropy <- EntropyProg(p, t(idx),  as.matrix(0.05), rbind(rep(1, J),
                                  t(idx * X)), rbind(1, 0.05 * view.CVaR95))
   p_[,i] <- posteriorEntropy$p_
-  KLdiv[i] <- posteriorEntropy$optimizationPerformance$ml
+  # when maximizing, objective turns negative. Bringing it back to normal
+  KLdiv[i] <- -posteriorEntropy$optimizationPerformance$ml
 }
 
 # Display results
-plot(s_, KLdiv)
+dev.new()
+par(mfrow = c(2,1))
+plot(s_, KLdiv, "l", col = "blue", xlab = "s", ylab = "KL divergence")
 dummy <- min(KLdiv)
 idxMin <- which.min(KLdiv)
-plot(s_[idxMin], KLdiv[idxMin])
+lines(s_[idxMin], KLdiv[idxMin], type = "b")
 
 tmp <- p_[, idxMin]
 tmp <- tmp / sum(tmp)
-plot(X, tmp)
+plot(X, tmp, type = "l", col = "blue", lwd = 1.5, xlab="",
+     ylab = "", ylim = c(0, 0.006))
 x <- seq(min(X), max(X), len = J)
 tmp <- market.pdf(x)
 tmp <- tmp / sum(tmp)
-plot(x, tmp)
-plot(market.CVaR95, 0)
-plot(view.CVaR95, 0)
+lines(x, tmp, type = "l", col = "red", lwd = 1.5)
+lines(market.CVaR95, 0.0,  type = "p", pch = 17, col = "blue")
+lines(view.CVaR95, 0.0,  type = "p", pch = 17, col = "red")
+legend("topright", 1.9, c("Prior", "Posterior"),
+       col = c("blue", "red"), lty = 1)
 
 # Entropy posterior from extreme view on CVaR: Newton Raphson approach
 
@@ -72,7 +80,7 @@ idx <- as.matrix(cumsum(p) <= 0.05)
 s[1] <- sum(idx)
 posteriorEntropy <- EntropyProg(p, t(idx), as.matrix(0.05), rbind(rep(1, J),
                                t(idx * X)), rbind(1, 0.05 * view.CVaR95))
-KLdiv <- as.matrix(posteriorEntropy$optimizationPerformance$ml)
+KLdiv <- as.matrix(-posteriorEntropy$optimizationPerformance$ml)
 p_ <- posteriorEntropy$p_
 
 # iterate
@@ -121,7 +129,8 @@ while (!doStop) {
   # [tmp.p_, tmp.KLdiv] = optimizeEntropy(p, [idx'; (idx .* X)'],
   # [0.05; 0.05 * view.CVaR95], [ones(1, J); X'], [1; view.mu]);
   p_ <- cbind(p_, tempEntropy$p_)
-  KLdiv <- rbind(KLdiv, tempEntropy$optimizationPerformance$ml) #ok<*AGROW>
+  # when maximizing, objective turns negative. Bringing it back to normal
+  KLdiv <- rbind(KLdiv, -tempEntropy$optimizationPerformance$ml)
 
   # if change in KLdiv less than one percent, stop
   if(abs((KLdiv[i] - KLdiv[i - 1]) / KLdiv[i - 1])  < 0.01)
@@ -131,20 +140,27 @@ while (!doStop) {
 # Display results
 
 N <- length(s)
-
-plot(1:N, KLdiv)
+dev.new()
+par(mfrow = c(2,1))
+plot(1:N, KLdiv, type = "l", xlab = "s", ylab = "KL divergence")
+lines(repmat(1:N, N, 1), repmat(t(KLdiv), N, 1), type = "p")
 x <- seq(min(X), max(X), len = J)
 tmp <- market.pdf(x)
 tmp <- tmp / sum(tmp)
-plot(t(X), tmp)
-plot(t(X), p_[, ncol(p_)])
-plot(market.CVaR95, 0.0)
-plot(view.CVaR95, 0.0)
+plot(t(X), tmp, type = "l", col = "blue", lwd = 1.5, xlab="",
+     ylab = "", ylim = c(0, 0.006))
+lines(t(X), p_[, ncol(p_)], type = "l", col = "red", lwd = 1.5)
+lines(market.CVaR95, 0.0,  type = "p", pch = 17, col = "blue")
+lines(view.CVaR95, 0.0,  type = "p", pch = 17, col = "red")
+legend("topright", 1.9, c("Prior", "Posterior"),
+       col = c("blue", "red"), lty = 1)
 
 # zoom here
-plot(t(X), tmp)
-plot(t(X), p_[, 1])
-plot(t(X), p_[, 2])
-plot(t(X), p_[, ncol(p_)])
-plot(market.CVaR95, 0)
-plot(view.CVaR95, 0)
+dev.new()
+plot(t(X), tmp, "l", col = "blue", xlim = c(-4, -2), ylim = c(0, 0.001),
+     xlab="", ylab = "")
+lines(t(X), p_[, 1], col = "magenta")
+lines(t(X), p_[, 2], col = "green")
+lines(t(X), p_[, ncol(p_)], col = "red")
+lines(market.CVaR95, 0.0,  type = "p", pch = 17, col = "blue")
+lines(view.CVaR95, 0.0,  type = "p", pch = 17, col = "red")
