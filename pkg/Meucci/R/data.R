@@ -284,3 +284,12 @@ NULL
 #' @references A. Meucci, D. Ardia, S. Keel - "Fully Flexible Extreme Views"
 #' @keywords data
 NULL
+
+#' @title Pseudo data: Gauss-Hermite grid case study input data
+#'
+#' @name pseudodata
+#' @docType data
+#' @author Xavier Valls\email{xaviervallspla@@gmail.com}
+#' @references A. Meucci, D. Ardia, S. Keel - "Fully Flexible Extreme Views"
+#' @keywords data
+NULL

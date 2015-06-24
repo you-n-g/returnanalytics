@@ -23,13 +23,13 @@ market$rnd <- function(x) rnorm(x, mean = market$mu, sd = sqrt(market$sig2))
 market$inv <- function(x) qnorm(x, mean = market$mu, sd = sqrt(market$sig2))
 
 # numerical (Monte Carlo) prior
-monteCarlo <- emptyMatrix
+monteCarlo <- list()
 monteCarlo$J <- 100000
 monteCarlo$X <- market$rnd(monteCarlo$J)
 monteCarlo$p <- normalizeProb(1 / monteCarlo$J * ones(monteCarlo$J, 1))
 
 # numerical (Gauss-Hermite grid) prior
-ghqMesh <- emptyMatrix
+ghqMesh <- list()
 
 # rescale GH zeros so they belong to [0,1]
 tmp <- (ghqx - min(ghqx)) / (max(ghqx) - min(ghqx))
@@ -46,11 +46,11 @@ ghqMesh$J <- nrow(ghqMesh$X)
 # Entropy posterior from extreme view on expectation
 ################################################################################
 # view of the analyst
-view <- emptyMatrix
+view <- list()
 view$mu <- -3.0
 
 # analytical (known since normal model has analytical solution)
-truePosterior <- emptyMatrix
+truePosterior <- list()
 truePosterior <- Prior2Posterior(market$mu, 1, view$mu, market$sig2, 0)
 truePosterior$pdf <- function(x) dnorm(x, truePosterior$M_,
        								   sqrt(truePosterior$S_))
@@ -58,8 +58,8 @@ truePosterior$pdf <- function(x) dnorm(x, truePosterior$M_,
 # numerical (Monte Carlo)
 Aeq <- rbind(ones(1, monteCarlo$J), t(monteCarlo$X))
 beq <- rbind(1, view$mu)
-monteCarloOptimResult <- EntropyProg(monteCarlo$p, emptyMatrix, emptyMatrix, Aeq,
-                                     beq)
+monteCarloOptimResult <- EntropyProg(monteCarlo$p, emptyMatrix, emptyMatrix,
+ 									 Aeq, beq)
 
 monteCarlo$p_ <- monteCarloOptimResult$p_
 monteCarlo$KLdiv <- monteCarloOptimResult$optimizationPerformance$ml
@@ -83,17 +83,17 @@ xmesh <- t(linspace(xmin, xmax, ghqMesh$J))
 # Monte Carlo
 dev.new()
 plotDataMC <- PHist(monteCarlo$X, monteCarlo$p_, 50, main = "Monte Carlo",
-					xlim = c(xmin, xmax), ylim = c(0, ymax))
+    				xlim = c(xmin, xmax), ylim = c(0, ymax))
 lines(xmesh, market$pdf(xmesh), type = "l", col = "blue")
 lines(xmesh, truePosterior$pdf(xmesh),  type = "l", col = "red")
 lines(0.0, 0.0,  type = "p", pch = 17, col = "blue")
-lines(view.mu, 0.0,  type = "p", pch = 17, col = "red")
+lines(view$mu, 0.0,  type = "p", pch = 17, col = "red")
 
 # Gauss Hermite Grid
 dev.new()
 plotDataGHQ <- PHist(data.matrix(ghqMesh$X), ghqMesh$p_, 50,
                      main = "Gauss-Hermite grid",
-					 xlim = c(xmin, xmax), ylim = c(0, ymax))
+    				 xlim = c(xmin, xmax), ylim = c(0, ymax))
 lines(xmesh, market$pdf(xmesh), type = "l", col = "blue")
 lines(xmesh, truePosterior$pdf(xmesh),  type = "l", col = "red")
 lines(0.0, 0.0,  type = "p", pch = 17, col = "blue")
