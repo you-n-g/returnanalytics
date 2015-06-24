@@ -62,6 +62,7 @@ CdfOfSumUsingGumbelCopula <- function(quantile, mu1, mu2, sigma1, sigma2, beta){
   
   y<- sum(approximate.copula.differential) * dw
   
+  return(y)
 }
 
 GumbelCopula <- function(u, v, beta){
