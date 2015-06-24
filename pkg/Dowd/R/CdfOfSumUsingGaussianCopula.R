@@ -59,6 +59,7 @@ CdfOfSumUsingGaussianCopula <- function(quantile, mu1, mu2, sigma1, sigma2, rho,
   
   y<- sum(approximate.copula.differential) * dw
   
+  return(y)
 }
 
 GaussianCopula <- function(u, v, rho, number.steps){
