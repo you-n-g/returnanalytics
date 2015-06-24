@@ -39,7 +39,6 @@ of risk measurement procedures. Quantitative Finance, 10(6), 2010, 593-606.
 Artzner, P., Delbaen, F., Eber, J.M. and Heath, D. Coherent Risk Measures
 of Risk. Mathematical Finance 9(3), 1999, 203.
 
-Föllmer, H. and Scheid, A. Stochastic Finance: An Introduction in Discrete
 Time. De Gryuter, 2011.
 }
 
