@@ -146,6 +146,7 @@ gaussHermiteMesh <- function(J) {
 #' @return bw a numeric signifying the bandwidth
 #'
 #' @author Manan Shah \email{mkshah@@tepper.cmu.edu}
+#' @export
 
 kernelbw <- function(xi) {
   N      <- length(xi)
@@ -174,6 +175,7 @@ kernelbw <- function(xi) {
 #'            value of length equal to x
 #'
 #' @author Manan Shah \email{mkshah@@tepper.cmu.edu}
+#' @export
 
 kernelcdf <- function(x, xi, bw, wi) {
   n <- length(xi)
@@ -205,6 +207,7 @@ kernelcdf <- function(x, xi, bw, wi) {
 #'            length equal to x
 #'
 #' @author Manan Shah \email{mkshah@@tepper.cmu.edu}
+#' @export
 
 kernelpdf <- function(x, xi, bw, wi) {
   n <- length(xi)
@@ -237,6 +240,7 @@ kernelpdf <- function(x, xi, bw, wi) {
 #'            to p
 #'
 #' @author Manan Shah \email{mkshah@@tepper.cmu.edu}
+#' @export
 
 kernelinv <- function(p, xi, bw, wi) {
   nargin <- length(as.list(match.call())) - 1
@@ -289,6 +293,7 @@ kernelinv <- function(p, xi, bw, wi) {
 #'            length equal to x or p
 #'
 #' @author Manan Shah \email{mkshah@@tepper.cmu.edu}
+#' @export
 
 private_fun <- function(x, xi, bw, wi, p) {
   f <- kernelcdf(x, xi, bw, wi) - p
