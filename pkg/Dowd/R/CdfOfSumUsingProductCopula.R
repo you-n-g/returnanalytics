@@ -55,6 +55,8 @@ CdfOfSumUsingProductCopula <- function(quantile, mu1, mu2, sigma1, sigma2){
   
   y<- sum(approximate.copula.differential) * dw
   
+  return(y)
+  
 }
 
 ProductCopula <- function(u, v){
