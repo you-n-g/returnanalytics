@@ -29,16 +29,16 @@ PlotDistributions <- function(X , p , Mu , Sigma , p_ , Mu_ , Sigma_) {
     x <- as.matrix(seq(from = xl, to = xh, by = (xh - xl) / 100))
 
     # posterior numerical
-    PHist(X[,n] , p_ , NBins)
+    PHist(X[, n], p_ , NBins)
 
     # posterior analytical
-    y1 <- dnorm(x , Mu_[n] , sqrt(Sigma_[n,n]))
-    lines(x , y1,  type = "l", col = "red", xlab = "", ylab = "")
+    y1 <- dnorm(x, Mu_[n], sqrt(Sigma_[n,n]))
+    lines(x, y1,  type = "l", col = "red", xlab = "", ylab = "")
     # prior analytical
-    y2 <- dnorm(x , Mu[n] ,sqrt(Sigma[n,n]))
-    lines(x , y2, col = "blue", xlab = "", ylab = "")
+    y2 <- dnorm(x, Mu[n], sqrt(Sigma[n,n]))
+    lines(x, y2, col = "blue", xlab = "", ylab = "")
 
-    legend(x = 1.5, y = 0.4 , legend = c("analytical","prior"),
-           lwd = c(0.2,0.2), lty = c(1,1), col = c("red", "blue"))
+    legend(x = 1.5, y = 0.4 , legend = c("analytical", "prior"),
+           lwd = c(0.2, 0.2), lty = c(1, 1), col = c("red", "blue"))
   }
 }
