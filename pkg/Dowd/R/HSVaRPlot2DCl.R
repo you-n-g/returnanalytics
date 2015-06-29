@@ -58,5 +58,4 @@ HSVaRPlot2DCl <- function(Ra, cl){
   
   # Plot
   plot(cl, VaR, type = "l", col = 3, xlab = "Confidence Level", ylab = "VaR", main = "Historical VaR against confidence level")
-  par(new = TRUE)
 } 
