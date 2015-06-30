@@ -21,7 +21,7 @@ KernelVaREpanechinikovKernel <- function(Ra, cl) {
   sigma <- sd(PandL)
   
   # Obtain pdf values
-  kernel.data <- density(PandL, kernel = "epanechinikov", from = mu - 4 * sigma, to = mu + 4 * sigma, n = 1000, bw = "nrd")
+  kernel.data <- density(PandL, kernel = "epanechnikov", from = mu - 4 * sigma, to = mu + 4 * sigma, n = 1000, bw = "nrd")
   kernel.pdf <- kernel.data$y
   x.values <- kernel.data$x
   delta.x <- x.values[2]-x.values[1]
