@@ -13,9 +13,9 @@
 #' @examples
 #' 
 #'    # Computes PCA VaR
-#'    
-#'    Ra <- rnorm(30)
-#'    KernelESEpanechinikovKernel(Ra, .95)
+#'    Ra <- matrix(rnorm(4*6),4,6)
+#'    position.data <- rnorm(6)
+#'    PCAVaR(Ra, position.data, 2, .95)
 #'
 #' @export
 PCAVaR <- function(Ra, position.data, number.of.principal.components, cl){
@@ -40,7 +40,6 @@ PCAVaR <- function(Ra, position.data, number.of.principal.components, cl){
   # Principal components estimation
   a <- svd(return.data)  # SVD; provides U and V
   index <- n - number.of.principal.components # Establishes how many zero terms on diagonal of S matrix
-  print(index)
   S.diag <- sort(a$d, decreasing = TRUE)[1:number.of.principal.components] # Creates diagonal for S matrix
   S.diag <- diag(S.diag)
   S <- matrix(0, min(m, n), min(m, n))
