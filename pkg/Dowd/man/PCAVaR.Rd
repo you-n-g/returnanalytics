@@ -23,9 +23,9 @@ Estimates the VaR of a multi position portfolio by principal components analysis
 }
 \examples{
 # Computes PCA VaR
-
-   Ra <- rnorm(30)
-   KernelESEpanechinikovKernel(Ra, .95)
+   Ra <- matrix(rnorm(4*6),4,6)
+   position.data <- rnorm(6)
+   PCAVaR(Ra, position.data, 2, .95)
 }
 \author{
 Dinesh Acharya
