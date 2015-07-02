@@ -40,11 +40,11 @@ PCAES <- function(Ra, position.data, number.of.principal.components, cl){
   # Principal components estimation
   a <- svd(return.data)  # SVD; provides U and V
   index <- n - number.of.principal.components # Establishes how many zero terms on diagonal of S matrix
-  S.diag <- c(sort(a$d, decreasing = TRUE)[1:number.of.principal.components],
-              double(index)) # Creates diagonal for S matrix
-  S <- matrix(0, m, n)
-  diag(S) <- S.diag # Creates S matrix with diagonal S.diag
-  synthetic.PandL.data <- a$u %*% S * t(a$v) * position.data
+  S.diag <- sort(a$d, decreasing = TRUE)[1:number.of.principal.components] # Creates diagonal for S matrix
+  S.diag <- diag(S.diag)
+  S <- matrix(0, min(m, n), min(m, n))
+  S[1:number.of.principal.components,1:number.of.principal.components] <- S.diag # Creates S matrix with diagonal S.diag
+  synthetic.PandL.data <- a$u %*% S %*% t(a$v) %*% position.data
   
   y <- HSES(synthetic.PandL.data, cl)
   return(y)
