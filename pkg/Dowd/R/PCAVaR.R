@@ -39,8 +39,14 @@ PCAVaR <- function(Ra, position.data, number.of.principal.components, cl){
   
   # Principal components estimation
   a <- svd(return.data)  # SVD; provides U and V
-  index <- n - number.of.principal.components # Establishes how many zero terms on diagonal of S matrix
   S.diag <- sort(a$d, decreasing = TRUE)[1:number.of.principal.components] # Creates diagonal for S matrix
+  # Following condition for the fact that scalar argument to diag returns 
+  # identity matrix
+  if (length(S.diag) == 1) {
+    S.diag <- as.matrix(S.diag)
+  } else {
+    S.diag <- diag(S.diag)
+  }
   S.diag <- diag(S.diag)
   S <- matrix(0, min(m, n), min(m, n))
   S[1:number.of.principal.components,1:number.of.principal.components] <- S.diag # Creates S matrix with diagonal S.diag
