@@ -9,9 +9,7 @@ PCAPrelim(Ra)
 \arguments{
 \item{Ra}{Matrix return data set where each row is interpreted as a set of
 daily observations, and each column as the returns to each position in a
-portfolio}
-
-\item{position.data}{Position-size vector, giving amount invested in each
+portfolio
 position}
 }
 \description{
@@ -19,7 +17,11 @@ Estimates VaR plot using principal components analysis
 }
 \examples{
 # Computes PCA Prelim
-   Ra <- matrix(rnorm(4*4), 4, 4)
+   # This code was based on Dowd's code and similar to Dowd's code,
+   # it is inconsistent for non-scalar data (Ra).
+   library(MASS)
+   library(expm)
+   Ra <- .15
    PCAPrelim(Ra)
 }
 \author{
