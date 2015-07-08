@@ -101,11 +101,11 @@ LogtVaRPlot2DCL <- function(...){
     stop("Confidence level(s) must be greater than 0")
   }
   # VaR estimation  
-  VaR <- investment - exp( ((df-2)/df)*sigma[1,1] * sqrt(hp[1,1]) * qt(1 - cl, df)+mu[1,1]*hp[1,1]*matrix(1,cl.col,cl.row) + log(investment)
+  VaR <- investment - exp(((df-2)/df)*sigma[1,1] * sqrt(hp[1,1]) * qt(1 - cl, df)+mu[1,1]*hp[1,1]*matrix(1,cl.col,cl.row) + log(investment)
                           ) # VaR
   # Plotting
-  plot(cl, VaR, type = "l", xlab = "Holding Period", ylab = "VaR")
-  title("Log-t VaR against holding period")
+  plot(cl, VaR, type = "l", xlab = "Confidence Level", ylab = "VaR")
+  title("Log-t VaR against confidence level")
   xmin <-min(cl)+.3*(max(cl)-min(cl))
   text(xmin,max(VaR)-.1*(max(VaR)-min(VaR)),
        'Input parameters', cex=.75, font = 2)
