@@ -2,7 +2,7 @@
 % Please edit documentation in R/HSESDFPerc.R
 \name{HSESDFPerc}
 \alias{HSESDFPerc}
-\title{Percentile of historical simulation VaR distribution function}
+\title{Percentile of historical simulation ES distribution function}
 \usage{
 HSESDFPerc(Ra, perc, cl)
 }
@@ -17,7 +17,7 @@ HSESDFPerc(Ra, perc, cl)
 Value of percentile of VaR distribution function
 }
 \description{
-Estimates percentiles of historical simulation VaR distribution
+Estimates percentiles of historical simulation ES distribution
 function, using theory of order statistics, for specified confidence level.
 }
 \examples{

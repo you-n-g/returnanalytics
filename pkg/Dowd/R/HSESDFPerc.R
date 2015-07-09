@@ -1,6 +1,6 @@
-#' @title Percentile of historical simulation VaR distribution function
+#' @title Percentile of historical simulation ES distribution function
 #'
-#' @description Estimates percentiles of historical simulation VaR distribution 
+#' @description Estimates percentiles of historical simulation ES distribution 
 #' function, using theory of order statistics, for specified confidence level.
 #'
 #' @param Ra Vector of daily P/L data
