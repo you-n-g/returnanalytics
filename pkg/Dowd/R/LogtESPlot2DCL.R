@@ -100,8 +100,10 @@ LogtESPlot2DCL <- function(...){
     stop("Confidence level(s) must be greater than 0")
   }
   # VaR estimation  
-  VaR <- investment - exp(((df - 2) / df) * sigma[1,1] * sqrt(hp[1,1]) * qt(1 - cl[1,1], df)
-                          + mu[1,1] * t(hp[1,1]) * matrix(1, cl.col, cl.row) + log(investment)) # VaR
+  cl.row <- dim(cl)[1]
+  cl.col <- dim(cl)[2]
+  VaR <- investment - exp(((df - 2) / df) * sigma[1,1] * sqrt(hp[1,1]) * qt(1 - cl, df)
+                          + mu[1,1] * hp[1,1] * matrix(1, cl.row, cl.col) + log(investment)) # VaR
   
   # ES etimation
   n <- 1000 # Number of slices into which tail is divided
@@ -112,24 +114,24 @@ LogtESPlot2DCL <- function(...){
     cl <- cl0 + i * delta.cl # Revised cl
     v <- v + investment - exp(((df - 2) / df) * sigma[1,1] * sqrt(hp[1,1]) * 
                                       qt(1 - cl, df) + mu[1,1] * hp[1,1] * 
-                                      matrix(1, cl.col, cl.row) + log(investment))
+                                      matrix(1, cl.row, cl.col) + log(investment))
   }
   v <- v/n
   
   # Plotting
-  plot(cl, v, type = "l", xlab = "Holding Period", ylab = "ES")
+  plot(cl0, v, type = "l", xlab = "Holding Period", ylab = "ES")
   title("Log-t ES against holding period")
-  xmin <-min(cl)+.25*(max(cl)-min(cl))
+  xmin <-min(cl0)+.25*(max(cl0)-min(cl0))
   text(xmin,max(v)-.1*(max(v)-min(v)),
        'Input parameters', cex=.75, font = 2)
   text(xmin,max(v)-.15*(max(v)-min(v)),
-       paste('Daily mean geometric return = ',mu[1,1]),cex=.75)
+       paste('Daily mean geometric return = ',round(mu[1,1],3)),cex=.75)
   text(xmin,max(v)-.2*(max(v)-min(v)),
-       paste('Stdev. of daily geometric returns = ',sigma[1,1]),cex=.75)
+       paste('Stdev. of daily geometric returns = ',round(sigma[1,1],3)),cex=.75)
   text(xmin,max(v)-.25*(max(v)-min(v)),
        paste('Degrees of freedom = ',df),cex=.75)
   text(xmin,max(v)-.3*(max(v)-min(v)),
        paste('Investment size = ',investment),cex=.75)
   text(xmin,max(v)-.35*(max(v)-min(v)),
-       paste('Confidence level = ',cl,'%'),cex=.75)
+       paste('Holding Period = ',hp),cex=.75)
 }
