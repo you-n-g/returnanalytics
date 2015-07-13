@@ -33,11 +33,11 @@ The input arguments contain either return data or else mean and
  data is computed from return data. See examples for details.
 }
 \examples{
-# Plots VaR against confidene level given geometric return data
+# Plots ES against confidene level given geometric return data
    data <- runif(5, min = 0, max = .2)
    LogtESPlot3D(returns = data, investment = 5, df = 6, cl = seq(.85,.99,.01), hp = 60:90)
 
-   # Computes VaR against confidence level given mean and standard deviation of return data
+   # Computes ES against confidence level given mean and standard deviation of return data
    LogtESPlot3D(mu = .012, sigma = .03, investment = 5, df = 6, cl = seq(.85,.99,.02), hp = 40:80)
 }
 \author{

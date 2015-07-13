@@ -34,8 +34,8 @@ Student t distributed, for specified confidence level and holding period.
 }
 \note{
 The input arguments contain either return data or else mean and
-standard deviation data. Accordingly, number of input arguments is either 5
-or 6. In case there 5 input arguments, the mean and standard deviation of
+standard deviation data. Accordingly, number of input arguments is either 6
+or 8. In case there 6 input arguments, the mean, standard deviation and number of observations of the
 data is computed from return data. See examples for details.
 }
 \examples{
