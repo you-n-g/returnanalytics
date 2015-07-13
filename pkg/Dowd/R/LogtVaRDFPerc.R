@@ -14,8 +14,8 @@
 #' @param hp VaR holding period and must be a a scalar
 #' @return Percentiles of VaR distribution function
 #' @note The input arguments contain either return data or else mean and 
-#' standard deviation data. Accordingly, number of input arguments is either 5 
-#' or 6. In case there 5 input arguments, the mean and standard deviation of 
+#' standard deviation data. Accordingly, number of input arguments is either 6 
+#' or 8. In case there 6 input arguments, the mean, standard deviation and number of observations of the
 #' data is computed from return data. See examples for details.
 #'  
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
@@ -33,6 +33,7 @@
 #'
 #' @export
 LogtVaRDFPerc <- function(...){
+  # Determine if there are four or five arguments, and ensure that arguments are read as intended
   if (nargs() < 6) {
     stop("Too few arguments")
   }
@@ -109,20 +110,20 @@ LogtVaRDFPerc <- function(...){
   if (n < 0) {
     stop("Number of observations must be non-negative")
   }
-  if (cl > 1){
+  if (perc > 1){
     stop("Chosen percentile must not exceed 1")
   }
-  if (cl <= 0){
-    stop("Confidence level must be positive")
+  if (perc <= 0){
+    stop("Chosen percentile must be positive")
   }
   if (cl >= 1){
     stop("Confidence level(s) must be less than 1")
   }
   if (cl <= 0){
-    stop("Confidence level must be greater than 0")
+    stop("Confidence level(s) must be greater than 0")
   }
   if (hp <= 0){
-    stop("Honding period must be greater than 0")
+    stop("Honding period(s) must be greater than 0")
   }
   
   # Derive order statistic and ensure it is an integer
