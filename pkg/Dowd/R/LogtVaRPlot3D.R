@@ -102,7 +102,7 @@ LogtVaRPlot3D <- function(...){
     stop("Confidence level(s) must be greater than 0")
   }
   if (min(hp) <= 0){
-    stop("Confidence level(s) must be greater than 0")
+    stop("Holding period(s) must be greater than 0")
   }
   
   # VaR estimation
