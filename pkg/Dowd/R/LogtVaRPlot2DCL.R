@@ -32,6 +32,7 @@
 #'
 #' @export
 LogtVaRPlot2DCL <- function(...){
+  # Determine if there are four or five arguments, and ensure that arguments are read as intended
   if (nargs() < 5) {
     stop("Too few arguments")
   }
@@ -98,10 +99,12 @@ LogtVaRPlot2DCL <- function(...){
     stop("Confidence level(s) must be greater than 0")
   }
   if (min(hp) <= 0){
-    stop("Confidence level(s) must be greater than 0")
+    stop("Holding period(s) must be greater than 0")
   }
-  # VaR estimation  
-  VaR <- investment - exp(((df-2)/df)*sigma[1,1] * sqrt(hp[1,1]) * qt(1 - cl, df)+mu[1,1]*hp[1,1]*matrix(1,cl.col,cl.row) + log(investment)
+  # VaR estimation
+  cl.row <- dim(cl)[1]
+  cl.col <- dim(cl)[2]
+  VaR <- investment - exp(((df-2)/df)*sigma[1,1] * sqrt(hp[1,1]) * qt(1 - cl, df)+mu[1,1]*hp[1,1]*matrix(1,cl.row,cl.col) + log(investment)
                           ) # VaR
   # Plotting
   plot(cl, VaR, type = "l", xlab = "Confidence Level", ylab = "VaR")
