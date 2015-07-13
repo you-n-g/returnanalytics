@@ -97,9 +97,11 @@ LogtESPlot2DHP <- function(...){
     stop("Confidence level(s) must be greater than 0")
   }
   if (min(hp) <= 0){
-    stop("Confidence level(s) must be greater than 0")
+    stop("Holding period(s) must be greater than 0")
   }
   # VaR estimation  
+  cl.row <- dim(cl)[1]
+  cl.col <- dim(cl)[2]
   VaR <- investment - exp(((df - 2) / 2) * sigma[1,1] * sqrt(t(hp)) * qt(1 - cl[1,1], df)
                           + mu[1,1] * t(hp) %*% matrix(1, cl.row, cl.col) + log(investment)) # VaR
   
