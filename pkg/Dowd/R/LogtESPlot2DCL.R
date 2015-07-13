@@ -31,6 +31,7 @@
 #'
 #' @export
 LogtESPlot2DCL <- function(...){
+  # Determine if there are five or six arguments, and ensure that arguments are read as intended
   if (nargs() < 5) {
     stop("Too few arguments")
   }
@@ -97,7 +98,7 @@ LogtESPlot2DCL <- function(...){
     stop("Confidence level(s) must be greater than 0")
   }
   if (min(hp) <= 0){
-    stop("Confidence level(s) must be greater than 0")
+    stop("Holding period(s) must be greater than 0")
   }
   # VaR estimation  
   cl.row <- dim(cl)[1]
