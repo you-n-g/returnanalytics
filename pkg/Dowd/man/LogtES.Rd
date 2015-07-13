@@ -30,7 +30,7 @@ cl and hp are both scalars, the matrix is 1 by 1. If cl is a vector and hp is
 }
 \description{
 Estimates the ES of a portfolio assuming that geometric returns are
-Student t distributed, for specified confidence level and holding period.
+Student-t distributed, for specified confidence level and holding period.
 }
 \note{
 The input arguments contain either return data or else mean and
