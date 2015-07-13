@@ -36,6 +36,7 @@
 #'
 #' @export
 LogtVaR <- function(...){
+  # Determine if there are four or five arguments, and ensure that arguments are read as intended
   if (nargs() < 5) {
     stop("Too few arguments")
   }
@@ -105,7 +106,7 @@ LogtVaR <- function(...){
     stop("Confidence level(s) must be greater than 0")
   }
   if (min(hp) <= 0){
-    stop("Confidence level(s) must be greater than 0")
+    stop("Holding Period(s) must be greater than 0")
   }
   # VaR estimation
   y <- investment - exp(((df - 2) / 2) * sigma %*% sqrt(t(hp)) %*% qt(1 - cl, df)
