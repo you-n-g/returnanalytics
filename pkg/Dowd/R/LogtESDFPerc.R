@@ -14,8 +14,8 @@
 #' @param hp ES holding period and must be a a scalar
 #' @return Percentiles of ES distribution function
 #' @note The input arguments contain either return data or else mean and 
-#' standard deviation data. Accordingly, number of input arguments is either 5 
-#' or 6. In case there 5 input arguments, the mean and standard deviation of 
+#' standard deviation data. Accordingly, number of input arguments is either 6 
+#' or 8. In case there 6 input arguments, the mean and standard deviation of 
 #' data is computed from return data. See examples for details.
 #'  
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
@@ -109,11 +109,11 @@ LogtESDFPerc <- function(...){
   if (n < 0) {
     stop("Number of observations must be non-negative")
   }
-  if (cl > 1){
+  if (perc > 1){
     stop("Chosen percentile must not exceed 1")
   }
-  if (cl <= 0){
-    stop("Confidence level must be positive")
+  if (perc <= 0){
+    stop("Chosen percentile must be positive")
   }
   if (cl >= 1){
     stop("Confidence level(s) must be less than 1")
