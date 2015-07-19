@@ -3,18 +3,24 @@
 #' Plots the ES of a portfolio against holding period assuming that geometric returns are 
 #' Student t distributed, for specified confidence level and holding period.
 #' 
-#' @param returns Vector of daily geometric return data
-#' @param mu Mean of daily geometric return data
-#' @param sigma Standard deviation of daily geometric return data
-#' @param investment Size of investment
-#' @param df Number of degrees of freedom in the t distribution
-#' @param cl ES confidence level and must be a scalar
-#' @param hp ES holding period and must be a vector
-#'  
-#'  @note The input arguments contain either return data or else mean and 
+#' @param ... The input arguments contain either return data or else mean and 
 #'  standard deviation data. Accordingly, number of input arguments is either 5 
 #'  or 6. In case there 5 input arguments, the mean and standard deviation of 
 #'  data is computed from return data. See examples for details.
+#'  
+#'  returns Vector of daily geometric return data
+#' 
+#'  mu Mean of daily geometric return data
+#' 
+#'  sigma Standard deviation of daily geometric return data
+#' 
+#'  investment Size of investment
+#' 
+#'  df Number of degrees of freedom in the t distribution
+#' 
+#'  cl ES confidence level and must be a scalar
+#' 
+#'  hp ES holding period and must be a vector
 #'  
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'
@@ -27,7 +33,6 @@
 #'    
 #'    # Computes v given mean and standard deviation of return data
 #'    LogtESPlot2DHP(mu = .012, sigma = .03, investment = 5, df = 6, cl = .99, hp = 40:80)
-#'
 #'
 #' @export
 LogtESPlot2DHP <- function(...){

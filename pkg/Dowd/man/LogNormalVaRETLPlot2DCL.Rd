@@ -7,28 +7,27 @@
 LogNormalVaRETLPlot2DCL(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
+\item{...}{The input arguments contain either return data or else mean and
+ standard deviation data. Accordingly, number of input arguments is either 4
+ or 5. In case there are 4 input arguments, the mean and standard deviation of
+ data is computed from return data. See examples for details.
 
-\item{mu}{Mean of daily geometric return data}
+ returns Vector of daily geometric return data
 
-\item{sigma}{Standard deviation of daily geometric return data}
+ mu Mean of daily geometric return data
 
-\item{investment}{Size of investment}
+ sigma Standard deviation of daily geometric return data
 
-\item{cl}{VaR confidence level and must be a vector}
+ investment Size of investment
 
-\item{hp}{VaR holding period and must be a scalar}
+ cl VaR confidence level and must be a vector
+
+ hp VaR holding period and must be a scalar}
 }
 \description{
 Plots the VaR and ETL of a portfolio against confidence level assuming that geometric
  returns are normally distributed, for specified confidence level and
  holding period.
-}
-\note{
-The input arguments contain either return data or else mean and
- standard deviation data. Accordingly, number of input arguments is either 4
- or 5. In case there are 4 input arguments, the mean and standard deviation of
- data is computed from return data. See examples for details.
 }
 \examples{
 # Plots VaR and ETL against confidene level given geometric return data

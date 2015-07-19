@@ -7,26 +7,27 @@
 LogNormalESFigure(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
-
-\item{mu}{Mean of daily geometric return data}
-
-\item{sigma}{Standard deviation of daily geometric return data}
-
-\item{investment}{Size of investment}
-
-\item{cl}{VaR confidence level and should be scalar}
-
-\item{hp}{VaR holding period in days and should be scalar}
-}
-\description{
-Gives figure showing the VaR and ES and probability distribution function against L/P of a portfolio assuming geometric returns are normally distributed, for specified confidence level and holding period.
-}
-\note{
-The input arguments contain either return data or else mean and
+\item{...}{The input arguments contain either return data or else mean and
  standard deviation data. Accordingly, number of input arguments is either 4
  or 5. In case there 4 input arguments, the mean and standard deviation of
  data is computed from return data. See examples for details.
+
+ returns Vector of daily geometric return data
+
+ mu Mean of daily geometric return data
+
+ sigma Standard deviation of daily geometric return data
+
+ investment Size of investment
+
+ cl VaR confidence level and should be scalar
+
+ hp VaR holding period in days and should be scalar}
+}
+\description{
+Gives figure showing the VaR and ES and probability distribution function
+against L/P of a portfolio assuming geometric returns are normally
+distributed, for specified confidence level and holding period.
 }
 \examples{
 # Plots lognormal VaR, ES and pdf against L/P data for given returns data

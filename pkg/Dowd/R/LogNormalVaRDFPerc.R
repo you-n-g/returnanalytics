@@ -1,20 +1,30 @@
 #' Percentiles of VaR distribution function for normally distributed geometric returns
 #' 
-#' Estimates the percentile of VaR distribution function for normally distributed geometric returns, using the theory of order statistics.
+#' Estimates the percentile of VaR distribution function for normally distributed 
+#' geometric returns, using the theory of order statistics.
 #' 
-#' @param returns Vector of daily geometric return data
-#' @param mu Mean of daily geometric return data
-#' @param sigma Standard deviation of daily geometric return data
-#' @param n Sample size
-#' @param investment Size of investment
-#' @param perc Desired percentile
-#' @param cl VaR confidence level and must be a scalar
-#' @param hp VaR holding period and must be a a scalar
-#' @return Percentiles of VaR distribution function and is scalar
-#' @note The input arguments contain either return data or else mean and 
+#' @param ... The input arguments contain either return data or else mean and 
 #' standard deviation data. Accordingly, number of input arguments is either 5 
-#' or 7. In case there 5 input arguments, the mean, standard deviation and number of observations of 
-#' data are computed from returns data. See examples for details.
+#' or 7. In case there 5 input arguments, the mean, standard deviation and number 
+#' of observations of data are computed from returns data. See examples for details.
+#' 
+#' returns Vector of daily geometric return data
+#' 
+#'  mu Mean of daily geometric return data
+#' 
+#'  sigma Standard deviation of daily geometric return data
+#' 
+#'  n Sample size
+#' 
+#'  investment Size of investment
+#' 
+#'  perc Desired percentile
+#' 
+#'  cl VaR confidence level and must be a scalar
+#' 
+#'  hp VaR holding period and must be a a scalar
+#' 
+#'  Percentiles of VaR distribution function and is scalar
 #'  
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'

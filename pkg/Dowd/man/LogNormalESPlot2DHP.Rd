@@ -7,27 +7,26 @@
 LogNormalESPlot2DHP(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
+\item{...}{The input arguments contain either return data or else mean and
+ standard deviation data. Accordingly, number of input arguments is either 4
+ or 5. In case there 4 input arguments, the mean and standard deviation of
+ data is computed from return data. See examples for details.
 
-\item{mu}{Mean of daily geometric return data}
+ returns Vector of daily geometric return data
 
-\item{sigma}{Standard deviation of daily geometric return data}
+ mu Mean of daily geometric return data
 
-\item{investment}{Size of investment}
+ sigma Standard deviation of daily geometric return data
 
-\item{cl}{ES confidence level and must be a scalar}
+ investment Size of investment
 
-\item{hp}{ES holding period and must be a vector}
+ cl ES confidence level and must be a scalar
+
+ hp ES holding period and must be a vector}
 }
 \description{
 Plots the ES of a portfolio against holding period assuming that geometric returns are
 normal distributed, for specified confidence level and holding period.
-}
-\note{
-The input arguments contain either return data or else mean and
- standard deviation data. Accordingly, number of input arguments is either 4
- or 5. In case there 4 input arguments, the mean and standard deviation of
- data is computed from return data. See examples for details.
 }
 \examples{
 # Computes ES given geometric return data

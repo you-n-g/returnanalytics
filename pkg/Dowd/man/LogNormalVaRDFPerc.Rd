@@ -7,33 +7,32 @@
 LogNormalVaRDFPerc(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
+\item{...}{The input arguments contain either return data or else mean and
+standard deviation data. Accordingly, number of input arguments is either 5
+or 7. In case there 5 input arguments, the mean, standard deviation and number
+of observations of data are computed from returns data. See examples for details.
 
-\item{mu}{Mean of daily geometric return data}
+returns Vector of daily geometric return data
 
-\item{sigma}{Standard deviation of daily geometric return data}
+ mu Mean of daily geometric return data
 
-\item{n}{Sample size}
+ sigma Standard deviation of daily geometric return data
 
-\item{investment}{Size of investment}
+ n Sample size
 
-\item{perc}{Desired percentile}
+ investment Size of investment
 
-\item{cl}{VaR confidence level and must be a scalar}
+ perc Desired percentile
 
-\item{hp}{VaR holding period and must be a a scalar}
-}
-\value{
-Percentiles of VaR distribution function and is scalar
+ cl VaR confidence level and must be a scalar
+
+ hp VaR holding period and must be a a scalar
+
+ Percentiles of VaR distribution function and is scalar}
 }
 \description{
-Estimates the percentile of VaR distribution function for normally distributed geometric returns, using the theory of order statistics.
-}
-\note{
-The input arguments contain either return data or else mean and
-standard deviation data. Accordingly, number of input arguments is either 5
-or 7. In case there 5 input arguments, the mean, standard deviation and number of observations of
-data are computed from returns data. See examples for details.
+Estimates the percentile of VaR distribution function for normally distributed
+geometric returns, using the theory of order statistics.
 }
 \examples{
 # Estimates Percentiles of VaR distribution

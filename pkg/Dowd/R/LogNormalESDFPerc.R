@@ -1,20 +1,32 @@
-#' Percentiles of ES distribution function for normally distributed geometric returns
+#' Percentiles of ES distribution function for normally distributed geometric 
+#' returns
 #' 
-#' Estimates the percentiles of ES distribution for normally distributed geometric returns, for specified confidence level and holding period using the theory of order statistics.
+#' Estimates the percentiles of ES distribution for normally distributed 
+#' geometric returns, for specified confidence level and holding period using 
+#' the theory of order statistics.
 #' 
-#' @param returns Vector of daily geometric return data
-#' @param mu Mean of daily geometric return data
-#' @param sigma Standard deviation of daily geometric return data
-#' @param n Sample size
-#' @param investment Size of investment
-#' @param perc Desired percentile
-#' @param cl ES confidence level and must be a scalar
-#' @param hp ES holding period and must be a a scalar
-#' @return Percentiles of ES distribution function
-#' @note The input arguments contain either return data or else mean and 
+#' @param ... The input arguments contain either return data or else mean and 
 #' standard deviation data. Accordingly, number of input arguments is either 5 
-#' or 7. In case there 5 input arguments, the mean, standard deviation and number of 
-#' samples is computed from return data. See examples for details.
+#' or 7. In case there 5 input arguments, the mean, standard deviation and 
+#' number of samples is computed from return data. See examples for details.
+#' 
+#'  returns Vector of daily geometric return data
+#' 
+#'  mu Mean of daily geometric return data
+#'  
+#'  sigma Standard deviation of daily geometric return data
+#'  
+#'  n Sample size
+#'  
+#'  investment Size of investment
+#'  
+#'  perc Desired percentile
+#'  
+#'  cl ES confidence level and must be a scalar
+#'  
+#'  hp ES holding period and must be a a scalar
+#'  
+#' @return Percentiles of ES distribution function
 #'  
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'

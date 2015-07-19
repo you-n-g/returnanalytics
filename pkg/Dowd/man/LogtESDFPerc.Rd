@@ -7,23 +7,28 @@
 LogtESDFPerc(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
+\item{...}{The input arguments contain either return data or else mean and
+standard deviation data. Accordingly, number of input arguments is either 6
+or 8. In case there 6 input arguments, the mean and standard deviation of
+data is computed from return data. See examples for details.
 
-\item{mu}{Mean of daily geometric return data}
+ returns Vector of daily geometric return data
 
-\item{sigma}{Standard deviation of daily geometric return data}
+ mu Mean of daily geometric return data
 
-\item{n}{Sample size}
+ sigma Standard deviation of daily geometric return data
 
-\item{investment}{Size of investment}
+ n Sample size
 
-\item{perc}{Desired percentile}
+ investment Size of investment
 
-\item{df}{Number of degrees of freedom in the t distribution}
+ perc Desired percentile
 
-\item{cl}{ES confidence level and must be a scalar}
+ df Number of degrees of freedom in the t distribution
 
-\item{hp}{ES holding period and must be a a scalar}
+ cl ES confidence level and must be a scalar
+
+ hp ES holding period and must be a a scalar}
 }
 \value{
 Percentiles of ES distribution function
@@ -31,12 +36,6 @@ Percentiles of ES distribution function
 \description{
 Plots the ES of a portfolio against confidence level assuming that geometric returns are
 Student t distributed, for specified confidence level and holding period.
-}
-\note{
-The input arguments contain either return data or else mean and
-standard deviation data. Accordingly, number of input arguments is either 6
-or 8. In case there 6 input arguments, the mean and standard deviation of
-data is computed from return data. See examples for details.
 }
 \examples{
 # Estimates Percentiles of ES distribution

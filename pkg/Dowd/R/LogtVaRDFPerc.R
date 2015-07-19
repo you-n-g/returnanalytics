@@ -3,20 +3,31 @@
 #' Plots the VaR of a portfolio against confidence level assuming that geometric returns are 
 #' Student t distributed, for specified confidence level and holding period.
 #' 
-#' @param returns Vector of daily geometric return data
-#' @param mu Mean of daily geometric return data
-#' @param sigma Standard deviation of daily geometric return data
-#' @param n Sample size
-#' @param investment Size of investment
-#' @param perc Desired percentile
-#' @param df Number of degrees of freedom in the t distribution
-#' @param cl VaR confidence level and must be a scalar
-#' @param hp VaR holding period and must be a a scalar
-#' @return Percentiles of VaR distribution function
-#' @note The input arguments contain either return data or else mean and 
+#' @param ... The input arguments contain either return data or else mean and 
 #' standard deviation data. Accordingly, number of input arguments is either 6 
-#' or 8. In case there 6 input arguments, the mean, standard deviation and number of observations of the
-#' data is computed from return data. See examples for details.
+#' or 8. In case there 6 input arguments, the mean, standard deviation and 
+#' number of observations of the data is computed from return data. See examples 
+#' for details.
+#' 
+#'  returns Vector of daily geometric return data
+#' 
+#'  mu Mean of daily geometric return data
+#' 
+#'  sigma Standard deviation of daily geometric return data
+#' 
+#'  n Sample size
+#' 
+#'  investment Size of investment
+#' 
+#'  perc Desired percentile
+#' 
+#'  df Number of degrees of freedom in the t distribution
+#' 
+#'  cl VaR confidence level and must be a scalar
+#' 
+#'  hp VaR holding period and must be a a scalar
+#' 
+#'  Percentiles of VaR distribution function
 #'  
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'

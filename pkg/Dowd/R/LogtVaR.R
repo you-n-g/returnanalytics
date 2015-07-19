@@ -3,23 +3,30 @@
 #' Estimates the VaR of a portfolio assuming that geometric returns are 
 #' Student t distributed, for specified confidence level and holding period.
 #' 
-#' @param returns Vector of daily geometric return data
-#' @param mu Mean of daily geometric return data
-#' @param sigma Standard deviation of daily geometric return data
-#' @param investment Size of investment
-#' @param df Number of degrees of freedom in the t distribution
-#' @param cl VaR confidence level
-#' @param hp VaR holding period
+#' @param ... The input arguments contain either return data or else mean and 
+#'  standard deviation data. Accordingly, number of input arguments is either 5 
+#'  or 6. In case there 5 input arguments, the mean and standard deviation of 
+#'  data is computed from return data. See examples for details.
+#'  
+#'  returns Vector of daily geometric return data
+#' 
+#'  mu Mean of daily geometric return data
+#' 
+#'  sigma Standard deviation of daily geometric return data
+#' 
+#'  investment Size of investment
+#' 
+#'  df Number of degrees of freedom in the t distribution
+#' 
+#'  cl VaR confidence level
+#' 
+#'  hp VaR holding period
+#'  
 #' @return Matrix of VaRs whose dimension depends on dimension of hp and cl. If 
 #' cl and hp are both scalars, the matrix is 1 by 1. If cl is a vector and hp is
 #'  a scalar, the matrix is row matrix, if cl is a scalar and hp is a vector, 
 #'  the matrix is column matrix and if both cl and hp are vectors, the matrix 
 #'  has dimension length of cl * length of hp.
-#'  
-#'  @note The input arguments contain either return data or else mean and 
-#'  standard deviation data. Accordingly, number of input arguments is either 5 
-#'  or 6. In case there 5 input arguments, the mean and standard deviation of 
-#'  data is computed from return data. See examples for details.
 #'  
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'

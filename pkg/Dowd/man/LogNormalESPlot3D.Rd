@@ -7,26 +7,25 @@
 LogNormalESPlot3D(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
+\item{...}{The input arguments contain either return data or else mean and
+ standard deviation data. Accordingly, number of input arguments is either 4
+ or 5. In case there 4 input arguments, the mean and standard deviation of
+ data is computed from return data. See examples for details.
 
-\item{mu}{Mean of daily geometric return data}
+ returns Vector of daily geometric return data
 
-\item{sigma}{Standard deviation of daily geometric return data}
+ mu Mean of daily geometric return data
 
-\item{cl}{VaR confidence level and must be a vector}
+ sigma Standard deviation of daily geometric return data
 
-\item{hp}{VaR holding period and must be a vector}
+ cl VaR confidence level and must be a vector
+
+ hp VaR holding period and must be a vector}
 }
 \description{
 Plots the ES of a portfolio against confidence level and holding period assuming that geometric
  returns are normally distributed, for specified confidence level and
  holding period.
-}
-\note{
-The input arguments contain either return data or else mean and
- standard deviation data. Accordingly, number of input arguments is either 4
- or 5. In case there 4 input arguments, the mean and standard deviation of
- data is computed from return data. See examples for details.
 }
 \examples{
 # Plots VaR against confidene level given geometric return data
