@@ -7,19 +7,24 @@
 LogtVaR(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
+\item{...}{The input arguments contain either return data or else mean and
+ standard deviation data. Accordingly, number of input arguments is either 5
+ or 6. In case there 5 input arguments, the mean and standard deviation of
+ data is computed from return data. See examples for details.
 
-\item{mu}{Mean of daily geometric return data}
+ returns Vector of daily geometric return data
 
-\item{sigma}{Standard deviation of daily geometric return data}
+ mu Mean of daily geometric return data
 
-\item{investment}{Size of investment}
+ sigma Standard deviation of daily geometric return data
 
-\item{df}{Number of degrees of freedom in the t distribution}
+ investment Size of investment
 
-\item{cl}{VaR confidence level}
+ df Number of degrees of freedom in the t distribution
 
-\item{hp}{VaR holding period}
+ cl VaR confidence level
+
+ hp VaR holding period}
 }
 \value{
 Matrix of VaRs whose dimension depends on dimension of hp and cl. If
@@ -31,12 +36,6 @@ cl and hp are both scalars, the matrix is 1 by 1. If cl is a vector and hp is
 \description{
 Estimates the VaR of a portfolio assuming that geometric returns are
 Student t distributed, for specified confidence level and holding period.
-}
-\note{
-The input arguments contain either return data or else mean and
- standard deviation data. Accordingly, number of input arguments is either 5
- or 6. In case there 5 input arguments, the mean and standard deviation of
- data is computed from return data. See examples for details.
 }
 \examples{
 # Computes VaR given geometric return data

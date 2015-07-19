@@ -1,20 +1,27 @@
 #' Figure of lognormal VaR and ES and pdf against L/P
 #'
-#' Gives figure showing the VaR and ES and probability distribution function against L/P of a portfolio assuming geometric returns are normally distributed, for specified confidence level and holding period.
+#' Gives figure showing the VaR and ES and probability distribution function 
+#' against L/P of a portfolio assuming geometric returns are normally 
+#' distributed, for specified confidence level and holding period.
 #' 
-#' @param returns Vector of daily geometric return data
-#' @param mu Mean of daily geometric return data
-#' @param sigma Standard deviation of daily geometric return data
-#' @param investment Size of investment
-#' @param cl VaR confidence level and should be scalar
-#' @param hp VaR holding period in days and should be scalar
-#'  
-#'  @note The input arguments contain either return data or else mean and 
+#' @param ... The input arguments contain either return data or else mean and 
 #'  standard deviation data. Accordingly, number of input arguments is either 4 
 #'  or 5. In case there 4 input arguments, the mean and standard deviation of 
 #'  data is computed from return data. See examples for details.
 #'  
-#' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
+#'  returns Vector of daily geometric return data
+#'  
+#'  mu Mean of daily geometric return data
+#'  
+#'  sigma Standard deviation of daily geometric return data
+#'  
+#'  investment Size of investment
+#'  
+#'  cl VaR confidence level and should be scalar
+#'  
+#'  hp VaR holding period in days and should be scalar
+#'  
+#'  @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'
 #' @author Dinesh Acharya
 #' @examples
@@ -138,6 +145,7 @@ LogNormalESFigure <- function(...){
   # ES line
   w <- c(es, es)
   z <- c(0, .45*max(p))
+  lines(w, z, type = "l", col = "blue")
   
   # Input Labels
   cl.for.label <- 100*cl

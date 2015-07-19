@@ -2,38 +2,40 @@
 % Please edit documentation in R/LogNormalESDFPerc.R
 \name{LogNormalESDFPerc}
 \alias{LogNormalESDFPerc}
-\title{Percentiles of ES distribution function for normally distributed geometric returns}
+\title{Percentiles of ES distribution function for normally distributed geometric
+returns}
 \usage{
 LogNormalESDFPerc(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
+\item{...}{The input arguments contain either return data or else mean and
+standard deviation data. Accordingly, number of input arguments is either 5
+or 7. In case there 5 input arguments, the mean, standard deviation and
+number of samples is computed from return data. See examples for details.
 
-\item{mu}{Mean of daily geometric return data}
+ returns Vector of daily geometric return data
 
-\item{sigma}{Standard deviation of daily geometric return data}
+ mu Mean of daily geometric return data
 
-\item{n}{Sample size}
+ sigma Standard deviation of daily geometric return data
 
-\item{investment}{Size of investment}
+ n Sample size
 
-\item{perc}{Desired percentile}
+ investment Size of investment
 
-\item{cl}{ES confidence level and must be a scalar}
+ perc Desired percentile
 
-\item{hp}{ES holding period and must be a a scalar}
+ cl ES confidence level and must be a scalar
+
+ hp ES holding period and must be a a scalar}
 }
 \value{
 Percentiles of ES distribution function
 }
 \description{
-Estimates the percentiles of ES distribution for normally distributed geometric returns, for specified confidence level and holding period using the theory of order statistics.
-}
-\note{
-The input arguments contain either return data or else mean and
-standard deviation data. Accordingly, number of input arguments is either 5
-or 7. In case there 5 input arguments, the mean, standard deviation and number of
-samples is computed from return data. See examples for details.
+Estimates the percentiles of ES distribution for normally distributed
+geometric returns, for specified confidence level and holding period using
+the theory of order statistics.
 }
 \examples{
 # Estimates Percentiles of ES distribution

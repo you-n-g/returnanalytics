@@ -7,35 +7,37 @@
 LogNormalESPlot2DCL(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
-
-\item{mu}{Mean of daily geometric return data}
-
-\item{sigma}{Standard deviation of daily geometric return data}
-
-\item{investment}{Size of investment}
-
-\item{cl}{ES confidence level and must be a vector}
-
-\item{hp}{ES holding period and must be a scalar}
-}
-\description{
-Plots the ES of a portfolio against confidence level assuming that geometric returns are
-normally distributed, for specified confidence level and holding period.
-}
-\note{
-The input arguments contain either return data or else mean and
+\item{...}{The input arguments contain either return data or else mean and
  standard deviation data. Accordingly, number of input arguments is either 4
  or 5. In case there 4 input arguments, the mean and standard deviation of
  data is computed from return data. See examples for details.
+
+ returns Vector of daily geometric return data
+
+ mu Mean of daily geometric return data
+
+ sigma Standard deviation of daily geometric return data
+
+ investment Size of investment
+
+ cl ES confidence level and must be a vector
+
+ hp ES holding period and must be a scalar}
+}
+\description{
+Plots the ES of a portfolio against confidence level assuming that geometric
+returns are normally distributed, for specified confidence level and holding
+period.
 }
 \examples{
 # Plots ES against confidence level
    data <- runif(5, min = 0, max = .2)
-   LogNormalESPlot2DCL(returns = data, investment = 5, cl = seq(.9,.99,.01), hp = 60)
+   LogNormalESPlot2DCL(returns = data, investment = 5,
+                       cl = seq(.9,.99,.01), hp = 60)
 
    # Plots ES against confidence level
-   LogNormalESPlot2DCL(mu = .012, sigma = .03, investment = 5, cl = seq(.9,.99,.01), hp = 40)
+   LogNormalESPlot2DCL(mu = .012, sigma = .03, investment = 5,
+                       cl = seq(.9,.99,.01), hp = 40)
 }
 \author{
 Dinesh Acharya

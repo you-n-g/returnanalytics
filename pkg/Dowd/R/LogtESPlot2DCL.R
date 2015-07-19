@@ -3,18 +3,24 @@
 #' Plots the ES of a portfolio against confidence level assuming that geometric returns are 
 #' Student t distributed, for specified confidence level and holding period.
 #' 
-#' @param returns Vector of daily geometric return data
-#' @param mu Mean of daily geometric return data
-#' @param sigma Standard deviation of daily geometric return data
-#' @param investment Size of investment
-#' @param df Number of degrees of freedom in the t distribution
-#' @param cl ES confidence level and must be a vector
-#' @param hp ES holding period and must be a scalar
-#'  
-#'  @note The input arguments contain either return data or else mean and 
+#' @param ... The input arguments contain either return data or else mean and 
 #'  standard deviation data. Accordingly, number of input arguments is either 5 
 #'  or 6. In case there 5 input arguments, the mean and standard deviation of 
 #'  data is computed from return data. See examples for details.
+#'  
+#'  returns Vector of daily geometric return data
+#' 
+#'  mu Mean of daily geometric return data
+#' 
+#'  sigma Standard deviation of daily geometric return data
+#' 
+#'  investment Size of investment
+#' 
+#'  df Number of degrees of freedom in the t distribution
+#' 
+#'  cl ES confidence level and must be a vector
+#' 
+#'  hp ES holding period and must be a scalar
 #'  
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'

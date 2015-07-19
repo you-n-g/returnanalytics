@@ -1,19 +1,25 @@
 #' Plots log normal ES against confidence level
 #' 
-#' Plots the ES of a portfolio against confidence level assuming that geometric returns are 
-#' normally distributed, for specified confidence level and holding period.
+#' Plots the ES of a portfolio against confidence level assuming that geometric 
+#' returns are normally distributed, for specified confidence level and holding 
+#' period.
 #' 
-#' @param returns Vector of daily geometric return data
-#' @param mu Mean of daily geometric return data
-#' @param sigma Standard deviation of daily geometric return data
-#' @param investment Size of investment
-#' @param cl ES confidence level and must be a vector
-#' @param hp ES holding period and must be a scalar
-#'  
-#'  @note The input arguments contain either return data or else mean and 
+#' @param ... The input arguments contain either return data or else mean and 
 #'  standard deviation data. Accordingly, number of input arguments is either 4 
 #'  or 5. In case there 4 input arguments, the mean and standard deviation of 
 #'  data is computed from return data. See examples for details.
+#'  
+#'  returns Vector of daily geometric return data
+#' 
+#'  mu Mean of daily geometric return data
+#' 
+#'  sigma Standard deviation of daily geometric return data
+#' 
+#'  investment Size of investment
+#' 
+#'  cl ES confidence level and must be a vector
+#' 
+#'  hp ES holding period and must be a scalar
 #'  
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'
@@ -22,15 +28,18 @@
 #' 
 #'    # Plots ES against confidence level
 #'    data <- runif(5, min = 0, max = .2)
-#'    LogNormalESPlot2DCL(returns = data, investment = 5, cl = seq(.9,.99,.01), hp = 60)
+#'    LogNormalESPlot2DCL(returns = data, investment = 5, 
+#'                        cl = seq(.9,.99,.01), hp = 60)
 #'    
 #'    # Plots ES against confidence level
-#'    LogNormalESPlot2DCL(mu = .012, sigma = .03, investment = 5, cl = seq(.9,.99,.01), hp = 40)
+#'    LogNormalESPlot2DCL(mu = .012, sigma = .03, investment = 5, 
+#'                        cl = seq(.9,.99,.01), hp = 40)
 #'
 #'
 #' @export
 LogNormalESPlot2DCL <- function(...){
-  # Determine if there are four or five arguments, and ensure that arguments are read as intended
+  # Determine if there are four or five arguments, and ensure that arguments are
+  # read as intended
   if (nargs() < 4) {
     stop("Too few arguments")
   }

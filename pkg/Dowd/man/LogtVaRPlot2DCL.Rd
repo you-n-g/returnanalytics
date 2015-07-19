@@ -7,30 +7,29 @@
 LogtVaRPlot2DCL(...)
 }
 \arguments{
-\item{returns}{Vector of daily geometric return data}
+\item{...}{The input arguments contain either return data or else mean and
+ standard deviation data. Accordingly, number of input arguments is either 5
+ or 6. In case there 5 input arguments, the mean and standard deviation of
+ data is computed from return data. See examples for details.
 
-\item{mu}{Mean of daily geometric return data}
+ returns Vector of daily geometric return data
 
-\item{sigma}{Standard deviation of daily geometric return data}
+ mu Mean of daily geometric return data
 
-\item{investment}{Size of investment}
+ sigma Standard deviation of daily geometric return data
 
-\item{df}{Number of degrees of freedom in the t distribution}
+ investment Size of investment
 
-\item{cl}{VaR confidence level and must be a vector}
+ df Number of degrees of freedom in the t distribution
 
-\item{hp}{VaR holding period and must be a scalar}
+ cl VaR confidence level and must be a vector
+
+ hp VaR holding period and must be a scalar}
 }
 \description{
 Plots the VaR of a portfolio against confidence level assuming that geometric
  returns are Student-t distributed, for specified confidence level and
  holding period.
-}
-\note{
-The input arguments contain either return data or else mean and
- standard deviation data. Accordingly, number of input arguments is either 5
- or 6. In case there 5 input arguments, the mean and standard deviation of
- data is computed from return data. See examples for details.
 }
 \examples{
 # Plots VaR against confidene level given geometric return data
