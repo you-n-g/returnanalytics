@@ -1,12 +1,12 @@
 Package: Dowd
 Type: Package
-Title: R-version of MMR II toolbox offered in Kevin Dowd's book Measuring Market Risk
+Title: R-version of MMR II Toolbox Offered in Kevin Dowd's Book Measuring Market Risk
 Version: 0.1
 Date: 2015-05-24
 Author: Dinesh Acharya <dines.acharya@gmail.com>
 Maintainer: Dinesh Acharya <dines.acharya@gmail.com>
-Description: This package is R-version of MMR2 Toolbox that supplements
-          Kevin Dowd's book measuring market risk.
+Description: R-version of MMR2 Toolbox that supplements
+          Kevin Dowd's book Measuring Market Risk
 Depends: R (>= 3.0.0), 
           bootstrap,
           MASS,
