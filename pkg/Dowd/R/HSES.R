@@ -19,7 +19,7 @@
 #' Artzner, P., Delbaen, F., Eber, J.M. and Heath, D. Coherent Risk Measures 
 #' of Risk. Mathematical Finance 9(3), 1999, 203.
 #' 
-#' Föllmer, H. and Scheid, A. Stochastic Finance: An Introduction in Discrete 
+#' Foellmer, H. and Scheid, A. Stochastic Finance: An Introduction in Discrete 
 #' Time. De Gryuter, 2011.
 #' 
 #' @author Dinesh Acharya
