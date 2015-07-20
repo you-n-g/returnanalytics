@@ -40,6 +40,7 @@ of Banking and Finance, 26(7), 2002, 1487-1503
 Artzner, P., Delbaen, F., Eber, J.M. and Heath, D. Coherent Risk Measures
 of Risk. Mathematical Finance 9(3), 1999, 203.
 
+Foellmer, H. and Scheid, A. Stochastic Finance: An Introduction in Discrete
 Time. De Gryuter, 2011.
 }
 
