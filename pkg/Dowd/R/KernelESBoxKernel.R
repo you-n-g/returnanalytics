@@ -21,8 +21,13 @@ KernelESBoxKernel <- function(Ra, cl){
   delta.cl <- (1 - cl) / n
   VaR <- double(999)
   for (i in 1:(n - 1)) {
-    VaR[i] <- KernelVaRBoxKernel(PandL, cl + i * delta.cl)
+    if(i<(n-1)){
+      VaR[i] <- KernelVaRBoxKernel(PandL, cl + i * delta.cl, FALSE)
+    } else if (i == n-1) {
+      VaR[i] <- KernelVaRBoxKernel(PandL, cl + i * delta.cl, TRUE)
+    }
   }
+  
   ES <- mean(VaR)
   return(ES)
   

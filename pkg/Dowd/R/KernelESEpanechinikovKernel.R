@@ -4,6 +4,7 @@
 #' 
 #' @param Ra Profit and Loss data set
 #' @param cl ES confidence level
+#' @param plot Bool, plots cdf if true
 #' @return Scalar ES
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'
@@ -15,13 +16,17 @@
 #'    KernelESEpanechinikovKernel(Ra, .95)
 #'
 #' @export
-KernelESEpanechinikovKernel <- function(Ra, cl){
+KernelESEpanechinikovKernel <- function(Ra, cl, plot = TRUE){
   PandL <- as.vector(Ra)
-  n <- 1000
+  n <- 200
   delta.cl <- (1 - cl) / n
-  VaR <- double(999)
+  VaR <- double(199)
   for (i in 1:(n - 1)) {
-    VaR[i] <- KernelVaREpanechinikovKernel(PandL, cl + i * delta.cl)
+    if(i<(n-1)){
+      VaR[i] <- KernelVaREpanechinikovKernel(PandL, cl + i * delta.cl, FALSE)
+    } else if (i == n-1) {
+      VaR[i] <- KernelVaREpanechinikovKernel(PandL, cl + i * delta.cl, TRUE)
+    }
   }
   ES <- mean(VaR)
   return(ES)

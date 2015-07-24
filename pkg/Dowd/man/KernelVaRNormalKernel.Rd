@@ -4,12 +4,14 @@
 \alias{KernelVaRNormalKernel}
 \title{Calculates VaR using normal kernel approach}
 \usage{
-KernelVaRNormalKernel(Ra, cl)
+KernelVaRNormalKernel(Ra, cl, plot = TRUE)
 }
 \arguments{
 \item{Ra}{Profit and Loss data set}
 
 \item{cl}{VaR confidence level}
+
+\item{plot}{Bool, plots cdf if true}
 }
 \value{
 Scalar VaR

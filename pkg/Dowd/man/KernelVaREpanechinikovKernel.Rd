@@ -4,12 +4,14 @@
 \alias{KernelVaREpanechinikovKernel}
 \title{Calculates VaR using epanechinikov kernel approach}
 \usage{
-KernelVaREpanechinikovKernel(Ra, cl)
+KernelVaREpanechinikovKernel(Ra, cl, plot = TRUE)
 }
 \arguments{
 \item{Ra}{Profit and Loss data set}
 
 \item{cl}{VaR confidence level}
+
+\item{plot}{Bool, plots the cdf if true.}
 }
 \value{
 Scalar VaR

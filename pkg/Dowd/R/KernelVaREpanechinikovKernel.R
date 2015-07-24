@@ -4,6 +4,7 @@
 #' 
 #' @param Ra Profit and Loss data set
 #' @param cl VaR confidence level
+#' @param plot Bool, plots the cdf if true.
 #' @return Scalar VaR
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'
@@ -15,7 +16,7 @@
 #'    KernelVaREpanechinikovKernel(Ra, .95)
 #'
 #' @export
-KernelVaREpanechinikovKernel <- function(Ra, cl) {
+KernelVaREpanechinikovKernel <- function(Ra, cl, plot=TRUE) {
   PandL <- as.vector(Ra)
   mu <- mean(PandL)
   sigma <- sd(PandL)
@@ -33,7 +34,10 @@ KernelVaREpanechinikovKernel <- function(Ra, cl) {
   for (i in 2:n) {
     cdf[i] <- kernel.pdf[i] * delta.x + cdf[i - 1]
   }
-  plot(x.values, kernel.pdf, type="l", main = "Constructed Pdf")
+  if (plot == TRUE) {
+    plot(x.values, kernel.pdf, type="l", main = "Constructed Pdf")
+  }
+  
   
   # Derivation of required percentile
   cdf.indices.less.than.prob <- which(cdf<cl)
