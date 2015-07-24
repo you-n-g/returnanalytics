@@ -4,12 +4,14 @@
 \alias{KernelESEpanechinikovKernel}
 \title{Calculates ES using Epanechinikov kernel approach}
 \usage{
-KernelESEpanechinikovKernel(Ra, cl)
+KernelESEpanechinikovKernel(Ra, cl, plot = TRUE)
 }
 \arguments{
 \item{Ra}{Profit and Loss data set}
 
 \item{cl}{ES confidence level}
+
+\item{plot}{Bool, plots cdf if true}
 }
 \value{
 Scalar ES

@@ -4,12 +4,14 @@
 \alias{KernelVaRTriangleKernel}
 \title{Calculates VaR using triangle kernel approach}
 \usage{
-KernelVaRTriangleKernel(Ra, cl)
+KernelVaRTriangleKernel(Ra, cl, plot = TRUE)
 }
 \arguments{
 \item{Ra}{Profit and Loss data set}
 
 \item{cl}{VaR confidence level}
+
+\item{plot}{Bool, plots cdf if true.}
 }
 \value{
 Scalar VaR

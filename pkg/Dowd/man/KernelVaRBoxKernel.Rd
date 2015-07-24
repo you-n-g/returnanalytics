@@ -4,12 +4,14 @@
 \alias{KernelVaRBoxKernel}
 \title{Calculates VaR using box kernel approach}
 \usage{
-KernelVaRBoxKernel(Ra, cl)
+KernelVaRBoxKernel(Ra, cl, plot = TRUE)
 }
 \arguments{
 \item{Ra}{Profit and Loss data set}
 
 \item{cl}{VaR confidence level}
+
+\item{plot}{Bool which indicates whether the graph is plotted or not}
 }
 \value{
 Scalar VaR
