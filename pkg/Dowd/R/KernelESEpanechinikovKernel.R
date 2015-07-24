@@ -18,9 +18,9 @@
 #' @export
 KernelESEpanechinikovKernel <- function(Ra, cl, plot = TRUE){
   PandL <- as.vector(Ra)
-  n <- 200
+  n <- 1000
   delta.cl <- (1 - cl) / n
-  VaR <- double(199)
+  VaR <- double(999)
   for (i in 1:(n - 1)) {
     if(i<(n-1)){
       VaR[i] <- KernelVaREpanechinikovKernel(PandL, cl + i * delta.cl, FALSE)
