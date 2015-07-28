@@ -9,8 +9,7 @@ PCAPrelim(Ra)
 \arguments{
 \item{Ra}{Matrix return data set where each row is interpreted as a set of
 daily observations, and each column as the returns to each position in a
-portfolio
-position}
+portfolio position}
 }
 \description{
 Estimates VaR plot using principal components analysis
@@ -20,7 +19,6 @@ Estimates VaR plot using principal components analysis
    # This code was based on Dowd's code and similar to Dowd's code,
    # it is inconsistent for non-scalar data (Ra).
    library(MASS)
-   library(expm)
    Ra <- .15
    PCAPrelim(Ra)
 }
