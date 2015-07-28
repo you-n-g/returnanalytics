@@ -2,7 +2,7 @@
 % Please edit documentation in R/PCAPrelim.R
 \name{PCAPrelim}
 \alias{PCAPrelim}
-\title{PCAPrelim}
+\title{Estimates VaR plot using principal components analysis}
 \usage{
 PCAPrelim(Ra)
 }
