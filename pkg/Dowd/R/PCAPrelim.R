@@ -1,11 +1,10 @@
-#' PCAPrelim
 #' 
 #' Estimates VaR plot using principal components analysis
 #' 
 #' @param Ra Matrix return data set where each row is interpreted as a set of 
 #' daily observations, and each column as the returns to each position in a 
-#' portfolio
-#' position
+#' portfolio position
+#' 
 #' @references Dowd, K. Measuring Market Risk, Wiley, 2007.
 #'
 #' @author Dinesh Acharya
@@ -15,11 +14,10 @@
 #'    # This code was based on Dowd's code and similar to Dowd's code,
 #'    # it is inconsistent for non-scalar data (Ra).
 #'    library(MASS)
-#'    library(expm)
 #'    Ra <- .15
 #'    PCAPrelim(Ra)
 #'
-#' @import expm MASS
+#' @import MASS
 #'
 #' @export
 PCAPrelim <- function(Ra){
@@ -68,4 +66,13 @@ PCAPrelim <- function(Ra){
   plot(t, c(0, cum.variance), xlab = "Principal component", ylab = "%", type="l")
   title("Explanatory Power of the Principal Components")
   
+}
+
+# ------------------------------ Helper function ------------------------------
+# Matrix exponentiation
+"%^%" <- function(S, power) {
+  # Uses eigenvalue decomposition A = PDP^-1 for matrix exponentiation.
+  # Also see expm package for larger matrices for efficiency.
+  y <- with(eigen(S), vectors %*% (values^power * solve(vectors)))
+  return(y)
 }
