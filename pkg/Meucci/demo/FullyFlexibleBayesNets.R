@@ -20,12 +20,11 @@ J <- nrow(freaqEst$X)
 N <- ncol(freaqEst$X)
 e <- 0.01
 # assigns a minimum probability to each scenario of e * number of scenarios
-p <- (1 - e) * p + e * ones(J, 1) / J
+p <- (1 - e) * freaqEst$p + e * ones(J, 1) / J
 moments <- ComputeMoments(freaqEst$X, p)
 m <- moments$means
 s <- moments$sd
 C <- moments$correlationMatrix
-rm(moments)
 
 ################################################################################
 # input views
@@ -38,7 +37,8 @@ rm(moments)
 
 # prepopulate list
 #namedVector  = vector(mode = "numeric", length = 7)
-#names(namedVector) = c("Who", "Equal", "Cond_Who", "Cond_Equal", "v", "sgn", "c ")
+#names(namedVector) = c("Who", "Equal", "Cond_Who", "Cond_Equal",
+#                       "v", "sgn", "c ")
 #View = list(namedVector) 
 #View = rep(list(namedVector), length = 2*N)
 
@@ -51,7 +51,7 @@ View$Cond_Equal <- list(matrix(0, nrow = 0, ncol = 0))
 View$v <- numeric(0)
 View$sgn <- numeric(0)
 View$c <- numeric(0)
-View <- rep(list(View), length = 2*N + 1)
+View <- rep(list(View), length = 2 * N + 1)
 
 # for each asset...
 for (n in 1:N) {
@@ -66,7 +66,7 @@ for (n in 1:N) {
 
   k <- 2 * n
   View[[k]]$Who <- matrix(n, nrow = 1, ncol = 1)
-  View[[k]]$Equal <- list(matrix(-1, nrow = 1, ncol = 1))
+  View[[k]]$Equal <- list(matrix(1, nrow = 1, ncol = 1))
   View[[k]]$Cond_Who <- emptyMatrix
   View[[k]]$Cond_Equal <- list(emptyMatrix)
   View[[k]]$v <- .4
@@ -89,7 +89,7 @@ constraints <- CondProbViews(View, freaqEst$X)
 A <- constraints$A
 b <- constraints$b
 g <- constraints$g
-rm(constraints)
+
 
 # add constraint for view on correlation
 C_12_ <- .6

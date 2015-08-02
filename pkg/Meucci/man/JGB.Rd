@@ -11,7 +11,8 @@ japanese government bonds
 Xavier Valls\email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci, A. Loregian - "Neither Normal not Lognormal: Modeling Interest Rates Across all Regimes" \url{http://symmys.com/node/601}
+A. Meucci, A. Loregian - "Neither Normal not Lognormal: Modeling
+Interest Rates Across all Regimes" \url{http://symmys.com/node/601}
 }
 \keyword{data}
 

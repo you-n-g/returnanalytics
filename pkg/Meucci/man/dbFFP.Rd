@@ -5,14 +5,16 @@
 \alias{dbFFP}
 \title{Historical Scenarios with Fully Flexible Probabilities dataset.}
 \description{
-Data for the Historical Scenarios with Fully Flexible Probabilities paper.
+Data for the Historical Scenarios with Fully Flexible
+Probabilities paper.
 }
 \author{
 Xavier Valls\email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci, "Personalized Risk Management: Historical Scenarios with Fully Flexible Probabilities"
-GARP Risk Professional, Dec 2010, p 47-51. \url{http://www.symmys.com/node/150}
+A. Meucci, "Personalized Risk Management: Historical Scenarios
+with Fully Flexible Probabilities"
+GARP Risk Professional, Dec 2010. \url{http://www.symmys.com/node/150}
 }
 \keyword{data}
 

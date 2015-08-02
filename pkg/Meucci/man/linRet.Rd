@@ -11,7 +11,9 @@ equal-weight portfolio of stocks in the S&P500
 Xavier Valls\email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci, A. Santangelo, R. Deguest - "Measuring Portfolio Diversification Based on Optimized Uncorrelated Factors" \url{http://symmys.com/node/599}
+A. Meucci, A. Santangelo, R. Deguest - "Measuring Portfolio
+Diversification Based on Optimized Uncorrelated Factors"
+\url{http://symmys.com/node/599}
 }
 \keyword{data}
 

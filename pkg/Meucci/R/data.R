@@ -1,23 +1,27 @@
 #' @title Historical Scenarios with Fully Flexible Probabilities dataset.
 #'
-#' @description Data for the Historical Scenarios with Fully Flexible Probabilities paper.
+#' @description Data for the Historical Scenarios with Fully Flexible
+#' Probabilities paper.
 #'
 #' @name dbFFP
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, "Personalized Risk Management: Historical Scenarios with Fully Flexible Probabilities"
-#' GARP Risk Professional, Dec 2010, p 47-51. \url{http://www.symmys.com/node/150}
+#' @references A. Meucci, "Personalized Risk Management: Historical Scenarios
+#' with Fully Flexible Probabilities"
+#' GARP Risk Professional, Dec 2010. \url{http://www.symmys.com/node/150}
 #' @keywords data
 NULL
 
 #' @title Fully Integrated Liquidity and Market Risk Model dataset.
 #'
-#' @description Data for the Fully Integrated Liquidity and Market Risk Model paper.
+#' @description Data for the Fully Integrated Liquidity and Market Risk Model
+#' paper.
 #'
 #' @name fILMR
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, "A Fully Integrated Liquidity and Market Risk Model", Financial Analyst Journal, 68, 6, 35-47 (2012) \url{http://www.symmys.com/node/350}
+#' @references A. Meucci, "A Fully Integrated Liquidity and Market Risk Model",
+#' Financial Analyst Journal, 68, 6 (2012) \url{http://www.symmys.com/node/350}
 #' @keywords data
 NULL
 
@@ -26,7 +30,8 @@ NULL
 #' @name implVol
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -34,11 +39,12 @@ NULL
 #'
 #' @name securitiesTS
 #'
-#' @description Stock Returns.
+#' @description Stock Returns
 #'
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -50,7 +56,8 @@ NULL
 #'
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -58,11 +65,13 @@ NULL
 #'
 #' @name derivatives
 #'
-#' @description implied vol for options on SPX for different time to maturity and moneyness.
+#' @description implied vol for options on SPX for different time to maturity
+#' and moneyness.
 #'
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -74,7 +83,8 @@ NULL
 #'
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -83,7 +93,8 @@ NULL
 #' @name highYieldIndices
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -92,7 +103,8 @@ NULL
 #' @name UsSwapRates
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -100,11 +112,13 @@ NULL
 #'
 #' @name fixedIncome
 #'
-#' @description US government yield curve and bond yield data for different dates.
+#' @description US government yield curve and bond yield data for different
+#' dates.
 #'
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -113,7 +127,8 @@ NULL
 #' @name db_FX
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -121,11 +136,13 @@ NULL
 #'
 #' @name linearModel
 #'
-#' @description parameters for the explicit factors / implicit loadings linear model.
+#' @description parameters for the explicit factors / implicit loadings linear
+#' model.
 #'
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -134,7 +151,8 @@ NULL
 #' @name TimeSeries
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -143,7 +161,8 @@ NULL
 #' @name StockSeries
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -152,7 +171,8 @@ NULL
 #' @name db
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -161,7 +181,8 @@ NULL
 #' @name swaps
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -170,7 +191,8 @@ NULL
 #' @name bondAttribution
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -179,7 +201,8 @@ NULL
 #' @name swapParRates
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -188,7 +211,9 @@ NULL
 #' @name sectorsTS
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references #' @references A. Meucci, Exercises in Advanced Risk and
+#' Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -197,7 +222,9 @@ NULL
 #' @name covNRets
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references #' @references A. Meucci, Exercises in Advanced Risk and
+#' Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
@@ -206,26 +233,32 @@ NULL
 #' @name swap2y4y
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+#' @references #' @references A. Meucci, Exercises in Advanced Risk and
+#' Portfolio Management.
+#' \url{http://symmys.com/node/170}
 #' @keywords data
 NULL
 
-#' @title Panel X of joint returns realizations and vector p of respective probabilities for returns
+#' @title Panel X of joint returns realizations and vector p of respective
+#' probabilities for returns
 #'
 #' @name returnsDistribution
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk Magazine,
+#' @references A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk
+#' Magazine,
 #' October 2008, p 100-106. \url{http://symmys.com/node/158}
 #' @keywords data
 NULL
 
-#' @title Panel X of joint factors realizations and vector p of respective probabilities for factors
+#' @title Panel X of joint factors realizations and vector p of respective
+#' probabilities for factors
 #'
 #' @name factorsDistribution
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk Magazine,
+#' @references A. Meucci, "Fully Flexible Views: Theory and Practice",
+#' The Risk Magazine,
 #' October 2008, p 100-106. \url{http://symmys.com/node/158}
 #' @keywords data
 NULL
@@ -235,17 +268,20 @@ NULL
 #' @name butterfliesAnalytics
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk Magazine,
+#' @references A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk
+#' Magazine,
 #' October 2008, p 100-106. \url{http://symmys.com/node/158}
 #' @keywords data
 NULL
 
-#' @title scenarios table and prior distribution for changes in SWAP2YR SWAP10YR CDXIG S&P500 DollarIndex Crude Gold VIX 10YRInflationSwapRate
+#' @title scenarios table and prior distribution for changes in SWAP2YR SWAP10YR
+#' CDXIG S&P500 DollarIndex Crude Gold VIX 10YRInflationSwapRate
 #'
 #' @name freaqEst
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references A. Meucci, "Stress-Testing with Fully Flexible Causal Inputs" \url{http://symmys.com/node/152}
+#' @references A. Meucci, "Stress-Testing with Fully Flexible Causal Inputs"
+#' \url{http://symmys.com/node/152}
 #' @keywords data
 NULL
 
@@ -254,7 +290,8 @@ NULL
 #' @name sectorsSnP500
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references  Attilio Meucci, 2011, "Robust Bayesian Allocation". \url{http://symmys.com/node/102}
+#' @references  Attilio Meucci, 2011, "Robust Bayesian Allocation".
+#' \url{http://symmys.com/node/102}
 #' @keywords data
 NULL
 
@@ -263,7 +300,8 @@ NULL
 #' @name JGB
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references  A. Meucci, A. Loregian - "Neither Normal not Lognormal: Modeling Interest Rates Across all Regimes" \url{http://symmys.com/node/601}
+#' @references  A. Meucci, A. Loregian - "Neither Normal not Lognormal: Modeling
+#' Interest Rates Across all Regimes" \url{http://symmys.com/node/601}
 #' @keywords data
 NULL
 
@@ -272,7 +310,9 @@ NULL
 #' @name linRet
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
-#' @references  A. Meucci, A. Santangelo, R. Deguest - "Measuring Portfolio Diversification Based on Optimized Uncorrelated Factors" \url{http://symmys.com/node/599}
+#' @references  A. Meucci, A. Santangelo, R. Deguest - "Measuring Portfolio
+#' Diversification Based on Optimized Uncorrelated Factors"
+#' \url{http://symmys.com/node/599}
 #' @keywords data
 NULL
 
@@ -288,6 +328,15 @@ NULL
 #' @title Pseudo data: Gauss-Hermite grid case study input data
 #'
 #' @name pseudodata
+#' @docType data
+#' @author Xavier Valls\email{xaviervallspla@@gmail.com}
+#' @references A. Meucci, D. Ardia, S. Keel - "Fully Flexible Extreme Views"
+#' @keywords data
+NULL
+
+#' @title data for the dynamic portfolio management examples
+#'
+#' @name dynamicManagement
 #' @docType data
 #' @author Xavier Valls\email{xaviervallspla@@gmail.com}
 #' @references A. Meucci, D. Ardia, S. Keel - "Fully Flexible Extreme Views"

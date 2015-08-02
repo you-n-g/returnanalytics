@@ -11,7 +11,8 @@ list of securities with analytics computed.
 Xavier Valls\email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk Magazine,
+A. Meucci, "Fully Flexible Views: Theory and Practice", The Risk
+Magazine,
 October 2008, p 100-106. \url{http://symmys.com/node/158}
 }
 \keyword{data}
