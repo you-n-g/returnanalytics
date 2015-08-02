@@ -5,13 +5,15 @@
 \alias{derivatives}
 \title{implied vol for options on SPX}
 \description{
-implied vol for options on SPX for different time to maturity and moneyness.
+implied vol for options on SPX for different time to maturity
+and moneyness.
 }
 \author{
 Xavier Valls\email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+\url{http://symmys.com/node/170}
 }
 \keyword{data}
 

@@ -29,7 +29,6 @@ Depends:
     R (>= 2.14.0),
     zoo,
     xts (>= 0.8),
-    matlab,
     pracma,
     R.utils,
     mvtnorm,
@@ -38,6 +37,7 @@ Depends:
     kernlab,
     nloptr,
     limSolve,
+    linprog,
 Suggests:
     Matrix,
     MASS,

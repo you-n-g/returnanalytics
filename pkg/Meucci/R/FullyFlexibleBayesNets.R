@@ -21,7 +21,7 @@ CondProbViews <- function(View, X) {
   # initialize parameters
   A <- matrix(, nrow = 0, ncol = nrow(X))
   b <- g <- matrix(, nrow = 0, ncol = 1)
-
+  c = c()
   # for each view...
   for (k in 1:length(View)) {
     I_mrg <- (X[, 1] < Inf)
@@ -64,8 +64,9 @@ CondProbViews <- function(View, X) {
     A <- rbind(A, New_A) # constraint for the conditional expectations...
     b <- rbind(b, New_b)
     g <- rbind(g, -log(1 - View[[k]]$c))
+    c <- rbind(c,I_mrg)
   }
-  return(list(A = A, b = b, g = g))
+  return(list(A = A, b = b, g = g, c=c))
 }
 
 #' tweak a matrix
@@ -78,70 +79,29 @@ CondProbViews <- function(View, X) {
 #' @author Ram Ahluwalia \email{ram@@wingedfootcapital.com}
 
 Tweak <- function(A, b, g) {
-  library(matlab)
-  library(limSolve)
-
   K <- nrow(A)
   J <- ncol(A)
 
-  g_ <- rbind(g, zeros(J, 1))
+  g_ <- rbind(g, matrix(0, J, 1))
 
-  Aeq_ <- cbind(zeros(1, K), ones(1, J))
+  Aeq_ <- cbind(matrix(0, 1, K), matrix(1, 1, J))
   beq_ <- 1
 
-  lb_ <- rbind(zeros(K, 1), zeros(J, 1))
-  ub_ <- rbind(Inf * ones(K, 1), ones(J, 1))
+  lb_ <- rbind(matrix(0, K, 1), matrix(0, J, 1))
+  ub_ <- rbind(Inf * matrix(1, K, 1), matrix(1, J, 1))
 
-  A_ <- cbind(-eye(K), A)
+  A_ <- cbind(-diag(1, K), A)
   b_ <- b
 
   # add lower-bound and upper-bound constraints
-  A_ <- rbind(A_, -eye(ncol(A_)))
-  b_ <- rbind(b_, zeros(ncol(A_), 1))
+  A_ <- rbind(A_, -diag(1, ncol(A_)))
+  b_ <- rbind(b_, matrix(0, ncol(A_), 1))
 
-  x0 <- rep(1/ncol(Aeq_), ncol(Aeq_))
-
-  # db_ = linprog(g_, A_, b_, Aeq_,beq_, lb_, ub_) # MATLAB version
-  # matrix containing coefficients of equality constraints Ex=F
-  # optimResult = linp(E = Aeq_,
-  # vector containing the right-hand side of equality constraints
-  #        F = beq_,
-  # matrix containint coefficients of the inequality constraints GX >= H
-  #        G = -1*A_,
-  # vector containing the right-hand side of the inequality constraints
-  #        H = -1*b_,
-  # vector containing the coefficients of the cost function
-  #        Cost = -1*g_,
-  #        ispos = FALSE)
-
-  costFunction <- function(x) {
-    matrix(x, nrow = 1) %*% matrix(-1*g_, ncol = 1)
-  }
-  gradient <- function(x) {
-   -1*g_ 
-  }
-  optimResult <- optim(par = x0,
-            fn = costFunction, # CHECK
-            gr = gradient,
-            method = "L-BFGS-B",
-            lower = lb_,
-            upper = ub_,
-            hessian = FALSE)
-
-  # library(linprog)
-  # optimResult2 = solveLP(E = Aeq_,
-  # vector containing the right-hand side of equality constraints
-  #        F = beq_,
-  # matrix containint coefficients of the inequality constraints GX >= H
-  #        G = -1*A_,
-  # vector containing the right-hand side of the inequality constraints
-  #        H = -1*b_,
-  # vector containing the coefficients of the cost function
-  #        Cost = -1*g_,
-  #        ispos = FALSE)
-
-  db_ <- optimResult$X
-
+  x0 <- rep(1 / ncol(Aeq_), ncol(Aeq_))
+  dim(A_)
+  dim(b_)
+  dim(g_)
+  db_ <- solveLP(g_,A_,b_,Aeq_,beq_,lb_,ub_)
   db <- db_[1:K]
 
   return(db)
@@ -173,7 +133,6 @@ Tweak <- function(A, b, g) {
 #' @export
 
 ComputeMoments <- function(X, p) {
-  library(matlab)
   N <- ncol(X)
   m <- t(X) %*% p
   Sm <- t(X) %*% (X * repmat(p, 1, N)) # repmat : repeats/tiles a matrix

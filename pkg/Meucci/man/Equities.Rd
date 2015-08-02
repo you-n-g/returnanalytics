@@ -11,7 +11,8 @@ daily stock prices from the utility sector in the S&P 500.
 Xavier Valls\email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci, Exercises in Advanced Risk and Portfolio Management. \url{http://symmys.com/node/170}
+A. Meucci, Exercises in Advanced Risk and Portfolio Management.
+\url{http://symmys.com/node/170}
 }
 \keyword{data}
 
