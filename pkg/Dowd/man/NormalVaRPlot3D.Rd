@@ -28,11 +28,11 @@ Plots the VaR of a portfolio against confidence level and holding period assumin
 }
 \examples{
 # Plots VaR against confidene level given geometric return data
-   data <- runif(5, min = 0, max = .2)
-   NormalVaRPlot3D(returns = data, cl = seq(.85,.99,.01), hp = 60:90)
+   data <- rnorm(5, .07, .03)
+   NormalVaRPlot3D(returns = data, cl = seq(.9,.99,.01), hp = 1:100)
 
    # Computes VaR against confidence level given mean and standard deviation of return data
-   NormalVaRPlot3D(mu = .012, sigma = .03, cl = seq(.85,.99,.02), hp = 40:80)
+   NormalVaRPlot3D(mu = .012, sigma = .03, cl = seq(.9,.99,.01), hp = 1:100)
 }
 \author{
 Dinesh Acharya

@@ -30,10 +30,10 @@ Plots the ES of a portfolio against confidence level and holding period assuming
 \examples{
 # Plots VaR against confidene level given geometric return data
    data <- runif(5, min = 0, max = .2)
-   LogNormalESPlot3D(returns = data, investment = 5, cl = seq(.85,.99,.01), hp = 60:90)
+   LogNormalESPlot3D(returns = data, investment = 5, cl = seq(.9,.99,.01), hp = 1:100)
 
    # Computes VaR against confidence level given mean and standard deviation of return data
-   LogNormalESPlot3D(mu = .012, sigma = .03, investment = 5, cl = seq(.85,.99,.02), hp = 40:80)
+   LogNormalESPlot3D(mu = .012, sigma = .03, investment = 5, cl = seq(.9,.99,.01), hp = 1:100)
 }
 \author{
 Dinesh Acharya
