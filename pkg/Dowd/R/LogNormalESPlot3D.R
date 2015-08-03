@@ -26,10 +26,10 @@
 #' 
 #'    # Plots VaR against confidene level given geometric return data
 #'    data <- runif(5, min = 0, max = .2)
-#'    LogNormalESPlot3D(returns = data, investment = 5, cl = seq(.85,.99,.01), hp = 60:90)
+#'    LogNormalESPlot3D(returns = data, investment = 5, cl = seq(.9,.99,.01), hp = 1:100)
 #'    
 #'    # Computes VaR against confidence level given mean and standard deviation of return data
-#'    LogNormalESPlot3D(mu = .012, sigma = .03, investment = 5, cl = seq(.85,.99,.02), hp = 40:80)
+#'    LogNormalESPlot3D(mu = .012, sigma = .03, investment = 5, cl = seq(.9,.99,.01), hp = 1:100)
 #'
 #'
 #' @export
@@ -124,7 +124,9 @@ LogNormalESPlot3D <- function(...){
   v <- v/n
   
   # Plotting
-  persp(x=cl, y=hp, t(VaR), xlab = "Confidence Level", 
-        ylab = "Holding Period", zlab = "VaR", 
-        main = "Log-t ES against confidence level")
+  persp(x=cl, y=hp, t(v), xlab = "Confidence Level", 
+        ylab = "Holding Period", zlab = "ES", border=NA,
+        theta = -45, phi = 40, shade = .75, ltheta = 120,
+        col = "lightgray", ticktype = "detailed", nticks = 5,
+        main = "Log-Normal ES against CL and HP")
 }

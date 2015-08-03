@@ -25,10 +25,10 @@
 #' 
 #'    # Plots VaR against confidene level given geometric return data
 #'    data <- runif(5, min = 0, max = .2)
-#'    NormalESPlot3D(returns = data, cl = seq(.85,.99,.01), hp = 60:90)
+#'    NormalESPlot3D(returns = data, cl = seq(.9,.99,.01), hp = 1:100)
 #'    
 #'    # Computes VaR against confidence level given mean and standard deviation of return data
-#'    NormalESPlot3D(mu = .012, sigma = .03, cl = seq(.85,.99,.02), hp = 40:80)
+#'    NormalESPlot3D(mu = .012, sigma = .03, cl = seq(.9,.99,.01), hp = 1:100)
 #'
 #'
 #' @export
@@ -110,10 +110,12 @@ NormalESPlot3D <- function(...){
   VaR <- - sigma[1,1] * sqrt(hp) %*% qnorm(1 - cl, 0, 1)  + mu[1,1] * hp %*% matrix(1,cl.row,cl.col)  # VaR
   
   # ES estimation
-  es <-NormalES(mu = mu ,sigma = sigma, cl = cl, hp = hp)
+  ES <-NormalES(mu = mu ,sigma = sigma, cl = cl, hp = hp)
   
   # Plotting
-  persp(x=cl, y=hp, t(VaR), xlab = "Confidence Level", 
-        ylab = "Holding Period", zlab = "VaR", 
-        main = "Normal ES against confidence level")
+  persp(x=cl, y=hp, t(ES), xlab = "Confidence Level", 
+        ylab = "Holding Period", zlab = "ES", border=NA,
+        theta = -45, phi = 40, shade = .75, ltheta = 120, cex.axis=.85, cex.lab=.85,
+        col = "lightgray", ticktype = "detailed", nticks = 5,
+        main = "Normal ES against CL and HP")
 }

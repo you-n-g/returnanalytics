@@ -29,11 +29,11 @@
 #' @examples
 #' 
 #'    # Plots ES against confidene level given geometric return data
-#'    data <- runif(5, min = 0, max = .2)
-#'    LogtESPlot3D(returns = data, investment = 5, df = 6, cl = seq(.85,.99,.01), hp = 60:90)
+#'    data <- rnorm(5, .09, .03)
+#'    LogtESPlot3D(returns = data, investment = 5, df = 6, cl = seq(.9,.99,.01), hp = 1:100)
 #'    
 #'    # Computes ES against confidence level given mean and standard deviation of return data
-#'    LogtESPlot3D(mu = .012, sigma = .03, investment = 5, df = 6, cl = seq(.85,.99,.02), hp = 40:80)
+#'    LogtESPlot3D(mu = .012, sigma = .03, investment = 5, df = 6, cl = seq(.9,.99,.01), hp = 1:100)
 #'
 #'
 #' @export
@@ -132,7 +132,10 @@ LogtESPlot3D <- function(...){
   v <- v/n
   
   # Plotting
-  persp(x=cl, y=hp, t(VaR), xlab = "Confidence Level", 
-        ylab = "Holding Period", zlab = "VaR", 
-        main = "Log-t ES against confidence level")
+  persp(x=cl, y=hp, t(v), xlab = "Confidence Level", 
+        ylab = "Holding Period", zlab = "ES", border=NA,
+        theta = -45, phi = 35, shade = .75, ltheta = 90, cex.axis=.85, cex.lab=.85,
+        col = "lightgray", ticktype = "detailed", nticks = 5,
+        main = "Log-t ES against CL and HP")
+  
 }
