@@ -37,7 +37,8 @@ Depends:
     kernlab,
     nloptr,
     limSolve,
-    linprog
+    linprog,
+    PEIP
 Suggests:
     Matrix,
     MASS,

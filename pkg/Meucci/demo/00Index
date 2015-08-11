@@ -104,5 +104,4 @@ logToArithmeticCovariance   		 generates arithmetric returns and arithmetric cov
 S_plotGaussHermite          		 displays mesh points based on Gaussian-Hermite quadrature Bayesian networks
 S_AnalyzeJGBrates					 applies the Inverse Call Transformation to Japanese government rates and compares the shadow rates returned.
 S_MainDiversification				 computes Diversification Distribution and the Effective Number of Bets.
-
-
+RobustBayesianCaseStudy				 case study for the display of the Robust Bayesian Allocation Techniques.
