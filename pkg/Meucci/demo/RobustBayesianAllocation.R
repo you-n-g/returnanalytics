@@ -1,4 +1,3 @@
-
 ####################################################################
 # Example from Meucci's MATLAB script:  S_SimulationsCaseStudy.M
 # See MATLAB package "Meucci_RobustBayesian" for original MATLAB
