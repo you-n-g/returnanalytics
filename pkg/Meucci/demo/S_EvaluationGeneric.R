@@ -14,7 +14,7 @@
 #'
 #' See Meucci's script for " EvaluationChoiceOptimal.m" 
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 
 EvaluationChoiceOptimal = function( Market, InvestorProfile )
@@ -47,7 +47,7 @@ EvaluationChoiceOptimal = function( Market, InvestorProfile )
 #'
 #' See Meucci's script for " EvaluationSatisfaction.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 
 EvaluationSatisfaction = function( Allocation, Market, InvestorProfile )
@@ -75,7 +75,7 @@ EvaluationSatisfaction = function( Allocation, Market, InvestorProfile )
 #'
 #' See Meucci's script for "EvaluationDecisionBestPerformer.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 EvaluationDecisionBestPerformer = function( Market, InvestorProfile )
 {
@@ -104,7 +104,7 @@ EvaluationDecisionBestPerformer = function( Market, InvestorProfile )
 #'
 #' See Meucci's script for "EvaluationDecisionBestPerformer.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 EvaluationCost = function( Allocation, Market, InvestorProfile )
 {
@@ -130,7 +130,7 @@ EvaluationCost = function( Allocation, Market, InvestorProfile )
 #'
 #' See Meucci's script for "S_EvaluationGeneric.m"
 #
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Inputs

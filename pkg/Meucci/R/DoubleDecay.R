@@ -14,7 +14,7 @@
 #' \url{http://www.symmys.com/node/150}
 #' See Meucci script for "DoubleDecay.m"
 #' 
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 DoubleDecay = function( X, lmd_c, lmd_s)

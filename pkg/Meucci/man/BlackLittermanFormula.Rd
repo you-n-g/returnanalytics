@@ -2,7 +2,8 @@
 % Please edit documentation in R/BlackLittermanFormula.R
 \name{BlackLittermanFormula}
 \alias{BlackLittermanFormula}
-\title{Computes the Black-Litterman formula for the moments of the posterior normal.}
+\title{Computes the Black-Litterman formula for the moments of the posterior
+normal.}
 \usage{
 BlackLittermanFormula(Mu, Sigma, P, v, Omega)
 }
@@ -23,15 +24,16 @@ BLMu     [vector] (N x 1) posterior expected values.
 BLSigma  [matrix] (N x N) posterior covariance matrix.
 }
 \description{
-This function computes the Black-Litterman formula for the moments of the posterior normal, as described in
-A. Meucci, "Risk and Asset Allocation", Springer, 2005.
+This function computes the Black-Litterman formula for the
+moments of the posterior normal, as described in  A. Meucci, "Risk and Asset
+Allocation", Springer, 2005.
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}.
-
-See Meucci's script for "BlackLittermanFormula.m"
+A. Meucci - "Exercises in Advanced Risk and Portfolio Management"
+\url{http://symmys.com/node/170}. See Meucci's script for
+"BlackLittermanFormula.m"
 }
 

@@ -27,7 +27,7 @@ Computes the mean and standard deviation of a lognormal distribution from its pa
 Inverts the formulas (1.98)-(1.99) in "Risk and Asset Allocation", Springer, 2005.
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}, "E 25 - Simulation of a lognormal random variable".

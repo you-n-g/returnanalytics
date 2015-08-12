@@ -7,7 +7,7 @@
 #'
 #' See Meucci's script for "S_MaximumLikelihood.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ## Parametric pdf used in the ML estimation
 fparam = function( x,  th )

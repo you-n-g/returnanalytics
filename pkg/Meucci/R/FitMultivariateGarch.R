@@ -19,7 +19,7 @@
 #'
 #' See Meucci's script for "FitMultivariateGarch.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 FitMultivariateGarch = function( returns, demean = 1, eps = 0, df = 500 )
@@ -135,7 +135,7 @@ FitMultivariateGarch = function( returns, demean = 1, eps = 0, df = 500 )
 #'
 #' See Meucci's script for "FitMultivariateGarch.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 
@@ -401,7 +401,7 @@ for( i in 1 : n )
 #'
 #'  See Meucci's script for "FitMultivariateGarch.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 garch2f8 = function( y, c1, a1, b1, y1, h1, c2, a2, b2, y2, h2, df )
@@ -696,7 +696,7 @@ garch2f8 = function( y, c1, a1, b1, y1, h1, c2, a2, b2, y2, h2, df )
 #
 # See Meucci's script for "FitMultivariateGarch.m"
 #
-# @author Xavier Valls \email{flamejat@@gmail.com}
+# @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 minfro = function( A )
 {

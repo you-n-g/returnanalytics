@@ -18,7 +18,7 @@
 #'
 #' See Meucci's script for "EfficientFrontierReturns.m".
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 EfficientFrontierPrices = function( NumPortf, Covariance, ExpectedValues, Current_Prices, Budget )

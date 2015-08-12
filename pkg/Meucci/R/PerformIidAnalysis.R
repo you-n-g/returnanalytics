@@ -20,7 +20,7 @@
 #'
 #' See Meucci's script for "PerformIidAnalysis.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 PerformIidAnalysis = function( Dates = dim( Data)[1], Data, Str = "")

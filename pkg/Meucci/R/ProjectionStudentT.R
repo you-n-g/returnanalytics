@@ -18,7 +18,7 @@
 #'
 #' See Meucci's script for "ProjectionStudentT.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 ProjectionStudentT = function(nu, m, s, T)

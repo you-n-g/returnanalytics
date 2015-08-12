@@ -26,7 +26,7 @@
 #'
 #' See Meucci's script for "MaxRsqCS.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 MaxRsqCS = function(X, B, W, A = NULL, D = NULL, Aeq = NULL, Deq, lb = NULL, ub = NULL)

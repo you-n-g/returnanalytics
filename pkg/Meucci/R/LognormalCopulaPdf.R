@@ -15,7 +15,7 @@
 #'
 #' See Meucci's script for "LognormalCopulaPdf.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 LognormalCopulaPdf = function( u, Mu, Sigma )

@@ -11,7 +11,7 @@
 #'
 #' See Meucci's script for "S_MeanVarianceOptimization.m"
 #
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Load data

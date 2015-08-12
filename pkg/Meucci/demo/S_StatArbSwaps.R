@@ -7,7 +7,7 @@
 #' See Meucci's script for "S_StatArbSwaps.m"
 #'
 #' A. Meucci - "Review of statistical arbitrage, cointegration, and multivariate Ornstein-Uhlenbeck", 2009. \url{http://symmys.com/node/132}
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 # TODO: Check the loadings of the principal components analysis, fix the date ticks on the plots.
 

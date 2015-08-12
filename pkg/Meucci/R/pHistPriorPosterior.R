@@ -12,7 +12,7 @@
 #'
 #' See Meucci's script for "pHistPriorPosterior.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 pHistPriorPosterior = function( X, p, p_)

@@ -11,7 +11,7 @@
 #'
 #' See Meucci's script for "S_MeanVarianceBenchmark.m" and "E 255 - Mean-variance pitfalls: two-step approach II" from the book.
 #
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Load data

@@ -17,7 +17,7 @@
 #'
 #' A. Meucci - "Risk and Asset Allocation"-Springer (2005). See (6.77)-(6.79).
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 ConvertChangeInYield2Price = function( Exp_DY, Cov_DY, Times2Mat, CurrentPrices )

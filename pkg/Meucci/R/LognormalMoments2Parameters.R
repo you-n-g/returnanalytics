@@ -20,7 +20,7 @@
 #'
 #' See Meucci's script for "LognormalMoments2Parameters.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 #determines $\mu$ and $\sigma^2$ from $\Expect\{X\}$ and $\Var\{X\}$, and uses it to determine $\mu$ 

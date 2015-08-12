@@ -9,7 +9,7 @@
 #'
 #' A. Meucci - "Review of linear factor models: Unexpected common features and the systematic-plus-idiosyncratic myth", 2010. \url{http://www.symmys.com/node/336}
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 ##################################################################################################################
 ### Load data
 # loads weekly stock returns X and indices stock returns F

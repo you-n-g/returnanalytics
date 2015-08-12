@@ -29,7 +29,7 @@ Returns \deqn{ \widehat{\mu} = \sum\limits_{t= 1}^{T} \frac{w_{t}}{\sum\limits_{
 where, adapted to the Sudent T distribution, \deqn{ w_{t}\equiv \frac{\nu+N}{\nu+(x_{t}-\widehat{\mu})^\prime \widehat{\Sigma}^{-1}(  x-\widehat{\mu})  }}
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170},

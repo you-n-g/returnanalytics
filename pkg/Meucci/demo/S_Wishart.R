@@ -9,7 +9,7 @@
 #'
 #' See Meucci's script for "S_Wishart.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 if ( !require( "scatterplot3d" ) ) stop("scatterplot3d package installation required for this script")
 

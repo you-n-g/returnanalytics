@@ -6,7 +6,7 @@
 #'
 #' See Meucci's script for "S_Estimator.R"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Inputs

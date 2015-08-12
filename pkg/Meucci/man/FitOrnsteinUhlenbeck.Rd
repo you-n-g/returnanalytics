@@ -30,7 +30,7 @@ o dY_t = -Th * (Y_t - Mu) * dt + S * dB_t where
 	o dB_t: vector of Brownian motions
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}.

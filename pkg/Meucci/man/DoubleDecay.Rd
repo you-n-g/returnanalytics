@@ -24,7 +24,7 @@ A. Meucci, "Personalized Risk Management: Historical Scenarios with Fully Flexib
 GARP Risk Professional, Dec 2010, p 47-51
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 \url{http://www.symmys.com/node/150}

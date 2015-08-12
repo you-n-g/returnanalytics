@@ -9,7 +9,7 @@
 #'
 #' TO DO: Change colors from TwoDimEllipsoid in each iteration
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Load data

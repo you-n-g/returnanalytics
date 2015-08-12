@@ -18,7 +18,7 @@
 #'
 #' See Meucci's script for "GenerateInvariants.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 GenerateInvariants = function( mu_x, sig_x, nu_f, sig_f, nu_w, Sigma_w, J ) 
 {

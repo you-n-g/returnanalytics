@@ -22,7 +22,7 @@
 #'
 #' See Meucci's script for "MleRecursionForStudentT.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 MleRecursionForStudentT = function(x, Nu, Tolerance = 10^(-10) )

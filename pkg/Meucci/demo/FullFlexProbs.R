@@ -17,7 +17,7 @@
 #' \url{http://www.symmys.com/node/150}
 #' See Meucci script for "CallPrice.m"
 #' 
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 CallPrice <- function(P, K, r, t, s) {
     d_1 <- log(P / K) + (r + s * s / 2) * t
@@ -42,7 +42,7 @@ CallPrice <- function(P, K, r, t, s) {
 #' \url{http://www.symmys.com/node/150},
 #' See Meucci script for "DoubleDecay.m"
 #' 
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##########################################################################
 # risk drivers scenarios
