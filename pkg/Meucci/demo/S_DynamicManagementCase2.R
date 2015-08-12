@@ -1,4 +1,4 @@
-#' This script is the first of two case studies using the techniques described
+#' This script is the second of two case studies using the techniques described
 #' in A. Meucci, "Dynamic Portfolio Management with Views at Multiple Horizons"
 #' It considers two risk drivers, the 10 year rate and the TIP spread, and two 
 #' non-synchronous views on them. The view on the rate is that its expected 
@@ -11,7 +11,7 @@
 #' A. Meucci - "Dynamic Portfolio Management with Views at Multiple Horizons"
 #'' \url{http://symmys.com/node/831}
 #'
-#' See Meucci's script "S_CaseStudy1.m"
+#' See Meucci's script "S_CaseStudy2.m"
 #
 #' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 

@@ -31,14 +31,16 @@ Described in A. Meucci "Risk and Asset Allocation", Springer, 2005
 Numerically and analytically the marginal pdf of
 		- the first entry of the random vector Mu
 		- the (1,1)-entry of the random matrix inv(Sigma)
-		when Mu and Sigma are jointly normal-inverse-Wishart: Mu ~ St(Mu_0,Sigma/T_0)
-                                                           inv(Sigma) ~ W(Nu_0,inv(Sigma_0)/Nu_0)
+		when Mu and Sigma are jointly normal-inverse-Wishart:
+				Mu ~ St(Mu_0,Sigma/T_0)
+             inv(Sigma) ~ W(Nu_0,inv(Sigma_0)/Nu_0)
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}.
+A. Meucci - "Exercises in Advanced Risk and Portfolio Management"
+\url{http://symmys.com/node/170}.
 
 See Meucci's script for "PlotMarginalsNormalInverseWishart.m"
 }
