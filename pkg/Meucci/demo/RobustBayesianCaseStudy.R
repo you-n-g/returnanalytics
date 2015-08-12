@@ -1,6 +1,15 @@
-# Example from Meucci's MATLAB script:  S_SnPCaseStudy.m
-# See MATLAB package "Meucci_RobustBayesian" for original MATLAB
-# source on www.symmys.com
+# Example of Robust Bayesian allocation in the stock market, as described in
+# A. Meucci, "Robust Bayesian Allocation".
+#'  
+#' @references 
+#' A. Meucci - "Robust Bayesian Allocation"
+#' \url{http://symmys.com/node/102}
+#'
+#' See Meucci's script for "S_SnPCaseStudy.m" and MATLAB package
+#' "Meucci_RobustBayesian" for original MATLAB
+#'
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
+#' 
 
 p_m <- .1 # robustness parameter location
 p_s <- .1 # robustness parameter scatter
@@ -49,7 +58,7 @@ for (t in (W + 1):(Ttot - 1)) {
     w1  <-  efficientFrontier(NumPortf, S1, m1)$weights
 
     # robustness parameters
-    q_m2 <- chi2inv(p_m,N)
+    q_m2 <- chi2inv(p_m, N)
     g_m <- sqrt(q_m2 / T1 * nu1 / (nu1 - 2))
     q_s2 <- chi2inv(p_s, N * (N + 1) / 2)
     PickVol <- round(.8 * NumPortf)

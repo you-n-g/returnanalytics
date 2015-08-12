@@ -298,8 +298,8 @@ BellmanEq_CS2 <- function(eta, gamma, lambda, tau, theta, mu, sig2, c2,
     #set the monitoring times of interest
     t <- c(0, tau, t_view - k * tau)
     t <- sort(t)
-    t <- t[t>=0]
-    idx <- which(diff(t) < tau * 10 ^ -10) 
+    t <- t[t >= 0]
+    idx <- which(diff(t) < tau * 10 ^ -10)
     t <- t(setdiff(1:length(t), idx))
     T_ <- length(t)
 
