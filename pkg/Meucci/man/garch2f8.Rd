@@ -51,7 +51,7 @@ MATLAB's code initially written by Olivier Ledoit, 4/28/1997
   Steepest Ascent on boundary, Hessian off boundary, no grid search
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}.

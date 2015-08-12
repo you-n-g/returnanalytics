@@ -20,7 +20,7 @@
 #'
 #' Bilmes, J. A.- "A Gentle Tutorial of the EM Algorithm and its Application to Parameter Estimation for Gaussian Mixture
 #' and Hidden Markov Models", 1998.
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 FitExpectationMaximization = function(X)

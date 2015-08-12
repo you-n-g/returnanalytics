@@ -9,7 +9,7 @@
 #'
 #' See Meucci's script for "S_ProjectNPriceMvGarch.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 if ( !require( "signal" ) ) stop("signal package installation required for this script")
 

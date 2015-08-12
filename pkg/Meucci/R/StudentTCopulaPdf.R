@@ -17,7 +17,7 @@
 #'
 #' See Meucci's script for "StudentTCopulaPdf.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 StudentTCopulaPdf = function( u, nu, Mu, Sigma )

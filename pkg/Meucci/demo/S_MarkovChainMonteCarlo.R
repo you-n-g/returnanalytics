@@ -7,7 +7,7 @@
 #'
 #' See Meucci's script for "S_MarkovChainMonteCarlo.m"
 #
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Set-up target and candidate

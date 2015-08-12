@@ -25,7 +25,7 @@ Compute central and standardized statistics, as described in A. Meucci
  where \deqn{\gamma_{X}^{(n)} \equiv E \{(X - \mu_{X})^{n}\}/\sigma_{X}^{n},\quad n\geq3 .}
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170},

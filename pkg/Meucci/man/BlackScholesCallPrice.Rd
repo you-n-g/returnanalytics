@@ -43,7 +43,7 @@ Compute the Black-Scholes price of a European call or put option
 Code is vectorized, so the inputs can be vectors or matrices (but sizes must match)
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}.

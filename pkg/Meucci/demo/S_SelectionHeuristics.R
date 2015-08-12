@@ -12,7 +12,7 @@
 #'
 #' See Meucci's script for "SelectGoodness.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 SelectGoodness = function( Who, M )
 {
@@ -45,7 +45,7 @@ SelectGoodness = function( Who, M )
 #'
 #' See Meucci's script for "SelectNaive.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 SelectNaive = function( OutOfWho, Metric )
 {
@@ -91,7 +91,7 @@ SelectNaive = function( OutOfWho, Metric )
 #'
 #' See Meucci's script for "SelectAcceptByS.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 SelectAcceptByS = function( OutOfWho, AcceptBy, Metric )
 {
@@ -148,7 +148,7 @@ SelectAcceptByS = function( OutOfWho, AcceptBy, Metric )
 #'
 #' See Meucci's script for "SelectRejectByS.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 SelectRejectByS = function(OutOfWho, RejectBy, Metric)
 {
@@ -197,7 +197,7 @@ SelectRejectByS = function(OutOfWho, RejectBy, Metric)
 #'
 #' See Meucci's script for "SelectRejectByS.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 SelectExactNChooseK = function( OutOfWho, K, M )
 {	
@@ -226,7 +226,7 @@ SelectExactNChooseK = function( OutOfWho, K, M )
 #'
 #' See Meucci's script for "S_SelectionHeuristics.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 
 ##################################################################################################################

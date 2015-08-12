@@ -28,7 +28,7 @@ level p can be vector. If this vector is uniformly distributed on [0,1] the samp
 Described in A. Meucci "Risk and Asset Allocation", Springer, 2005.
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170},

@@ -7,7 +7,7 @@
 #'
 #' See Meucci's script for "S_EntropyView.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Market simulations

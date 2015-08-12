@@ -22,7 +22,7 @@
 #'
 #' A. Meucci - "Annualization and general projection of skweness, kurtosis, and all summary statistics",
 #' GARP Risk Professional August 2010, 55-56. \url{http://symmys.com/node/136}.
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 CentralAndStandardizedStatistics = function( X, N )

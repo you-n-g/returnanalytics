@@ -8,7 +8,7 @@
 #'
 #' See Meucci's script for "S_InvestorsObjective.m"
 #
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Parameters of first marginal

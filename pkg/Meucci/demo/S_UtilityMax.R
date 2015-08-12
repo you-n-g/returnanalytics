@@ -7,7 +7,7 @@
 #'
 #' See Meucci's script for "S_UtilityMax.m" and "E 262 - Utility maximization I" from the book.
 #
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Input parameters

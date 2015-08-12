@@ -22,7 +22,7 @@
 #'
 #' See Meucci's script for "BlackScholesCallPrice.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 BlackScholesCallPrice = function( spot, K, r, vol, T )

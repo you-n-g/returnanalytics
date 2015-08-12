@@ -8,7 +8,7 @@
 #'
 #' See Meucci's script for "S_TimeSeriesConstrainedIndustries.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Loads weekly stock returns X and indices stock returns F

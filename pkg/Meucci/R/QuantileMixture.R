@@ -19,7 +19,7 @@
 #'
 #'See Meucci's script for "QuantileMixture.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 QuantileMixture = function( p, a, m_Y, s_Y, m_Z, s_Z )

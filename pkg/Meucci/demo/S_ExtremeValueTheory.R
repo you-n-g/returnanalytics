@@ -10,7 +10,7 @@
 #'
 #' See Meucci's script for "S_ExtremeValueTheory.m"
 #
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 if ( !require( "fExtremes" ) ) stop("fExtremes package installation required for this script")
 ##################################################################################################################

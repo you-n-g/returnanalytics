@@ -14,7 +14,7 @@
 #'
 #' See Meucci's script for "Log2Lin.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 Log2Lin = function( Mu, Sigma )

@@ -8,7 +8,7 @@
 #' See Meucci's script for "S_JumpDiffusionMerton.m"
 #' @note see  Merton, R. C., 1976. "Option pricing when underlying stocks are discontinuous". Journal of Financial
 #' Economics 3, 125-144.
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Parameters

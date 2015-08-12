@@ -15,7 +15,7 @@
 #'
 #' See Meucci's script for "MvnRnd.m".
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 MvnRnd = function( M, S, J )

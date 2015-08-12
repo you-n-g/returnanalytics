@@ -12,7 +12,7 @@
 #' "ButterflyTrading/S_MAIN.m"
 #' 
 #' 
-#' @author Xavier Valls \email{flamejat@@gmail.com} and Ram Ahluwalia 
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com} and Ram Ahluwalia 
 #' \email{ram@@wingedfootcapital.com}
 
 ################################################################################

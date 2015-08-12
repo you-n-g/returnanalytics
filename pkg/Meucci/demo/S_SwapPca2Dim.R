@@ -14,7 +14,7 @@
 #'
 #' See Meucci's script for "S_SwapPca2Dim.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ##################################################################################################################
 ### Load data

@@ -23,7 +23,7 @@ Expectation-Maximization (EM) algorithm to recover missing observations in a tim
  as described in  A. Meucci, "Risk and Asset Allocation", Springer, 2005, section 4.6.2 "Missing data".
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170},

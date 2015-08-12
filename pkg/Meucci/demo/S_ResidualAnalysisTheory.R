@@ -8,7 +8,7 @@
 #' See Meucci's script for "S_ResidualAnalysisTheory.m"
 #' @note See #' A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170},
 #' "E 116 - Time series factors: analysis of residuals I".
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' 
 
 ##################################################################################################################

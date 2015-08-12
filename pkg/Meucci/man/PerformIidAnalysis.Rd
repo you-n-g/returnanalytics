@@ -27,7 +27,7 @@ it checks the evolution over time
   under i.i.d. the location-dispersion ellipsoid should be a circle
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}.

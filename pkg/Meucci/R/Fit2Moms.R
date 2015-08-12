@@ -13,7 +13,7 @@
 #' \url{http://www.symmys.com/node/150}
 #' See Meucci script for "S_MainFullFlexProbs.m"
 #' 
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 Fit2Moms = function( X, m, S)

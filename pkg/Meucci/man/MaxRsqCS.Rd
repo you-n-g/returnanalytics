@@ -39,7 +39,7 @@ and Aeq*G=Deq (A,D, Aeq,Deq conformable matrices),as described in  A. Meucci,
 Initial code by Tai-Ho Wang
 }
 \author{
-Xavier Valls \email{flamejat@gmail.com}
+Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
 A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}.

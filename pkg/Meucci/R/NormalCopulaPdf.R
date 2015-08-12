@@ -15,7 +15,7 @@
 #'
 #' See Meucci's script for "NormalCopulaPdf.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 #' @export
 
 NormalCopulaPdf = function( u, Mu, Sigma )

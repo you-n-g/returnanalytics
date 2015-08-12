@@ -7,7 +7,7 @@
 #'
 #' See Meucci's script for "S_FxCopulaMarginal.m"
 #'
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 #############################################################################################################
 ### Load data and select the pair to display

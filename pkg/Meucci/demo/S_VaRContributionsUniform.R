@@ -10,7 +10,7 @@
 #'
 #' See Meucci's script for "S_VaRContributionsUniform.m" and E 220 from the book.
 #
-#' @author Xavier Valls \email{flamejat@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ###################################################################################################################
 ### Inputs 
