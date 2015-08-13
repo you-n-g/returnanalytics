@@ -2,9 +2,9 @@
 % Please edit documentation in R/MaxRsqTS.R
 \name{MaxRsqTS}
 \alias{MaxRsqTS}
-\title{Solve for B that maximises sample r-square of F'*B' with X under constraints A*G<=D
-and Aeq*G=Deq (A,D, Aeq,Deq conformable matrices),as described in  A. Meucci,
-"Risk and Asset Allocation", Springer, 2005.}
+\title{Solve for B that maximises sample r-square of F'*B' with X under constraints
+A*G<=D and Aeq*G=Deq (A,D, Aeq,Deq conformable matrices),as described in
+ A. Meucci, "Risk and Asset Allocation", Springer, 2005.}
 \usage{
 MaxRsqTS(X, F, W, A = NULL, D = NULL, Aeq = NULL, Deq, lb = NULL,
   ub = NULL)
@@ -32,9 +32,9 @@ MaxRsqTS(X, F, W, A = NULL, D = NULL, Aeq = NULL, Deq, lb = NULL,
 B   : [matrix] (N x K)
 }
 \description{
-Solve for B that maximises sample r-square of F'*B' with X under constraints A*G<=D
-and Aeq*G=Deq (A,D, Aeq,Deq conformable matrices),as described in  A. Meucci,
-"Risk and Asset Allocation", Springer, 2005.
+Solve for B that maximises sample r-square of F'*B' with X under constraints
+A*G<=D and Aeq*G=Deq (A,D, Aeq,Deq conformable matrices),as described in
+ A. Meucci, "Risk and Asset Allocation", Springer, 2005.
 }
 \note{
 Initial MATLAB's code by Tai-Ho Wang.
@@ -43,7 +43,7 @@ Initial MATLAB's code by Tai-Ho Wang.
 Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}.
-See Meucci's script for "MaxRsqTS.m"
+A. Meucci - "Exercises in Advanced Risk and Portfolio Management"
+\url{http://symmys.com/node/170}. See Meucci's script for "MaxRsqTS.m"
 }
 
