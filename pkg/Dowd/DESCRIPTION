@@ -9,7 +9,8 @@ Description: R-version of MMR2 Toolbox that supplements
           Kevin Dowd's book Measuring Market Risk.
 Depends: R (>= 3.0.0), 
           bootstrap,
-          MASS
+          MASS,
+	  forecast
 Suggests: PerformanceAnalytics, 
           testthat
 License: GPL
