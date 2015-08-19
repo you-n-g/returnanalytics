@@ -19,15 +19,13 @@
 #'    # Hotspots for ES for randomly generated portfolio
 #'    vc.matrix <- matrix(rnorm(16),4,4)
 #'    mu <- rnorm(4,.08,.04)
-#'    skew <- .5
-#'    kurtosis <- 1.2
 #'    positions <- c(5,2,6,10)
 #'    cl <- .95
 #'    hp <- 280
-#'    AdjustedNormalESHotspots(vc.matrix, mu, skew, kurtosis, positions, cl, hp)
+#'    NormalESHotspots(vc.matrix, mu, positions, cl, hp)
 #' 
 #' @export
-NormalESHotspots <- function(vc.matrix, mu, skew, kurtosis, positions,
+NormalESHotspots <- function(vc.matrix, mu, positions,
                                     cl, hp){
   
   # Check that positions vector read as a scalar or row vector
@@ -47,7 +45,7 @@ NormalESHotspots <- function(vc.matrix, mu, skew, kurtosis, positions,
     stop("Positions vector and expected returns vector must have same size")
   }
   if (max(dim(vc.matrix)) != max(dim(positions))){
-    stop("Positions vector and expected returns vector must have same size")
+    stop("Positions vector and variance-covariance matrix must have compatible dimensions")
   }
   
   # Check that inputs obey sign and value restrictions
