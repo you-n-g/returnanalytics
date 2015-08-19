@@ -46,10 +46,10 @@ AdjustedNormalESHotspots <- function(vc.matrix, mu, skew, kurtosis, positions,
   
   # Check that dimensions are correct
   if (max(dim(mu)) != max(dim(positions))){
-    stop("Positions vector and expected returns vector must have same size")
+    stop("Positions vector and expected returns vector must have same size.")
   }
   if (max(dim(vc.matrix)) != max(dim(positions))){
-    stop("Positions vector and expected returns vector must have same size")
+    stop("Positions vector and variance-covariance matrix must have compatible dimensions.")
   }
   
   # Check that inputs obey sign and value restrictions
