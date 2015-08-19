@@ -45,7 +45,7 @@ NormalVaRHotspots <- function(vc.matrix, mu, positions, cl, hp){
   }
   vc.matrix <- as.matrix(vc.matrix)
   if (max(dim(vc.matrix)) != max(dim(positions))){
-    stop("Positions vector and expected returns vector must have same size")
+    stop("Positions vector and variance-covariance matrix must have compatible dimensions")
   }
   
   # Check that inputs obey sign and value restrictions
