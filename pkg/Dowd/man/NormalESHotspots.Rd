@@ -4,7 +4,7 @@
 \alias{NormalESHotspots}
 \title{Hotspots for normal ES}
 \usage{
-NormalESHotspots(vc.matrix, mu, skew, kurtosis, positions, cl, hp)
+NormalESHotspots(vc.matrix, mu, positions, cl, hp)
 }
 \arguments{
 \item{vc.matrix}{Variance covariance matrix for returns}
@@ -29,12 +29,10 @@ specified confidence level and holding period.
 # Hotspots for ES for randomly generated portfolio
    vc.matrix <- matrix(rnorm(16),4,4)
    mu <- rnorm(4,.08,.04)
-   skew <- .5
-   kurtosis <- 1.2
    positions <- c(5,2,6,10)
    cl <- .95
    hp <- 280
-   AdjustedNormalESHotspots(vc.matrix, mu, skew, kurtosis, positions, cl, hp)
+   NormalESHotspots(vc.matrix, mu, positions, cl, hp)
 }
 \author{
 Dinesh Acharya
