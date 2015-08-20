@@ -4,11 +4,11 @@ to be (and will be) changed accordingly. The dependence on forecast and few othe
 packages can be avoided and will be attempted in future. 
 
 The original Dowd's package contains some errors and this package has inherited
-most of them. Not all functions work perfectly. It is also a possibility that can
-be explored.
+most of them. Not all functions work perfectly. Correction of such errors is a 
+possibility that can be explored, too.
 
-There are also few functions that did not give same result as Dowd's MATLAB toolbox. 
+There are also few functions that did not give same result as Dowd's MATLAB toolbox.
 This is possibly because of two different scenarios, either because the parameters
-parameters to algorithms such as density function in Kernel Density Approach (just
-for sake of example) were not suitably chosen or there actually are errors in the code.
-An attempt will be made in future to remove such inconsistencies.
+to algorithms such as density function in Kernel Density Approach (just
+for sake of example) were not suitably chosen or there actually are some errors in the 
+code. An attempt will be made in future to remove such inconsistencies.
