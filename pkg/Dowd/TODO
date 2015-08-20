@@ -1,0 +1,14 @@
+The vignette is not yet ready for the package and it will be done in near 
+future. Many examples in the source files are not insightful. They also need 
+to be (and will be) changed accordingly. The dependence on forecast and few other
+packages can be avoided and will be attempted in future. 
+
+The original Dowd's package contains some errors and this package has inherited
+most of them. Not all functions work perfectly. It is also a possibility that can
+be explored.
+
+There are also few functions that did not give same result as Dowd's MATLAB toolbox. 
+This is possibly because of two different scenarios, either because the parameters
+parameters to algorithms such as density function in Kernel Density Approach (just
+for sake of example) were not suitably chosen or there actually are errors in the code.
+An attempt will be made in future to remove such inconsistencies.
