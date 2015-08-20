@@ -8,7 +8,7 @@ Author: Dinesh Acharya <dines.acharya@gmail.com>
 Maintainer: Dinesh Acharya <dines.acharya@gmail.com>
 Description: Kevin Dowd's book Measuring Market Risk is a widely read book 
           in the area of risk measurement and is widely used by students and 
-          practitioners alike. As he claims, MATLAB indeed have been most 
+          practitioners alike. As he claims, MATLAB indeed might have been most 
           suitable language when Dowd originally wrote the functions, however,
           with growing popularity of R and a large user base, this project 
           should make Dowd's code accessible to more readers. As Dowd's code 
