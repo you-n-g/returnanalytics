@@ -17,8 +17,8 @@
 #' @author Dinesh Acharya
 #' @examples
 #'    
-#'    # Has to be modified with appropriate data:
-#'    # Blanco-Ihle Backtest For Independence for given parameters
+#'    # Blanco-Ihle Backtest For Independence for given confidence level.
+#'    # The VaR and ES are randomly generated.
 #'    a <- rnorm(1*100)
 #'    b <- abs(rnorm(1*100))+2
 #'    c <- abs(rnorm(1*100))+2
