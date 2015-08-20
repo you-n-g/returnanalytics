@@ -20,12 +20,12 @@
 #' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 CallPrice <- function(P, K, r, t, s) {
-    d_1 <- log(P / K) + (r + s * s / 2) * t
-    d_2 <- d_1 - s * sqrt(t)
+  d_1 <- log(P / K) + (r + s * s / 2) * t
+  d_2 <- d_1 - s * sqrt(t)
 
-    C <- P * pnorm(d_1) - K * exp(-r * t) * pnorm(d_2)
+  C <- P * pnorm(d_1) - K * exp(-r * t) * pnorm(d_2)
 
-    return(C)
+  return(C)
 }
 
 
@@ -76,48 +76,45 @@ p <- matrix(0, T, 1)
 
 
 if(DefineProbs == 1) {
-    # rolling window
-
-        tau <- 2 * 252
-        p[1:tau] <- 1
-        p <- p / sum(p)
+  # rolling window
+  tau <- 2 * 252
+  p[1:tau] <- 1
+  p <- p / sum(p)
 } else if(DefineProbs == 2) {
-    # exponential smoothing
-
-        lmd <- 0.0166
-        p   <- exp(-lmd * (T - (1 : T)))
-        p   <- p / sum(p)
+  # exponential smoothing
+  lmd <- 0.0166
+  p   <- exp(-lmd * (T - (1 : T)))
+  p   <- p / sum(p)
 
 } else if(DefineProbs == 3) {
-    # market conditions
-        Cond <- Y >= 2.8
-        p[Cond] <- 1
-        p <- p / sum(p)
+  # market conditions
+  Cond <- Y >= 2.8
+  p[Cond] <- 1
+  p <- p / sum(p)
 
 } else if(DefineProbs == 4) {
-    # kernel damping
-        y  <- 3
-        h2 <- cov(matrix(diff(Y)))
-        p  <- dmvnorm(Y, y, h2)
-        p  <- p / sum(p)
+  # kernel damping
+  y  <- 3
+  h2 <- cov(matrix(diff(Y)))
+  p  <- dmvnorm(Y, y, h2)
+  p  <- p / sum(p)
 
 } else if(DefineProbs == 5) {
-    # partial information prox. kernel damping
-        y  <- 3
-        h2 <- NaN  # set h2<-NaN for no conditioning on second moments
-        h2 <- cov(1 * diff(Y))
-        p  <- LeastInfoKernel(Y, y, h2)
+  # partial information prox. kernel damping
+  y  <- 3
+  h2 <- NaN  # set h2<-NaN for no conditioning on second moments
+  h2 <- cov(1 * diff(Y))
+  p  <- LeastInfoKernel(Y, y, h2)
 
 } else if(DefineProbs == 6) {
-     #partial information: match covariance
+  #partial information: match covariance
+  l_c <- 0.0055
+  l_s <- 0.0166
 
-        l_c <- 0.0055
-        l_s <- 0.0166
+  N <- 20
+  Dd <- DoubleDecay(X, l_c, l_s)
 
-        N <- 20
-        Dd <- DoubleDecay(X, l_c, l_s)
-
-        p <- Fit2Moms(X, Dd$m, Dd$S)
+  p <- Fit2Moms(X, Dd$m, Dd$S)
 }
 
 ###########################################################################
@@ -140,10 +137,10 @@ rf_T  <- rf_0 * exp(X[, 3])
 PnL <- matrix(NaN, T, N)
 
 # securities scenarios
-for(n in 1:N) {
-    Call_1 <- CallPrice(S_T, K[n], rf_T, Expiry[n] - 1 / 252, vol_T)
-    Call_0 <- CallPrice(S_0, K[n], rf_0, Expiry[n], vol_0)
-    PnL[, n] <- Call_1 - Call_0
+for (n in 1:N) {
+  Call_1 <- CallPrice(S_T, K[n], rf_T, Expiry[n] - 1 / 252, vol_T)
+  Call_0 <- CallPrice(S_0, K[n], rf_0, Expiry[n], vol_0)
+  PnL[, n] <- Call_1 - Call_0
 }
 
 # portfolio scenarios

@@ -1,8 +1,11 @@
-# This script illustrates the discrete Newton recursion  to process views on
-# CVaR according to Entropy Pooling and complements the article "Fully Flexible
-#	Extreme Views" by A. Meucci, D. Ardia, S. Keel available at www.ssrn.com.
-# The most recent version of this code is available at
-# MATLAB Central - File Exchange
+#' This script illustrates the discrete Newton recursion  to process views on
+#' CVaR according to Entropy Pooling
+#'
+#' @references 
+#' A. Meucci, D. Ardia, S. Keel, "Fully Flexible Extreme Views"
+#' \url{http://www.symmys.com/node/159}
+#' 
+#' @author Manan Shah \email{mkshah@@cmu.edu}
 
 data(gqhx)
 

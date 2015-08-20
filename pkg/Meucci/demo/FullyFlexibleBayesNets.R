@@ -1,9 +1,12 @@
-# This case study uses Entropy Pooling to compute Fully Flexible Bayesian
-# networks for risk management, see A. Meucci (2010) "Fully Flexible Bayesian
-# Networks".
-# 
-#  Most recent version of article and code available at
-#  http://www.symmys.com/node/152
+#' This case study uses Entropy Pooling to compute Fully Flexible Bayesian
+#' networks for risk management, see A. Meucci (2010) "Fully Flexible Bayesian
+#' Networks".
+#'
+#' @references 
+#' \url{http://www.symmys.com/node/152}
+#' See Meucci script "S_Main.m"
+#' 
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ################################################################################
 # upload scenarios table and prior distribution for changes in

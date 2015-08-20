@@ -2,7 +2,8 @@
 % Please edit documentation in R/StudentTCopulaPdf.R
 \name{StudentTCopulaPdf}
 \alias{StudentTCopulaPdf}
-\title{Pdf of the copula of the Student t distribution at the generic point u in the unit hypercube}
+\title{Pdf of the copula of the Student t distribution at the generic point u
+in the unit hypercube}
 \usage{
 StudentTCopulaPdf(u, nu, Mu, Sigma)
 }
@@ -19,15 +20,16 @@ StudentTCopulaPdf(u, nu, Mu, Sigma)
 F_U   : [vector] (J x 1) PDF values
 }
 \description{
-Pdf of the copula of the Student t distribution at the generic point u in the unit hypercube,
-as described in  A. Meucci, "Risk and Asset Allocation", Springer, 2005.
+Pdf of the copula of the Student t distribution at the generic
+point u in the unit hypercube, as described in  A. Meucci, "Risk and Asset
+Allocation", Springer, 2005.
 }
 \author{
 Xavier Valls \email{xaviervallspla@gmail.com}
 }
 \references{
-A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170},
-"E 88 - Copula vs. Correlation".
+A. Meucci - "Exercises in Advanced Risk and Portfolio Management"
+\url{http://symmys.com/node/170}, "E 88 - Copula vs. Correlation".
 
 See Meucci's script for "StudentTCopulaPdf.m"
 }

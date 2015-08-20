@@ -7,19 +7,20 @@
 Cumul2Raw(ka)
 }
 \arguments{
-\item{ka}{: [vector] (length N corresponding to order N) cumulative moments}
+\item{ka}{: [vector] (length N corresponding to order N) cumulative
+                                                              moments}
 }
 \value{
-mu_ : [vector] (length N corresponding to order N) corresponding raw moments
+mu_ : [vector] (length N corresponding to order N) corresponding
+                                                              raw moments
 }
 \description{
-Step 5 of the projection process:
+Step 5 of the projection process:\\
+From the cumulants of Y we compute the raw non-central moments of Y, and We
+do so recursively by the identity in formula (24) which follows from applying
+(21) and re-arranging terms
 }
 \details{
-From the cumulants of Y we compute the raw non-central moments of Y
-
-We do so recursively by the identity in formula (24) which follows from applying (21) and re-arranging terms
-
 \deqn{ \tilde{ \mu } ^{ \big(n\big) }_{Y}
 \equiv \kappa^{ \big(n\big) }_{Y}  +  \sum_{k=1}^{n-1} (n-1)C_{k-1}
 \kappa_{Y}^{ \big(k\big) }   \tilde{ \mu } ^{n-k}_{Y}  }
@@ -28,9 +29,9 @@ We do so recursively by the identity in formula (24) which follows from applying
 Ram Ahluwalia \email{rahluwalia@gmail.com}
 }
 \references{
-A. Meucci - "Exercises in Advanced Risk and Portfolio Management" \url{http://symmys.com/node/170}.
-See Meucci's script for "Cumul2Raw.m".
-
-A. Meucci - "Annualization and General Projection of Skewness, Kurtosis and All Summary Statistics" - formula (24) \url{http://www.symmys.com/node/136}
+A. Meucci - "Exercises in Advanced Risk and Portfolio Management"
+\url{http://symmys.com/node/170}. See Meucci's script for "Cumul2Raw.m".
+A. Meucci - "Annualization and General Projection of Skewness, Kurtosis and
+All Summary Statistics" - formula (24) \url{http://www.symmys.com/node/136}
 }
 

@@ -116,7 +116,8 @@ for(i in 1:(tau_-1)) {
 
     ############################################################################
     ## Market impact: calculus of variation
-    l_t <- - exp(-lambda %*% t(seq(0, tau_ - 2, 1))) * diff(Mean_prior[1:(length(Mean_prior) - 1)])
+    l_t <- - exp(-lambda %*% t(seq(0, tau_ - 2, 1))) *
+             diff(Mean_prior[1:(length(Mean_prior) - 1)])
     l_t[1] <- l_t[1] - eta * c2 * b_legacy_prior
     q_t <- QuadraticMat_Vc(lambda, gamma, eta, Prior$cov, c2, tau_ - 1, n_)
     b_MI_Vc_prior_tmp <- solve(2 * q_t) %*% l_t
@@ -168,7 +169,8 @@ for(i in 1:(tau_-1)) {
     b_legacy_post = b_MI_Vc_post[i, 1:n_]
    
     ############################################################################
-    ## LongTerm and viewMean contributions of the optimal solution with views in absence of market impact of transactions 
+    ## LongTerm and viewMean contributions of the optimal solution with views in
+    ## absence of market impact of transactions 
     b_NoMI_LongTerm[i, 1:n_] = 2 * theta / (gamma * sig2) / 
                                (1 + exp(-theta * tau)) * 
                                (1 - (1 + exp(theta * tau)) /
@@ -183,6 +185,8 @@ for(i in 1:(tau_-1)) {
 ################################################################################
 ################################################################################
 
-# save ('data\CaseStudy1.mat','X_path','t','mu_LT','mu_view','b_NoMI_prior','b_NoMI_post',...
-#     'b_MI_Vc_prior','b_MI_Vc_post','b_MI_Bellman_prior','b_MI_Bellman_post','b_NoMI_LongTerm','b_NoMI_viewMean','tau_');
+# save ('data\CaseStudy1.mat','X_path','t','mu_LT','mu_view','b_NoMI_prior',
+#    'b_NoMI_post',...
+#    'b_MI_Vc_prior','b_MI_Vc_post','b_MI_Bellman_prior','b_MI_Bellman_post',
+#    'b_NoMI_LongTerm','b_NoMI_viewMean','tau_');
 

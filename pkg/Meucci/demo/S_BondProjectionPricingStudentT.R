@@ -1,4 +1,4 @@
-#'This script projects the distribution of the market invariants for the bond
+#' This script projects the distribution of the market invariants for the bond
 #' markets (i.e. the changes in yield to maturity) from the estimation interval 
 #' (Student t assumption) to the investment horizon. Then it computes the
 #' distribution of prices at the investment horizon  as described in A. Meucci,

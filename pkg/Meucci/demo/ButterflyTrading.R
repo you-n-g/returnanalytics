@@ -1,4 +1,3 @@
-
 #' This script performs the butterfly-trading case study for the Entropy-Pooling
 #'' approach by Attilio Meucci, as it appears in A. Meucci, "Fully Flexible
 #' Views: Theory and Practice", The Risk Magazine, October 2008, p 100-106

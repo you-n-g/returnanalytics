@@ -1,6 +1,6 @@
-#'This script compares the Cornish-Fisher estimate of the VaR with the true
-#'analytical VaR under the lognormal assumptions as described in A. Meucci,
-#'"Risk and Asset Allocation", Springer, 2005,  Chapter 5.
+#' This script compares the Cornish-Fisher estimate of the VaR with the true
+#' analytical VaR under the lognormal assumptions as described in A. Meucci,
+#' "Risk and Asset Allocation", Springer, 2005,  Chapter 5.
 #'
 #' @references
 #' A. Meucci - "Exercises in Advanced Risk and Portfolio Management"

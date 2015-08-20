@@ -1,9 +1,11 @@
-# This script verifies the correctness of the eigenvalue-eigenvector representation in terms of real matrices 
-# for the transition matrix of an OU process discussed in A. Meucci (2009) 
-# "Review of Statistical Arbitrage, Cointegration, and Multivariate
-#  Ornstein-Uhlenbeck" available at ssrn.com
-# Code by A. Meucci, April 2009
-# Most recent version available at www.symmys.com > Teaching > MATLAB
+#' This script verifies the correctness of the eigenvalue-eigenvector
+#' representation in terms of real matrices for the transition matrix of an OU
+#' process.
+#'
+#' A. Meucci - "Review of statistical arbitrage, cointegration, and multivariate
+#' Ornstein-Uhlenbeck", 2009. \url{http://symmys.com/node/132}
+#'
+#' @author Manan Shah \email{mkshah@@cmu.edu}
 
 N <- 5
 Theta <- matrix(runif(N ^ 2), 5, byrow = T)

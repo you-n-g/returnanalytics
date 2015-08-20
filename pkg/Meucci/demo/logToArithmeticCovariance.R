@@ -1,5 +1,8 @@
-# Generate arithmetric returns and arithmetric covariance matrix given a
-# distribution of log returns
+#' Generates arithmetric returns and arithmetric covariance matrix given a
+#' distribution of log returns
+#'
+#' @author Ram Ahluwalia \email{ram@@wingedfootcapital.com}
+
 
 # Example experiment with two assets
 library(MASS)

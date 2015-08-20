@@ -102,8 +102,10 @@ b_MI_Bellman <- BellmanEq_CS2(eta, gamma, lambda, tau, theta, mu, sig2, c2,
 #initialize variables
 
 #prior
-b_NoMI_prior <- matrix(NaN, tau_ - 1, k_)      #optimal 1-period myopic prior solution 
-b_MI_Vc_prior <- matrix(NaN, tau_ - 1, k_)     #optimal prior solution with MI (Calculus of Variation)
+#optimal 1-period myopic prior solution 
+b_NoMI_prior <- matrix(NaN, tau_ - 1, k_)
+#optimal prior solution with MI (Calculus of Variation)
+b_MI_Vc_prior <- matrix(NaN, tau_ - 1, k_)
 b_legacy_prior <- b_legacy
 b_legacy_prior_LR <- b_legacy
 b_legacy_prior_xt <- b_legacy
@@ -225,12 +227,14 @@ for (i in 1:(tau_ - 1)) {
     b_legacy_post <- b_MI_Vc_post[i, 1:k_]
          
     ###########################################################################
-    ## LongTerm and viewMean contributions of the optimal solution with views in absence of market impact of transactions 
+    ## LongTerm and viewMean contributions of the optimal solution with views in
+    ## absence of market impact of transactions 
         
     theta1 <- theta[1, 1]
     theta2 <- theta[2, 2]
 
-    #extract the covariance matrix relative to time t, t+1, t_viewTIP_roll and t_viewX_roll 
+    # extract the covariance matrix relative to time t, t+1, t_viewTIP_roll and
+    # t_viewX_roll 
     idx <- c(1, 2, 3, 4, n_ * Index_t_viewTIP - 1, n_ * Index_t_viewTIP,
            t_ * n_ - 1, t_ * n_)
     SubSig2 <- Posterior$cov[idx, idx]   

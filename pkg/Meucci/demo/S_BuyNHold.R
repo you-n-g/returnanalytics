@@ -78,8 +78,8 @@ Time  <- seq(0, Time_Horizon, Time_Step)
 y_max <- max(cbind(Portfolio_Series, Market_Series)) * 1.2
 dev.new()
 par(mfrow <- c(2,1))
-for(i in 1 : length(Time))
-{
+
+for(i in 1 : length(Time)) {
     plot(Time[1:i], Portfolio_Series[1:i], type ="l", lwd = 2.5, col = "blue",
          ylab = "value", xlim = c(0, Time_Horizon), ylim = c(0, y_max),
          main = "investment (blue) vs underlying (red) value")

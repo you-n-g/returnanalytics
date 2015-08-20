@@ -17,8 +17,9 @@ ga   standardized statistics
 mu   central moments
 }
 \description{
-Step 0 in projection process: Compute summary stats (mean, skew, kurtosis, etc.) of the invariant X-t
-step 1 in the project process We collect the first 'n' central moments of the invariant X-t.
+Step 0 in projection process: Compute summary stats (mean, skew,
+kurtosis, etc.) of the invariant X-t step 1 in the project process We collect
+the first 'n' central moments of the invariant X-t.
 }
 \author{
 Ram Ahluwalia \email{rahluwalia@gmail.com}
