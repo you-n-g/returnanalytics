@@ -99,7 +99,7 @@ AdjustedVarianceCovarianceES <- function(vc.matrix, mu, skew, kurtosis,
       VaR[i,j] <- - mu %*% t(positions) * hp[j] - (z[i] + adjustment[i]) * 
         sigma * (sum(positions)^2) * sqrt(hp[j]) # VaR
       # ES Estimation
-      n <- 1000 # Number of slives into which tail is divided
+      n <- 1000 # Number of slices into which tail is divided
       cl0[i] <- cl[i] # Initial confidence level
       term[i, j] <- VaR[i, j]
       delta.cl[i] <- (1 - cl[i]) / n # Increment to confidence level as each 
