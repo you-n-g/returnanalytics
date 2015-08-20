@@ -1,5 +1,8 @@
-# Example 1: Two-asset example with -.9 correlation
-# generate covariance matrix to sample "good returns"
+#' Example 1: Two-asset example with -.9 correlation
+#' generate covariance matrix to sample "good returns"
+#'
+#' @author Ram Ahluwalia \email{ram@@wingedfootcapital.com}
+
 sig <- matrix(c(1, 1), nrow = 1)
 r <- -.9
 # generate 2x2 correlation matrix
@@ -32,7 +35,7 @@ rm(covarianceMatrix)
 rm(corruptSample)
 
 covarianceMatrix <- matrix(rnorm(numberOfStocks^2, 0, .1),
-						  nrow = numberOfStocks, ncol = numberOfStocks)
+						   nrow = numberOfStocks, ncol = numberOfStocks)
 covarianceMatrix <- (covarianceMatrix + t(covarianceMatrix)) / 2
 covarianceMatrix <- nearPD(covarianceMatrix, corr = FALSE)$mat
 covarianceMatrix <- as.matrix(covarianceMatrix)

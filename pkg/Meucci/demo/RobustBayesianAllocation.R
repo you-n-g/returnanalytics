@@ -1,8 +1,15 @@
-####################################################################
-# Example from Meucci's MATLAB script:  S_SimulationsCaseStudy.M
-# See MATLAB package "Meucci_RobustBayesian" for original MATLAB
-# source on www.symmys.com
-####################################################################
+#' Example of Robust Bayesian allocation in the stock market. Case study of the
+#' simulations, as described in A. Meucci, "Robust Bayesian Allocation". 
+#'  
+#' @references 
+#' A. Meucci - "Robust Bayesian Allocation"
+#' \url{http://symmys.com/node/102}
+#'
+#' See Meucci's script for "S_SimulationsCaseStudy.m" and MATLAB package
+#' "Meucci_RobustBayesian" for original MATLAB
+#'
+#' @author Ram Ahluwalia \email{ram@@wingedfootcapital.com}
+
 library(MASS)
 ####################################################################
 # inputs

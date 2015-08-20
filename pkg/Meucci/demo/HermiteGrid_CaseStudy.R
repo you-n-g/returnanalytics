@@ -1,11 +1,11 @@
-# This script estimates the prior of a hedge fund return and processes extreme
-# views on CVaR according to Entropy Pooling
-#
-# This script complements the article "Fully Flexible Extreme Views" by
-# A. Meucci, D. Ardia, S. Keel available at www.ssrn.com
-#	
-# The most recent version of this code is available at MATLAB Central -
-# File Exchange
+#' This script estimates the prior of a hedge fund return and processes extreme
+#' views on CVaR according to Entropy Pooling
+#'
+#' @references 
+#' A. Meucci, D. Ardia, S. Keel, "Fully Flexible Extreme Views"
+#' \url{http://www.symmys.com/node/159}
+#' 
+#' @author Manan Shah \email{mkshah@@cmu.edu}
 
 # IMPORTANT - This script is about the methodology, not the input data, 
 # which has been modified
@@ -118,4 +118,3 @@ lines(view$mu, 0.0,  type = "p", pch = 16, col = "red")
 lines(view$CVaR95, 0.0,  type = "p", pch = 17, col = "red")
 legend("topright", 1.9, c("Prior", "Posterior"),
        col = c("blue", "red"), lty = 1)
-

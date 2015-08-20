@@ -1,11 +1,13 @@
-# Annualization and Projection algorithm for invariant
-#
-# SYMMYS - Last version of article and code available at
-# http://symmys.com/node/136
-# Project summary statistics to arbitrary horizons under i.i.d. assumption
-# see Meucci, A. (2010) "Annualization and General Projection of Skewness,
-# Kurtosis and All Summary Statistics"
-# GARP Risk Professional, August, pp. 52-54
+#' Project summary statistics to arbitrary horizons under i.i.d. assumption
+#' applying Entropy Pooling to process extreme views
+#'
+#' @references 
+#' A. Meucci, "Annualization and General Projection of Skewness, Kurtosis and
+#' All Summary Statistics", GARP Risk Professional, August 2010, pp. 52-54
+#' \url{http://www.symmys.com/node/136}
+#' 
+#' @author Manan Shah \email{mkshah@@cmu.edu}
+
 
 # numeric with number of the first N stadardized summary statistics to project
 N <- 6

@@ -1,6 +1,6 @@
-#'This script projects the distribution of the market invariants for the
+#' This script projects the distribution of the market invariants for the
 #' derivatives market
-#'Then it computes the distribution of prices at the investment horizon as
+#' Then it computes the distribution of prices at the investment horizon as
 #' described in A. Meucci, "Risk and Asset Allocation", Springer, 2005,  Ch 3.
 #'
 #' @references

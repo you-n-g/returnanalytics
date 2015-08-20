@@ -1,10 +1,10 @@
-# This script represents the evolution of the covariance of an OU process in
-# terms of the dispersion ellipsoid. See A. Meucci (2009), "Review of
-# Statistical Arbitrage, Cointegration, and Multivariate Ornstein-Uhlenbeck"
-# available at ssrn.com
-
-# Code by A. Meucci, April 2009
-# Most recent version available at www.symmys.com > Teaching > MATLAB
+#' This script represents the evolution of the covariance of an OU process in
+#' terms of the dispersion ellipsoid.
+#'
+#' A. Meucci - "Review of statistical arbitrage, cointegration, and multivariate
+#' Ornstein-Uhlenbeck", 2009. \url{http://symmys.com/node/132}
+#'
+#' @author Manan Shah \email{mkshah@@cmu.edu}
 
 # input parameters of multivariate OU process
 K <- 1

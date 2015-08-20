@@ -9,7 +9,6 @@
 #' "Meucci_RobustBayesian" for original MATLAB
 #'
 #' @author Xavier Valls \email{xaviervallspla@@gmail.com}
-#' 
 
 p_m <- .1 # robustness parameter location
 p_s <- .1 # robustness parameter scatter

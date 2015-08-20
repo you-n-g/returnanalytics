@@ -8,7 +8,7 @@
 #'
 #' See Meucci's script for "S_AutocorrelatedProcess.m"
 #'
-#' @author xXavier Valls \email{xaviervallspla@@gmail.com}
+#' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 
 ################################################################################
 ### Input parameters

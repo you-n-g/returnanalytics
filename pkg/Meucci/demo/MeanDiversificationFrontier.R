@@ -1,9 +1,9 @@
 # This script computes the mean-diversification efficient frontier
-# see A. Meucci - "Managing Diversification", Risk Magazine, June 2009
-# available at www.ssrn.com
-
-# Code by A. Meucci. This version March 2009. 
-# Last version available at MATLAB central as "Managing Diversification"
+#'
+#' @references 
+#' A. Meucci, "Managing Diversification". \url{http://www.symmys.com/node/199}
+#' 
+#' @author Ram Ahluwalia \email{ram@@wingedfootcapital.com}
 
 # inputs
 # upload returns covariance and expectations

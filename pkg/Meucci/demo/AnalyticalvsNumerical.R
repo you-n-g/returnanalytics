@@ -73,12 +73,12 @@ beq <- rbind(beq , Mu_Q)
 # ...constrain the second moments... 
 SecMom <- G %*% Mu_ %*% t(Mu_) %*% t(G) + Sigma_G  
 
-    # We use Mu_ from analytical result. We do not use Revised Sigma because we 
-    # are testing whether the numerical approach for handling expectations of 
-    # covariance matches the analytical approach
-    #
-    # TODO: Can we perform this procedure without relying on Mu_ from the 
-    # analytical result?
+  # We use Mu_ from analytical result. We do not use Revised Sigma because we 
+  # are testing whether the numerical approach for handling expectations of 
+  # covariance matches the analytical approach
+  #
+  # TODO: Can we perform this procedure without relying on Mu_ from the 
+  # analytical result?
 
 GX <- X %*% t(G)
 

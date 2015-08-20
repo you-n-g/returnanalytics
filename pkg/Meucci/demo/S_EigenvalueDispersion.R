@@ -54,7 +54,7 @@ for (i in 1 : nSampleLenght) {
 ### Display surface
 dev.new()
 
-persp(SampleLenght/N, 1 :N, Store_EVal_Hat,
-    theta = 7 * 45, phi = 30, expand=0.6, col='lightblue', shade=0.75,
-    ltheta=120, ticktype='detailed', xlab = "eigenvalue #",
+persp(SampleLenght / N, 1 :N, Store_EVal_Hat,
+    theta = 7 * 45, phi = 30, expand = 0.6, col = 'lightblue', shade = 0.75,
+    ltheta = 120, ticktype = 'detailed', xlab = "eigenvalue #",
     ylab = "sample lenght/N")

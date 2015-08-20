@@ -1,13 +1,14 @@
 # TODO: Determine how to extend correlation view to multiple assets
 # TODO: Create plot distributions function
 
-# This example script compares the numerical and the analytical solution of
-# entropy-pooling, see "A. Meucci - Fully Flexible Views: Theory and Practice"
-# and associated script S_Main
-# Example compares analytical vs. numerical approach to entropy pooling
-
-# Code by A. Meucci, September 2008
-# Last version available at www.symmys.com > Teaching > MATLAB
+#' This example script compares the numerical and the analytical solution of
+#' entropy-pooling, see "A. Meucci - Fully Flexible Views: Theory and Practice"
+#'
+#' @references 
+#' A. Meucci, "Fully Flexible Views: Theory and Practice".
+#' \url{http://www.symmys.com/node/337}. 
+#' 
+#' @author Ram Ahluwalia \email{ram@@wingedfootcapital.com}
 
 ################################################################################
 # prior

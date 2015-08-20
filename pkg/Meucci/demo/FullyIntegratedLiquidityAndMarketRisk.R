@@ -3,8 +3,8 @@
 #' Market Risk Model", Financial Analyst Journal, 68, 6, 35-47 (2012)
 #'
 #' @references 
+#' A. Meucci, "A Fully Integrated Liquidity and Market Risk Model" 
 #' \url{http://www.symmys.com/node/350}
-#' See Meucci script "S_Main.m"
 #' 
 #' @author Xavier Valls \email{xaviervallspla@@gmail.com}
 

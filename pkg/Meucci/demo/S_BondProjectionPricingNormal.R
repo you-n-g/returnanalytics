@@ -1,6 +1,6 @@
 #' This script projects the distribution of the market invariants for the bond
 #' markets 
-#'(i.e. the changes in yield to maturity) from the estimation interval to the
+#' (i.e. the changes in yield to maturity) from the estimation interval to the
 #' investment horizon 
 #' Then it computes the distribution of prices at the investment horizon as
 #' described in A. Meucci, "Risk and Asset Allocation", Springer, 2005, Ch. 3
