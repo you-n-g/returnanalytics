@@ -50,7 +50,7 @@ BlackScholesPutESSim <- function(amountInvested, stockPrice, strike, r, mu,
     lnSt[i] <- lnS + rnorm(1, nudt, sigmadt) # Random stock price movement
     newStockPrice[i] <- exp(lnSt[i, 1]) # New stock price
   }
-  # Profit/Loss camculation
+  # Profit/Loss calculation
   profitOrLoss <- double(M)
   if (amountInvested > 0) { # If option position is long
     for (i in 1:M) {
