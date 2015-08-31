@@ -28,7 +28,7 @@ for normal marginals.
 }
 \examples{
 # VaR using bivariate Gumbel for X and Y with given parameters:
-   GumbelCopulaVaR(2.3, 4.1, 1.2, 1.5, 1.2, .95)
+   GumbelCopulaVaR(1.1, 3.1, 1.2, 1.5, 1.1, .95)
 }
 \author{
 Dinesh Acharya

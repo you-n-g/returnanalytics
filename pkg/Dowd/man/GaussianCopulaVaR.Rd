@@ -30,7 +30,7 @@ Derives VaR using bivariate Gaussian copula with specified inputs
 for normal marginals.
 }
 \examples{
-# VaR using bivariate Gumbel for X and Y with given parameters:
+# VaR using bivariate Gaussian for X and Y with given parameters:
    GaussianCopulaVaR(2.3, 4.1, 1.2, 1.5, .6, 10, .95)
 }
 \author{
