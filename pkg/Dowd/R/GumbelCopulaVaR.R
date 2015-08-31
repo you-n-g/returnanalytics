@@ -20,7 +20,7 @@
 #' @examples
 #' 
 #'    # VaR using bivariate Gumbel for X and Y with given parameters:
-#'    GumbelCopulaVaR(2.3, 4.1, 1.2, 1.5, 1.2, .95)
+#'    GumbelCopulaVaR(1.1, 3.1, 1.2, 1.5, 1.1, .95)
 #'
 #' @export
 GumbelCopulaVaR <- function(mu1, mu2, sigma1, sigma2, beta, cl){
@@ -50,7 +50,9 @@ GumbelCopulaVaR <- function(mu1, mu2, sigma1, sigma2, beta, cl){
   }
   
   # Bisection Algorithm
-  tol <- 0.0001 # Tolerance level (NM: change manually if desired)
+  # The tolerance level in Dowd's original code was 0.0001. It was changed for test case
+  # to take less time.
+  tol <- 0.001 # Tolerance level (NM: change manually if desired)
   while (U - L > tol){
     x <- (L + U) / 2 # Bisection carried out in terms of P/L quantiles or minus VaR
     cum.prob <- CdfOfSumUsingGumbelCopula(x, mu1, mu2, sigma1, sigma2, beta)
@@ -64,5 +66,5 @@ GumbelCopulaVaR <- function(mu1, mu2, sigma1, sigma2, beta, cl){
     }
   }
   y <- -x # VaR is negative of terminal x-value or P/L quantile
-  
+  return(y)
 }

@@ -35,7 +35,8 @@ CdfOfSumUsingGumbelCopula <- function(quantile, mu1, mu2, sigma1, sigma2, beta){
   # Define w variable
   w.min <- 0.001
   w.max <- 0.999 # Specify min and max of w
-  dw <- 0.001 # Specify incremental change in w
+  dw <- 0.001 # Specify incremental change in w. Note that this is different than in Dowd's
+  # original code (dw=0.001). It was necessary to reduce run time for examples.
   w <- seq(w.min, w.max, dw) # Define w-variable going from min to max in units of size dw
   
   # Obtain 'first' and 'second' sets of copula values corresponding to 

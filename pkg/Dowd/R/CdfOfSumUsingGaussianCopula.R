@@ -1,4 +1,4 @@
-#' Derives prob ( X + Y < quantile) using Gumbel copula
+#' Derives prob ( X + Y < quantile) using Gaussian copula
 #' 
 #' If X and Y are position P/Ls, then the VaR is equal to minus quantile. In
 #' such cases, we insert the negative of the VaR as the quantile, and the
@@ -30,9 +30,9 @@
 CdfOfSumUsingGaussianCopula <- function(quantile, mu1, mu2, sigma1, sigma2, rho, number.steps.in.copula){
   
   # Define w variable
-  w.min <- 0.001
-  w.max <- 0.999 # Specify min and max of w
-  dw <- 0.001 # Specify incremental change in w
+  w.min <- 0.01
+  w.max <- 0.99 # Specify min and max of w
+  dw <- 0.01 # Specify incremental change in w
   w <- seq(w.min, w.max, dw) # Define w-variable going from min to max in units of size dw
   
   # Obtain 'first' and 'second' sets of copula values corresponding to 
