@@ -20,7 +20,7 @@
 #' @author Dinesh Acharya
 #' @examples
 #' 
-#'    # VaR using bivariate Gumbel for X and Y with given parameters:
+#'    # VaR using bivariate Gaussian for X and Y with given parameters:
 #'    GaussianCopulaVaR(2.3, 4.1, 1.2, 1.5, .6, 10, .95)
 #'
 #' @export
@@ -50,7 +50,7 @@ GaussianCopulaVaR <- function(mu1, mu2, sigma1, sigma2, rho,
   }
   
   # Bisection Algorithm
-  tol <- 0.0001 # Tolerance level (NM: change manually if desired)
+  tol <- 0.001 # Tolerance level (NM: change manually if desired)
   while (U - L > tol){
     x <- (L + U) / 2 # Bisection carried out in terms of P/L quantiles or minus VaR
     cum.prob <- CdfOfSumUsingGaussianCopula(x, mu1, mu2, sigma1, sigma2, rho, 
