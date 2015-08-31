@@ -2,7 +2,7 @@
 % Please edit documentation in R/CdfOfSumUsingGaussianCopula.R
 \name{CdfOfSumUsingGaussianCopula}
 \alias{CdfOfSumUsingGaussianCopula}
-\title{Derives prob ( X + Y < quantile) using Gumbel copula}
+\title{Derives prob ( X + Y < quantile) using Gaussian copula}
 \usage{
 CdfOfSumUsingGaussianCopula(quantile, mu1, mu2, sigma1, sigma2, rho,
   number.steps.in.copula)
