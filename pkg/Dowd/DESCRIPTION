@@ -2,7 +2,7 @@ Package: Dowd
 Type: Package
 Title: Functions Ported from 'MMR2' Toolbox Offered in Kevin Dowd's Book 
           Measuring Market Risk
-Version: 0.1
+Version: 0.11
 Date: 2015-08-20
 Author: Dinesh Acharya <dines.acharya@gmail.com>
 Maintainer: Dinesh Acharya <dines.acharya@gmail.com>
