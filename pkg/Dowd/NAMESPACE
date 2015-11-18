@@ -150,8 +150,3 @@ export(tVaRPlot3D)
 import(MASS)
 import(bootstrap)
 import(forecast)
-importFrom("graphics", "barplot", "hist", "legend", "lines", "par",
-             "persp", "plot", "text", "title")
-importFrom("stats", "cov", "density", "dlnorm", "dnorm", "dt",
-             "pbinom", "pchisq", "pnorm", "pt", "qnorm", "qt",
-             "quantile", "rbinom", "rlnorm", "rnorm", "sd")
